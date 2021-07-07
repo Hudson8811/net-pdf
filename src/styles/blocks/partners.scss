@@ -2,10 +2,19 @@
 	&__container {
 		padding-top: 75px;
 		padding-bottom: 92px;
+
+		@include max(lg) {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
 	}
 
 	&__title {
 		margin-bottom: 76px;
+
+		@include max(lg) {
+			margin-bottom: 50px;
+		}
 	}
 
 	img {

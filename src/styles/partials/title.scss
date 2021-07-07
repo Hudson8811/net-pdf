@@ -1,15 +1,59 @@
 .title {
+	font-family: $mainFont;
 	font-size: 75px;
 	line-height: 65px;
 	font-weight: 700;
 	letter-spacing: 1.9px;
 	color: $mainColor;
 
+	@include max(lg) {
+		font-size: 70px;
+		letter-spacing: normal;
+	}
+
+	@include max(md) {
+		font-size: 60px;
+		text-align: center;
+	}
+
+	@include max(sm) {
+		font-size: 40px;
+		line-height: 40px;
+	}
+
+	@include max(xxs) {
+		font-size: 26px;
+		line-height: 30px;
+	}
+
+	br {
+		@include max(lg) {
+			display: none;
+		}
+	}
+
 	.subtitle {
+		font-family: $mainFont;
 		font-size: 16px;
 		line-height: 22px;
 		color: $gray-9e;
 		letter-spacing: 0.36px;
 		margin-top: 21px;
+
+		@include max(md) {
+			text-align: center;
+		}
+
+		@include max(sm) {
+			font-size: 15px;
+			line-height: 20px;
+			letter-spacing: normal;
+		}
+
+		br {
+			@include max(lg) {
+				display: none;
+			}
+		}
 	}
 }

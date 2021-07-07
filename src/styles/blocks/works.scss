@@ -4,13 +4,34 @@
 	&__container {
 		padding-top: 83px;
 		padding-bottom: 177px;
+
+		@include max(lg) {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
 	}
 
 	&__title {
 		margin-bottom: 104px;
+
+		@include max(lg) {
+			margin-bottom: 100px;
+		}
+
+		@include max(md) {
+			margin-bottom: 65px;
+		}
 	}
 
 	&__grid {
 		@include flex-row(112px, 160px);
+
+		@include max(lg) {
+			@include flex-row(80px, 160px);
+		}
+
+		@include max(md) {
+			margin-top: -90px;
+		}
 	}
 }
