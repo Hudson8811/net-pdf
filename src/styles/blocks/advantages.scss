@@ -4,20 +4,53 @@
 	&__container {
 		padding-top: 73px;
 		padding-bottom: 121px;
+
+		@include max(lg) {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
 	}
 
 	&__title {
 		margin-bottom: 147px;
+
+		@include max(lg) {
+			margin-bottom: 100px;
+		}
+
+		@include max(md) {
+			margin-bottom: 65px;
+		}
 	}
 
 	&__grid {
 		@include flex-row(240px, 160px);
 		padding-right: 50px;
+
+		@include max(lg) {
+			justify-content: center;
+		}
+
+		@include max(md) {
+			@include flex-row(210px, 60px);
+		}
+
+		@include max(sm) {
+			@include flex-row(60px, 40px);
+		}
 	}
 
 	&__item {
 		@include flex-block(208px, 226px, 115px);
 		position: relative;
+
+		@include max(md) {
+			@include flex-block(180px, 200px, 40px);
+		}
+
+		@include max(sm) {
+			@include flex-block(40px, 60px, 20px);
+		}
 
 		.digit {
 			font-family: $secondFont;
@@ -26,10 +59,20 @@
 			font-weight: 500;
 			color: $gray-de;
 			letter-spacing: -2.12px;
-			-webkit-text-stroke: 1px $gray-af;
+
+			@include max(lg) {
+				font-size: 200px;
+				line-height: 200px;
+			}
+
+			@include max(sm) {
+				font-size: 175px;
+				line-height: 175px;
+			}
 		}
 
 		.text {
+			font-family: $mainFont;
 			font-size: 30px;
 			line-height: 23px;
 			font-weight: 700;
@@ -39,6 +82,15 @@
 			top: 50%;
 			left: 45px;
 			transform: translateY(-50%);
+
+			@include max(lg) {
+				font-size: 26px;
+				letter-spacing: normal;
+			}
+
+			@include max(sm) {
+				font-size: 24px;
+			}
 		}
 	}
 }
