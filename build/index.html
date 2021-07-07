@@ -113,50 +113,59 @@
                         </div>
                       </div>
                       <div class="ec-form__section ec-form__section--cols">
-                        <div class="ec-form__col">
-                          <div class="ec-form__col-field field">
-                            <input class="required" type="text" required="required" placeholder="Название компании">
+                        <div class="ec-form__cols">
+                          <div class="ec-form__col">
+                            <div class="ec-form__col-field field">
+                              <input class="required" type="text" required="required" placeholder="Название компании">
+                            </div>
+                            <div class="ec-form__error">КП должно быть персонифицировано, мы же делаем его именно для вас! Заполните ячейку!</div>
                           </div>
-                          <div class="ec-form__error">КП должно быть персонифицировано, мы же делаем его именно для вас! Заполните ячейку!</div>
-                        </div>
-                        <div class="ec-form__col">
-                          <div class="ec-form__col-field field ec-form__col-field--error">
-                            <input class="required" type="text" required="required" placeholder="Дата/даты проведения мероприятия">
+                          <div class="ec-form__col">
+                            <div class="ec-form__col-field field ec-form__col-field--error">
+                              <input class="required" type="text" required="required" placeholder="Дата/даты проведения мероприятия">
+                            </div>
+                            <div class="ec-form__error">Заполните дату, нам это важно, чтобы свериться с расписанием других забронированных мероприятий</div>
                           </div>
-                          <div class="ec-form__error">Заполните дату, нам это важно, чтобы свериться с расписанием других забронированных мероприятий</div>
-                        </div>
-                        <div class="ec-form__col">
-                          <div class="ec-form__col-field field">
-                            <input class="required" type="email" required="required" placeholder="E-mail, куда отправить КП в PDF">
+                          <div class="ec-form__col">
+                            <div class="ec-form__col-field field">
+                              <input class="required" type="email" required="required" placeholder="E-mail, куда отправить КП в PDF">
+                            </div>
+                            <div class="ec-form__error">Почта нужна, чтобы выслать вам КП. <br>Заполните ячейку!</div>
                           </div>
-                          <div class="ec-form__error">Почта нужна, чтобы выслать вам КП. <br>Заполните ячейку!</div>
                         </div>
                       </div>
                       <div class="ec-form__info">Примечание: расчет на проведение мероприятия в Москве. Мы выезжаем со своим оборудованием в другие города России по требованию. <br>Командировочные расходы рассчитает аккаунт менеджер.</div>
                       <div class="ec-form__btn">
-                        <button type="submit">РАССЧИТАТЬ БАЗОВУЮ СТОИМОСТЬ МОЕГО МЕРОПРИЯТИЯ</button>
+                        <button class="ec-btn" type="submit">РАССЧИТАТЬ БАЗОВУЮ СТОИМОСТЬ МОЕГО МЕРОПРИЯТИЯ</button>
                       </div>
                     </form>
                   </div>
                   <div class="event-calc__section event-calc__section--3">
                     <div class="ec-results">
                       <div class="ec-results__info">
-                        <div class="ec-results__col">
+                        <div class="ec-results__col ec-results__col--1">
                           <div class="ec-results__col-number">7.500 р./час * 24 часа</div>
                           <div class="ec-results__col-text">Ставка за час за комплект оборудования со съемочной группой с 1 камерой</div>
                         </div>
                         <div class="ec-results__col">
-                          <div class="ec-results__col-number">+ 7.500 р. * 12 часов</div>
+                          <div class="ec-results__col-number">&nbsp;+ 7.500 р.</div>
+                        </div>
+                        <div class="ec-results__col ec-results__col--2">
+                          <div class="ec-results__col-number">&nbsp;* 12 часов</div>
                           <div class="ec-results__col-text">Параллельные часы/потоки</div>
                         </div>
-                        <div class="ec-results__col">
-                          <div class="ec-results__col-number">*1.1 - <span>10% скидка</span></div>
-                          <div class="ec-results__col-text">Коэффициент количества спикеров от 3 до 6</div>
+                        <div class="ec-results__col ec-results__col--3">
+                          <div class="ec-results__col-number">&nbsp;* 1.1 - <span>10% скидка</span></div>
+                          <div class="ec-results__col-text">Коэффициент количества спикеров <br>от 3 до 6</div>
                         </div>
                       </div>
-                      <div class="ec-results__total">ИТОГО: 297.000 р.<span>НДС <br>не облагается</span></div>
+                      <div class="ec-results__total">
+                        <div class="es-total">
+                          <div>ИТОГО: 297.000 р.</div><span class="es-total__nds">НДС <br>не облагается</span>
+                        </div>
+                      </div>
                     </div>
-                    <div class="event-calc__hr"></div>
+                    <div class="event-calc__hr event-calc__hr--center"></div>
                   </div>
                   <div class="event-calc__section event-calc__section--4">
                     <div class="event-calc__subtitle">Что включено в данную сумму</div>
@@ -245,110 +254,143 @@
                         </div>
                       </div>
                     </div>
-                    <div class="event-calc__hr"></div>
+                    <div class="event-calc__hr event-calc__hr--center"></div>
                   </div>
                   <div class="event-calc__section event-calc__section--5">
                     <div class="event-calc__title">Добавим еще опций к вашему мероприятию?</div>
                     <form class="event-calc__options ec-options" action="" method="POST">
-                      <div class="ec-options__left">
-                        <div class="checkbox">
-                          <input id="add1" type="checkbox" name="add" value="Квиз (разработка и ведение)">
-                          <label for="add1">+ Квиз (разработка и ведение)
-                            <div class="tooltip">?</div>
-                          </label>
-                          <div class="price" data-price="45000">45.000 р.</div><i class="tooltiptext tooltip-bottom">Подсказка</i>
+                      <div class="ec-options__flex">
+                        <div class="ec-options__left">
+                          <div class="checkbox">
+                            <input id="add1" type="checkbox" name="add" value="Квиз (разработка и ведение)">
+                            <label for="add1">+ Квиз (разработка и ведение)
+                              <div class="tooltip">?</div>
+                            </label>
+                            <div class="price" data-price="45000">45.000 р.</div><i class="tooltiptext tooltip-bottom">Подсказка</i>
+                          </div>
+                          <div class="checkbox">
+                            <input id="add2" type="checkbox" name="add" value="Работа с чатом, модерация">
+                            <label for="add2">+ Работа с чатом, модерация</label>
+                            <div class="price" data-price="5000">5.000 р.</div>
+                          </div>
+                          <div class="checkbox">
+                            <input id="add3" type="checkbox" name="add" value="Оформление заставки/ анимация логотипа">
+                            <label for="add3">+ Оформление заставки/ анимация логотипа</label>
+                            <div class="price" data-price="8000">8.000 р.</div>
+                          </div>
+                          <div class="checkbox">
+                            <input id="add4" type="checkbox" name="add" value="TOP-модератор/ведущий">
+                            <label for="add4">+ TOP-модератор/ведущий
+                              <div class="tooltip">?</div>
+                            </label>
+                            <div class="price" data-price="80000">от 80.000 р.</div><i class="tooltiptext tooltip-bottom">Подсказка</i>
+                          </div>
+                          <div class="checkbox">
+                            <input id="add5" type="checkbox" name="add" value="Разработка Тизера под мероприятие">
+                            <label for="add5">+ Разработка Тизера под мероприятие
+                              <div class="tooltip">?</div>
+                            </label>
+                            <div class="price" data-price="35000">35.000 р.</div><i class="tooltiptext tooltip-bottom">Подсказка</i>
+                          </div>
+                          <div class="checkbox">
+                            <input id="add6" type="checkbox" name="add" value="Внедрение анимированной инфографики ">
+                            <label for="add6">+ Внедрение анимированной инфографики
+                              <div class="tooltip">?</div>
+                            </label>
+                            <div class="price" data-price="35000">от 35.000 р.</div><i class="tooltiptext tooltip-bottom">Подсказка</i>
+                          </div>
+                          <div class="checkbox">
+                            <input id="add7" type="checkbox" name="add" value="Техническое обеспечение переводчиков-синхронистов">
+                            <label for="add7">+ Техническое обеспечение переводчиков-синхронистов</label>
+                            <div class="price" data-price="5000">5.000 р.</div>
+                          </div>
+                          <div class="checkbox">
+                            <input id="add8" type="checkbox" name="add" value="Переводчик синхронист">
+                            <label for="add8">+ Переводчик синхронист</label>
+                            <div class="price" data-price="10000">от 10.000 р.</div>
+                          </div>
+                          <div class="checkbox">
+                            <input id="add9" type="checkbox" name="add" value="Суфлер">
+                            <label for="add9">+ Суфлер
+                              <div class="tooltip">?</div>
+                            </label>
+                            <div class="price" data-price="5000">5.000 р.</div><i class="tooltiptext tooltip-bottom">Подсказка</i>
+                          </div>
+                          <div class="checkbox">
+                            <input id="add10" type="checkbox" name="add" value="Плейбэк экран (подсказка спикерам)">
+                            <label for="add10">+ Плейбэк экран (подсказка спикерам)
+                              <div class="tooltip">?</div>
+                            </label>
+                            <div class="price" data-price="3000">3.000 р./спикер</div><i class="tooltiptext tooltip-bottom">Подсказка</i>
+                          </div>
+                          <div class="checkbox">
+                            <input id="add11" type="checkbox" name="add" value="Кликер (переключатель слайдов на экране)">
+                            <label for="add11">+ Кликер (переключатель слайдов на экране)</label>
+                            <div class="price" data-price="2500">2.500 р./мероприятие</div>
+                          </div>
+                          <div class="checkbox">
+                            <input id="add12" type="checkbox" name="add" value="Обеспечение интернета (если нет)">
+                            <label for="add12">+ Обеспечение интернета (если нет)</label>
+                            <div class="price" data-price="3500">3.500 р./мероприятие</div>
+                          </div>
+                          <div class="checkbox">
+                            <input id="add13" type="checkbox" name="add" value="Усилитель сигнала для интернета (если подвал)">
+                            <label for="add13">+ Усилитель сигнала для интернета (если подвал)</label>
+                            <div class="price" data-price="10000">10.000 р./мероприятие</div>
+                          </div>
+                          <div class="checkbox">
+                            <input id="add14" type="checkbox" name="add" value="Предложить локацию в виде интерьерной студии">
+                            <label for="add14">+ Предложить локацию в виде интерьерной студии
+                              <div class="tooltip">?</div>
+                            </label>
+                            <div class="price" data-price="">индивидуальная цена</div><i class="tooltiptext tooltip-bottom">Подсказка</i>
+                          </div>
+                          <div class="checkbox">
+                            <input id="add15" type="checkbox" name="add" value="Предложить локацию в видео конференцзала">
+                            <label for="add15">+ Предложить локацию в видео конференцзала
+                              <div class="tooltip">?</div>
+                            </label>
+                            <div class="price" data-price="">индивидуальная цена</div><i class="tooltiptext tooltip-bottom">Подсказка</i>
+                          </div>
+                          <div class="ec-options__total">
+                            <div class="es-total es-total--flex">
+                              <div class="es-total-left">ИТОГО:</div>
+                              <div class="es-total-right">0 р.</div><span class="es-total__nds">НДС <br>не облагается</span>
+                            </div>
+                          </div>
                         </div>
-                        <div class="checkbox">
-                          <input id="add2" type="checkbox" name="add" value="Работа с чатом, модерация">
-                          <label for="add2">+ Работа с чатом, модерация</label>
-                          <div class="price" data-price="5000">5.000 р.</div>
-                        </div>
-                        <div class="checkbox">
-                          <input id="add3" type="checkbox" name="add" value="Оформление заставки/ анимация логотипа">
-                          <label for="add3">+ Оформление заставки/ анимация логотипа</label>
-                          <div class="price" data-price="8000">8.000 р.</div>
-                        </div>
-                        <div class="checkbox">
-                          <input id="add4" type="checkbox" name="add" value="TOP-модератор/ведущий">
-                          <label for="add4">+ TOP-модератор/ведущий
-                            <div class="tooltip">?</div>
-                          </label>
-                          <div class="price" data-price="80000">от 80.000 р.</div><i class="tooltiptext tooltip-bottom">Подсказка</i>
-                        </div>
-                        <div class="checkbox">
-                          <input id="add5" type="checkbox" name="add" value="Разработка Тизера под мероприятие">
-                          <label for="add5">+ Разработка Тизера под мероприятие
-                            <div class="tooltip">?</div>
-                          </label>
-                          <div class="price" data-price="35000">35.000 р.</div><i class="tooltiptext tooltip-bottom">Подсказка</i>
-                        </div>
-                        <div class="checkbox">
-                          <input id="add6" type="checkbox" name="add" value="Внедрение анимированной инфографики ">
-                          <label for="add6">+ Внедрение анимированной инфографики
-                            <div class="tooltip">?</div>
-                          </label>
-                          <div class="price" data-price="35000">от 35.000 р.</div><i class="tooltiptext tooltip-bottom">Подсказка</i>
-                        </div>
-                        <div class="checkbox">
-                          <input id="add7" type="checkbox" name="add" value="Техническое обеспечение переводчиков-синхронистов">
-                          <label for="add7">+ Техническое обеспечение переводчиков-синхронистов</label>
-                          <div class="price" data-price="5000">5.000 р.</div>
-                        </div>
-                        <div class="checkbox">
-                          <input id="add8" type="checkbox" name="add" value="Переводчик синхронист">
-                          <label for="add8">+ Переводчик синхронист</label>
-                          <div class="price" data-price="10000">от 10.000 р.</div>
-                        </div>
-                        <div class="checkbox">
-                          <input id="add9" type="checkbox" name="add" value="Суфлер">
-                          <label for="add9">+ Суфлер
-                            <div class="tooltip">?</div>
-                          </label>
-                          <div class="price" data-price="5000">5.000 р.</div><i class="tooltiptext tooltip-bottom">Подсказка</i>
-                        </div>
-                        <div class="checkbox">
-                          <input id="add10" type="checkbox" name="add" value="Плейбэк экран (подсказка спикерам)">
-                          <label for="add10">+ Плейбэк экран (подсказка спикерам)
-                            <div class="tooltip">?</div>
-                          </label>
-                          <div class="price" data-price="3000">3.000 р./спикер</div><i class="tooltiptext tooltip-bottom">Подсказка</i>
-                        </div>
-                        <div class="checkbox">
-                          <input id="add11" type="checkbox" name="add" value="Кликер (переключатель слайдов на экране)">
-                          <label for="add11">+ Кликер (переключатель слайдов на экране)</label>
-                          <div class="price" data-price="2500">2.500 р./мероприятие</div>
-                        </div>
-                        <div class="checkbox">
-                          <input id="add12" type="checkbox" name="add" value="Обеспечение интернета (если нет)">
-                          <label for="add12">+ Обеспечение интернета (если нет)</label>
-                          <div class="price" data-price="3500">3.500 р./мероприятие</div>
-                        </div>
-                        <div class="checkbox">
-                          <input id="add13" type="checkbox" name="add" value="Усилитель сигнала для интернета (если подвал)">
-                          <label for="add13">+ Усилитель сигнала для интернета (если подвал)</label>
-                          <div class="price" data-price="10000">10.000 р./мероприятие</div>
-                        </div>
-                        <div class="checkbox">
-                          <input id="add14" type="checkbox" name="add" value="Предложить локацию в виде интерьерной студии">
-                          <label for="add14">+ Предложить локацию в виде интерьерной студии
-                            <div class="tooltip">?</div>
-                          </label>
-                          <div class="price" data-price="">индивидуальная цена</div><i class="tooltiptext tooltip-bottom">Подсказка</i>
-                        </div>
-                        <div class="checkbox">
-                          <input id="add15" type="checkbox" name="add" value="Предложить локацию в видео конференцзала">
-                          <label for="add15">+ Предложить локацию в видео конференцзала
-                            <div class="tooltip">?</div>
-                          </label>
-                          <div class="price" data-price="">индивидуальная цена</div><i class="tooltiptext tooltip-bottom">Подсказка</i>
+                        <div class="ec-options__right"><a class="ec-options__video js-video-popup" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="images/video-placeholder.png" alt=""></a><a class="ec-options__video js-video-popup" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="images/video-placeholder.png" alt=""></a>
+                          <div class="ec-options__arrow"><span>пара примеров наших работ</span><img src="images/ec-result--arrows.png" alt=""></div>
                         </div>
                       </div>
-                      <div class="ec-options__right"><a class="ec-options__video js-video-popup" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="images/video-placeholder.png" alt=""></a><a class="ec-options__video js-video-popup" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="images/video-placeholder.png" alt=""></a>
-                        <div class="ec-options__arrow"><span>пара примеров наших работ</span><img src="images/ec-result--arrows.png" alt=""></div>
+                      <div class="ec-options__bottom">
+                        <div class="ec-options__info">Примечание: Общая сумма договора будет складываться из базовой стоимости вашего мероприятия в сумме с дополнительными опциями. <br>Данный калькулятор позволяет максимально точно и быстро “прикинуть” бюджет на ваше онлайн событие и автоматически сформировать высокого уровня коммерческое предложение. Финализация точной суммы договора будет после брифинга при встрече или онлайн с нашей стороной, чтобы уточнить некоторые детали, чаще всего - по дополнительному оборудованию и его количеству.</div>
+                        <div class="es-options__btn">
+                          <button class="ec-btn" type="submit">ДОБАВИТЬ ОПЦИИ И ОТПРАВИТЬ КП В ФОРМАТЕ PDF</button>
+                        </div>
                       </div>
                     </form>
                   </div>
-                  <div class="event-calc__section event-calc__section--6"></div>
+                  <div class="event-calc__section event-calc__section--7">
+                    <div class="es-quest">
+                      <div class="es-quest__text">Мы будем признательны, если вы ответите на вопрос как вам идея онлайн калькулятора вместо ожидания КП от подрядчика?</div>
+                      <div class="es-quest__flex">
+                        <div class="es-quest__item" data-id="1">
+                          <div class="es-quest__item-img"><img src="images/es-quest-1.png" alt=""></div>
+                          <div class="es-quest__item-text">Норм, но мне все равно, восторга не вызвало</div>
+                        </div>
+                        <div class="es-quest__item" data-id="2">
+                          <div class="es-quest__item-img"><img src="images/es-quest-2.png" alt=""></div>
+                          <div class="es-quest__item-text">Мне понравилось! Хорошая идея! Это экономит время</div>
+                        </div>
+                        <div class="es-quest__item" data-id="3">
+                          <div class="es-quest__item-img"><img src="images/es-quest-3.png" alt=""></div>
+                          <div class="es-quest__item-text">Отличная идея, раньше всегда всегда приходилось ожидать пока вышлют КП</div>
+                        </div>
+                      </div>
+                      <div class="es-quest__thanks">Спасибо за обратную связь!</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

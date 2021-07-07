@@ -12,6 +12,9 @@
       height: 10px;
       background-color: #000002;
     }
+    &--center{
+      justify-content: center;
+    }
   }
   &__title{
     color: #000002;
@@ -66,11 +69,46 @@
         }
       }
     }
-    &--3{}
+    &--3{
+      #{ $self }{
+        &__hr{
+          margin-top: 40px;
+        }
+      }
+    }
+    &--4{}
+    &--5{
+      #{ $self }{
+        &__title{
+          margin-bottom: 85px;
+        }
+      }
+    }
+    &--6{}
+    &--7{}
   }
 }
 
 
+.ec-btn{
+  width: 593px;
+  height: 65px;
+  display: block;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: #91AB46;
+  color: #ffffff;
+  font-family: $mainFont;
+  font-size: 18px;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  letter-spacing: 0.54px;
+  box-sizing: border-box;
+  padding: 15px;
+  max-width: 100%;
+}
 
 .ec-form{
   $self: &;
@@ -163,6 +201,11 @@
     }
   }
 
+  &__cols{
+    display: flex;
+    margin: 0 -12px;
+    width: calc(100% - 133px);
+  }
 
   &__col{
     width: calc(100% / 3);
@@ -231,24 +274,110 @@
     display: flex;
     justify-content: center;
     margin-top: 112px;
-    button{
-      width: 593px;
-      height: 65px;
-      display: block;
-      cursor: pointer;
-      border: none;
-      outline: none;
-      background: #91AB46;
-      color: #ffffff;
+  }
+}
+
+
+.es-total{
+  position: relative;
+  &--flex{
+    display: flex;
+  }
+  > div{
+    color: #262628;
+    font-family: $mainFont;
+    font-size: 75px;
+    line-height: 1;
+    font-weight: 700;
+  }
+  &__nds{
+    width: 85px;
+    color: #69841c;
+    font-family: $mainFont;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: left;
+    font-style: normal;
+    letter-spacing: normal;
+    position: absolute;
+    left: calc(100% + 15px);
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60px;
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+
+.ec-results{
+  &__info{
+    display: flex;
+    justify-content: center;
+  }
+  &__col{
+    $self: &;
+    &-number{
+      color: #262628;
       font-family: $mainFont;
-      font-size: 18px;
+      font-size: 30px;
       font-weight: 700;
       font-style: normal;
-      text-align: center;
-      letter-spacing: 0.54px;
-      box-sizing: border-box;
-      padding: 15px;
+      letter-spacing: normal;
+      line-height: 1;
+      text-align: left;
+      span{
+        color: #f40341;
+      }
+    }
+    &-text{
+      color: #69841c;
+      font-family: $mainFont;
+      font-size: 14px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 14px;
+      margin-top: 13px;
       max-width: 100%;
     }
+
+    &--1{
+      #{ $self }-text{
+        width: 165px;
+      }
+    }
+    &--2{
+      #{ $self }-text{
+        width: 90px;
+        margin-left: 26px;
+      }
+    }
+    &--3{
+      #{ $self }-text{
+        width: 90px;
+        margin-left: 26px;
+      }
+    }
+  }
+  &__total{
+    display: flex;
+    justify-content: center;
+    margin-top: 63px;
+  }
+}
+
+
+
+
+.ec-options{
+  &__flex{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__left{}
+  &__right{
+    width: 461px;
   }
 }
