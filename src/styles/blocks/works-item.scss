@@ -13,6 +13,11 @@
 	&__preview {
 		display: block;
 		height: 332px;
+		transition: opacity 0.3s ease;
+
+		&:hover {
+			opacity: 0.8;
+		}
 
 		@include max(lg) {
 			height: auto;
