@@ -5,6 +5,9 @@
     margin: 16px 0 40px;
     display: flex;
     justify-content: flex-start;
+    @include max(md) {
+      justify-content: center;
+    }
     &::before{
       content: "";
       display: block;
@@ -24,7 +27,23 @@
     font-style: normal;
     line-height: 65px;
     text-align: left;
-    letter-spacing: 1.88px
+    letter-spacing: 1.88px;
+    @include max(lg) {
+      font-size: 70px;
+      letter-spacing: normal;
+    }
+    @include max(md) {
+      font-size: 60px;
+      text-align: center;
+    }
+    @include max(sm) {
+      font-size: 40px;
+      line-height: 40px;
+    }
+    @include max(xxs) {
+      font-size: 26px;
+      line-height: 30px;
+    }
   }
   &__subtitle{
     color: #000002;
@@ -45,6 +64,14 @@
     line-height: 22px;
     text-align: left;
     letter-spacing: 0.4px;
+    @include max(md) {
+      text-align: center;
+    }
+    @include max(sm) {
+      font-size: 15px;
+      line-height: 20px;
+      letter-spacing: normal;
+    }
   }
 
 
@@ -167,6 +194,11 @@
     width: 276px;
     margin-left: 30px;
     flex-shrink: 0;
+    @include max(lg) {
+      width: 119px;
+      height: 50px;
+      flex-direction: column;
+    }
   }
   &__error{
     color: #fa0101;
@@ -179,6 +211,11 @@
     margin-left: 12px;
     max-width: 100px;
     display: none;
+    @include max(lg) {
+      margin-left: 0;
+      margin-top: 10px;
+      max-width: 100%;
+    }
   }
   &__field{
     width: 119px;
@@ -216,6 +253,9 @@
     display: flex;
     margin: 0 -12px;
     width: calc(100% - 133px);
+    @include max(lg) {
+      width: calc(100% + 24px);
+    }
   }
 
   &__col{
@@ -300,9 +340,25 @@
     font-size: 75px;
     line-height: 1;
     font-weight: 700;
+    @include max(lg) {
+      font-size: 70px;
+      letter-spacing: normal;
+    }
+    @include max(md) {
+      font-size: 60px;
+      text-align: center;
+    }
+    @include max(sm) {
+      font-size: 40px;
+      line-height: 40px;
+    }
+    @include max(xxs) {
+      font-size: 26px;
+      line-height: 30px;
+    }
   }
   &__left{
-    width: 450px;
+    width: 468px;
   }
   &__right{
     position: relative;
@@ -500,6 +556,10 @@
   &__right{
     width: 461px;
     position: relative;
+    @include max(lg) {
+      width: 240px;
+      padding-top: 30px;
+    }
   }
   &__video{
     display: block;
@@ -512,6 +572,9 @@
   }
   &__video + &__video{
     margin-top: 21px;
+    @include max(lg) {
+      margin-top: 67px;
+    }
   }
   &__arrow{
     position: absolute;
