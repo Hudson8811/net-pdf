@@ -1,279 +1,280 @@
-.qodef-content-grid
-    main.qodef-grid.qodef-layout--template
-        .qodef-grid-inner.clear
-            .qodef-grid-item.qodef-page-content-section.qodef-col--12
+.ec-section
+    .qodef-content-grid
+        main.qodef-grid.qodef-layout--template
+            .qodef-grid-inner.clear
+                .qodef-grid-item.qodef-page-content-section.qodef-col--12
 
-                .event-calc
-                    .event-calc__section.event-calc__section--1
-                        .event-calc__title Наш онлайн калькулятор составит вам смету прямо сейчас, и вы сразу сможете отправить ее в формате КП себе на почту
-                        .event-calc__text Если вы сомневаетесь как заполнить калькулятор, чтобы рассчитать максимально точную стоимость вашего мероприятия, напишите в вотсап аккаунт менеджеру или позвоните ей, она поможет: +7 /966/ 362-32-62
-                        .event-calc__hr
-                        .event-calc__text Данная смета рассчитывается для всех онлайн мероприятий с выездом на локацию Заказчика, или мы сами можем предложить вам как конференцзал, так и небольшую студию, если зрителей “вживую” в любом случае не будет. В дополнительных услугах (ниже) вы сможете учесть приблизительный бюджет, а мы вам вышлем на почту варианты студий с ценами - за час или за день.
+                    .event-calc
+                        .event-calc__section.event-calc__section--1
+                            .event-calc__title Наш онлайн калькулятор составит вам смету прямо сейчас, и вы сразу сможете отправить ее в формате КП себе на почту
+                            .event-calc__text Если вы сомневаетесь как заполнить калькулятор, чтобы рассчитать максимально точную стоимость вашего мероприятия, напишите в вотсап аккаунт менеджеру или позвоните ей, она поможет: +7 /966/ 362-32-62
+                            .event-calc__hr
+                            .event-calc__text Данная смета рассчитывается для всех онлайн мероприятий с выездом на локацию Заказчика, или мы сами можем предложить вам как конференцзал, так и небольшую студию, если зрителей “вживую” в любом случае не будет. В дополнительных услугах (ниже) вы сможете учесть приблизительный бюджет, а мы вам вышлем на почту варианты студий с ценами - за час или за день.
 
-                    .event-calc__section.event-calc__section--2
-                        .event-calc__subtitle Заполните все ячейки онлайн калькулятора
-                        form.event-calc__form.ec-form(action="" method="POST")
-                            .ec-form__section
-                                .ec-form__left
-                                    .ec-form__title Сколько часов в сумме будет длиться ваше мероприятие? <br>Даже если оно длится несколько дней и делится на несколько потоков.
-                                    .ec-form__text Например, мероприятие 2 дня, в 2-х залах - 5 часов в одном и 6 часов в другом будет рассчитано, как (5+6)*2 = 22 часа.
-                                .ec-form__right
-                                    .ec-form__field.field
-                                        input.required(type="text" required="required")
-                                    .ec-form__error Заполните ячейку!
-                            .ec-form__section
-                                .ec-form__left
-                                    .ec-form__title Сколько дней будет проходить ваше мероприятие?
-                                .ec-form__right
-                                    .ec-form__field.field.ec-form__field--error
-                                        input.required(type="text" required="required")
-                                    .ec-form__error Заполните ячейку!
-                            .ec-form__section
-                                .ec-form__left
-                                    .ec-form__title Накладываются ли эти часы друг на друга? Другими словами, в рамках вашего мероприятия есть ли параллельные потоки? Если так, то сколько часов в рамках этого мероприятия будут параллельными?
-                                    .ec-form__text Например, в одном зале 6 часов и в другом - 6 часов в то же самое время, значит кол-во параллельных часов = 6. Если нисколько, укажите цифру ноль!
-                                .ec-form__right
-                                    .ec-form__field.field
-                                        input.required(type="text" required="required")
-                                    .ec-form__error Заполните ячейку!
-                            .ec-form__section
-                                .ec-form__left
-                                    .ec-form__title Вы хотите один ракурс, два или съемку сразу с трех камер? <br>Укажите 1, 2 или 3 камеры?
-                                    .ec-form__text Чем больше ракурсов, тем динамичнее смена кадров и более увлекательно смотрится мероприятие. <br>Мы советуем заказывать 2 камеры - одна статичная на штативе лицом, другая подвижная работает с более крупными планами с других ракурсов - на стедикаме (подвижная камера), для более масштабных мероприятий - на кране или на рельсах.
-                                .ec-form__right
-                                    .ec-form__field.field
-                                        input.required(type="text" required="required")
-                                    .ec-form__error Заполните ячейку!
-                            .ec-form__section
-                                .ec-form__left
-                                    .ec-form__title Сколько будет спикеров вживую?
-                                .ec-form__right
-                                    .ec-form__field.field
-                                        input.required(type="text" required="required")
-                                    .ec-form__error Заполните ячейку!
-                            .ec-form__section
-                                .ec-form__left
-                                    .ec-form__title Сколько будет подключаться спикеров?
-                                .ec-form__right
-                                    .ec-form__field.field
-                                        input.required(type="text" required="required")
-                                    .ec-form__error Заполните ячейку!
-                            .ec-form__section.ec-form__section--cols
-                                .ec-form__cols
-                                    .ec-form__col
-                                        .ec-form__col-field.field
-                                            input.required(type="text" required="required" placeholder="Название компании")
-                                        .ec-form__error КП должно быть персонифицировано, мы же делаем его именно для вас! Заполните ячейку!
-                                    .ec-form__col
-                                        .ec-form__col-field.field.ec-form__col-field--error
-                                            input.required(type="text" required="required" placeholder="Дата/даты проведения мероприятия")
-                                        .ec-form__error Заполните дату, нам это важно, чтобы свериться с расписанием других забронированных мероприятий
-                                    .ec-form__col
-                                        .ec-form__col-field.field
-                                            input.required(type="email" required="required" placeholder="E-mail, куда отправить КП в PDF")
-                                        .ec-form__error Почта нужна, чтобы выслать вам КП. <br>Заполните ячейку!
-                            .ec-form__info Примечание: расчет на проведение мероприятия в Москве. Мы выезжаем со своим оборудованием в другие города России по требованию. <br>Командировочные расходы рассчитает аккаунт менеджер.
-                            .ec-form__btn
-                                button.ec-btn(type="submit") РАССЧИТАТЬ БАЗОВУЮ СТОИМОСТЬ МОЕГО МЕРОПРИЯТИЯ
+                        .event-calc__section.event-calc__section--2
+                            .event-calc__subtitle Заполните все ячейки онлайн калькулятора
+                            form.event-calc__form.ec-form(action="" method="POST")
+                                .ec-form__section
+                                    .ec-form__left
+                                        .ec-form__title Сколько часов в сумме будет длиться ваше мероприятие? <br>Даже если оно длится несколько дней и делится на несколько потоков.
+                                        .ec-form__text Например, мероприятие 2 дня, в 2-х залах - 5 часов в одном и 6 часов в другом будет рассчитано, как (5+6)*2 = 22 часа.
+                                    .ec-form__right
+                                        .ec-form__field.field
+                                            input.required(type="text" required="required")
+                                        .ec-form__error Заполните ячейку!
+                                .ec-form__section
+                                    .ec-form__left
+                                        .ec-form__title Сколько дней будет проходить ваше мероприятие?
+                                    .ec-form__right
+                                        .ec-form__field.field.ec-form__field--error
+                                            input.required(type="text" required="required")
+                                        .ec-form__error Заполните ячейку!
+                                .ec-form__section
+                                    .ec-form__left
+                                        .ec-form__title Накладываются ли эти часы друг на друга? Другими словами, в рамках вашего мероприятия есть ли параллельные потоки? Если так, то сколько часов в рамках этого мероприятия будут параллельными?
+                                        .ec-form__text Например, в одном зале 6 часов и в другом - 6 часов в то же самое время, значит кол-во параллельных часов = 6. Если нисколько, укажите цифру ноль!
+                                    .ec-form__right
+                                        .ec-form__field.field
+                                            input.required(type="text" required="required")
+                                        .ec-form__error Заполните ячейку!
+                                .ec-form__section
+                                    .ec-form__left
+                                        .ec-form__title Вы хотите один ракурс, два или съемку сразу с трех камер? <br>Укажите 1, 2 или 3 камеры?
+                                        .ec-form__text Чем больше ракурсов, тем динамичнее смена кадров и более увлекательно смотрится мероприятие. <br>Мы советуем заказывать 2 камеры - одна статичная на штативе лицом, другая подвижная работает с более крупными планами с других ракурсов - на стедикаме (подвижная камера), для более масштабных мероприятий - на кране или на рельсах.
+                                    .ec-form__right
+                                        .ec-form__field.field
+                                            input.required(type="text" required="required")
+                                        .ec-form__error Заполните ячейку!
+                                .ec-form__section
+                                    .ec-form__left
+                                        .ec-form__title Сколько будет спикеров вживую?
+                                    .ec-form__right
+                                        .ec-form__field.field
+                                            input.required(type="text" required="required")
+                                        .ec-form__error Заполните ячейку!
+                                .ec-form__section
+                                    .ec-form__left
+                                        .ec-form__title Сколько будет подключаться спикеров?
+                                    .ec-form__right
+                                        .ec-form__field.field
+                                            input.required(type="text" required="required")
+                                        .ec-form__error Заполните ячейку!
+                                .ec-form__section.ec-form__section--cols
+                                    .ec-form__cols
+                                        .ec-form__col
+                                            .ec-form__col-field.field
+                                                input.required(type="text" required="required" placeholder="Название компании")
+                                            .ec-form__error КП должно быть персонифицировано, мы же делаем его именно для вас! Заполните ячейку!
+                                        .ec-form__col
+                                            .ec-form__col-field.field.ec-form__col-field--error
+                                                input.required(type="text" required="required" placeholder="Дата/даты проведения мероприятия")
+                                            .ec-form__error Заполните дату, нам это важно, чтобы свериться с расписанием других забронированных мероприятий
+                                        .ec-form__col
+                                            .ec-form__col-field.field
+                                                input.required(type="email" required="required" placeholder="E-mail, куда отправить КП в PDF")
+                                            .ec-form__error Почта нужна, чтобы выслать вам КП. <br>Заполните ячейку!
+                                .ec-form__info Примечание: расчет на проведение мероприятия в Москве. Мы выезжаем со своим оборудованием в другие города России по требованию. <br>Командировочные расходы рассчитает аккаунт менеджер.
+                                .ec-form__btn
+                                    button.ec-btn(type="submit") РАССЧИТАТЬ БАЗОВУЮ СТОИМОСТЬ МОЕГО МЕРОПРИЯТИЯ
 
-                    .event-calc__section.event-calc__section--3
-                        .ec-results
-                            .ec-results__info
-                                .ec-results__col.ec-results__col--1
-                                    .ec-results__col-number 7.500 р./час * 24 часа
-                                    .ec-results__col-text Ставка за час за комплект оборудования со съемочной группой с 1 камерой
-                                .ec-results__col
-                                    .ec-results__col-number &nbsp;+ 7.500 р.
-                                .ec-results__col.ec-results__col--2
-                                    .ec-results__col-number &nbsp;* 12 часов
-                                    .ec-results__col-text Параллельные часы/потоки
-                                .ec-results__col.ec-results__col--3
-                                    .ec-results__col-number &nbsp;* 1.1 - <span>10% скидка</span>
-                                    .ec-results__col-text Коэффициент количества спикеров <br>от 3 до 6
-                            .ec-results__total
-                                .es-total
-                                    div ИТОГО: 297.000 р.
-                                    span.es-total__nds НДС <br>не облагается
-                        .event-calc__hr.event-calc__hr--center
+                        .event-calc__section.event-calc__section--3
+                            .ec-results
+                                .ec-results__info
+                                    .ec-results__col.ec-results__col--1
+                                        .ec-results__col-number 7.500 р./час * 24 часа
+                                        .ec-results__col-text Ставка за час за комплект оборудования со съемочной группой с 1 камерой
+                                    .ec-results__col
+                                        .ec-results__col-number &nbsp;+ 7.500 р.
+                                    .ec-results__col.ec-results__col--2
+                                        .ec-results__col-number &nbsp;* 12 часов
+                                        .ec-results__col-text Параллельные часы/потоки
+                                    .ec-results__col.ec-results__col--3
+                                        .ec-results__col-number &nbsp;* 1.1 - <span>10% скидка</span>
+                                        .ec-results__col-text Коэффициент количества спикеров <br>от 3 до 6
+                                .ec-results__total
+                                    .es-total
+                                        div ИТОГО: 297.000 р.
+                                        span.es-total__nds НДС <br>не облагается
+                            .event-calc__hr.event-calc__hr--center
 
-                    .event-calc__section.event-calc__section--4
-                        .event-calc__subtitle Что включено в данную сумму
-                        .ec-grid
-                            .ec-grid__item
-                                .ec-grid__inner
-                                    .ec-grid__bg-number 01
-                                    .ec-grid__content
-                                        .ec-grid__content-title Захват презентационных слайдов
-                            .ec-grid__item
-                                .ec-grid__inner
-                                    .ec-grid__bg-number 02
-                                    .ec-grid__content
-                                        .ec-grid__content-title Режиссер прямого эфира
-                                        .ec-grid__content-text 1-2-3 и более в зависимости от кол-ва потоков и залов
-                            .ec-grid__item
-                                .ec-grid__inner
-                                    .ec-grid__bg-number 03
-                                    .ec-grid__content
-                                        .ec-grid__content-title Оператор прямого эфира
-                                        .ec-grid__content-text1-2-3 и более в зависимости от кол-ва камер
-                            .ec-grid__item
-                                .ec-grid__inner
-                                    .ec-grid__bg-number 04
-                                    .ec-grid__content
-                                        .ec-grid__content-title Сдаем материалы в записи в формате ролика
-                            .ec-grid__item
-                                .ec-grid__inner
-                                    .ec-grid__bg-number 05
-                                    .ec-grid__content
-                                        .ec-grid__content-title Камера 1 и более уровня SONY 7m3
-                            .ec-grid__item
-                                .ec-grid__inner
-                                    .ec-grid__bg-number 06
-                                    .ec-grid__content
-                                        .ec-grid__content-title Трансляция на бесплатный сервис
-                            .ec-grid__item
-                                .ec-grid__inner
-                                    .ec-grid__bg-number 07
-                                    .ec-grid__content
-                                        .ec-grid__content-title Мультистрим
-                            .ec-grid__item
-                                .ec-grid__inner
-                                    .ec-grid__bg-number 08
-                                    .ec-grid__content
-                                        .ec-grid__content-title Графическое оформление
-                            .ec-grid__item
-                                .ec-grid__inner
-                                    .ec-grid__bg-number 09
-                                    .ec-grid__content
-                                        .ec-grid__content-title Петлички по 1 шт. на 1 камеру
-                                        .ec-grid__content-text Большее кол-во петличек или микрофон оплачиваются отдельно (ниже доп. услуги)
-                            .ec-grid__item
-                                .ec-grid__inner
-                                    .ec-grid__bg-number 10
-                                    .ec-grid__content
-                                        .ec-grid__content-title Ну и... <br>Супер опыт, конечно!
-                        .event-calc__hr.event-calc__hr--center
+                        .event-calc__section.event-calc__section--4
+                            .event-calc__subtitle Что включено в данную сумму
+                            .ec-grid
+                                .ec-grid__item
+                                    .ec-grid__inner
+                                        .ec-grid__bg-number 01
+                                        .ec-grid__content
+                                            .ec-grid__content-title Захват презентационных слайдов
+                                .ec-grid__item
+                                    .ec-grid__inner
+                                        .ec-grid__bg-number 02
+                                        .ec-grid__content
+                                            .ec-grid__content-title Режиссер прямого эфира
+                                            .ec-grid__content-text 1-2-3 и более в зависимости от кол-ва потоков и залов
+                                .ec-grid__item
+                                    .ec-grid__inner
+                                        .ec-grid__bg-number 03
+                                        .ec-grid__content
+                                            .ec-grid__content-title Оператор прямого эфира
+                                            .ec-grid__content-text1-2-3 и более в зависимости от кол-ва камер
+                                .ec-grid__item
+                                    .ec-grid__inner
+                                        .ec-grid__bg-number 04
+                                        .ec-grid__content
+                                            .ec-grid__content-title Сдаем материалы в записи в формате ролика
+                                .ec-grid__item
+                                    .ec-grid__inner
+                                        .ec-grid__bg-number 05
+                                        .ec-grid__content
+                                            .ec-grid__content-title Камера 1 и более уровня SONY 7m3
+                                .ec-grid__item
+                                    .ec-grid__inner
+                                        .ec-grid__bg-number 06
+                                        .ec-grid__content
+                                            .ec-grid__content-title Трансляция на бесплатный сервис
+                                .ec-grid__item
+                                    .ec-grid__inner
+                                        .ec-grid__bg-number 07
+                                        .ec-grid__content
+                                            .ec-grid__content-title Мультистрим
+                                .ec-grid__item
+                                    .ec-grid__inner
+                                        .ec-grid__bg-number 08
+                                        .ec-grid__content
+                                            .ec-grid__content-title Графическое оформление
+                                .ec-grid__item
+                                    .ec-grid__inner
+                                        .ec-grid__bg-number 09
+                                        .ec-grid__content
+                                            .ec-grid__content-title Петлички по 1 шт. на 1 камеру
+                                            .ec-grid__content-text Большее кол-во петличек или микрофон оплачиваются отдельно (ниже доп. услуги)
+                                .ec-grid__item
+                                    .ec-grid__inner
+                                        .ec-grid__bg-number 10
+                                        .ec-grid__content
+                                            .ec-grid__content-title Ну и... <br>Супер опыт, конечно!
+                            .event-calc__hr.event-calc__hr--center
 
-                    .event-calc__section.event-calc__section--5
-                        .event-calc__title Добавим еще опций к вашему мероприятию?
-                        form.event-calc__options.ec-options(action="" method="POST")
-                            .ec-options__flex
-                                .ec-options__left
-                                    .checkbox
-                                        input#add1(type='checkbox' name='add' value='Квиз (разработка и ведение)')
-                                        label(for='add1') + Квиз (разработка и ведение)
-                                            .tooltip ?
-                                        .price(data-price='45000') 45.000 р.
-                                        i.tooltiptext.tooltip-bottom Подсказка
-                                    .checkbox
-                                        input#add2(type='checkbox' name='add' value='Работа с чатом, модерация')
-                                        label(for='add2') + Работа с чатом, модерация
-                                        .price(data-price='5000') 5.000 р.
-                                    .checkbox
-                                        input#add3(type='checkbox' name='add' value='Оформление заставки/ анимация логотипа')
-                                        label(for='add3') + Оформление заставки/ анимация логотипа
-                                        .price(data-price='8000') 8.000 р.
-                                    .checkbox
-                                        input#add4(type='checkbox' name='add' value='TOP-модератор/ведущий')
-                                        label(for='add4') + TOP-модератор/ведущий
-                                            .tooltip ?
-                                        .price(data-price='80000') от 80.000 р.
-                                        i.tooltiptext.tooltip-bottom Подсказка
-                                    .checkbox
-                                        input#add5(type='checkbox' name='add' value='Разработка Тизера под мероприятие')
-                                        label(for='add5') + Разработка Тизера под мероприятие
-                                            .tooltip ?
-                                        .price(data-price='35000') 35.000 р.
-                                        i.tooltiptext.tooltip-bottom Подсказка
-                                    .checkbox
-                                        input#add6(type='checkbox' name='add' value='Внедрение анимированной инфографики ')
-                                        label(for='add6') + Внедрение анимированной инфографики
-                                            .tooltip ?
-                                        .price(data-price='35000') от 35.000 р.
-                                        i.tooltiptext.tooltip-bottom Подсказка
-                                    .checkbox
-                                        input#add7(type='checkbox' name='add' value='Техническое обеспечение переводчиков-синхронистов')
-                                        label(for='add7') + Техническое обеспечение переводчиков-синхронистов
-                                        .price(data-price='5000') 5.000 р.
-                                    .checkbox
-                                        input#add8(type='checkbox' name='add' value='Переводчик синхронист')
-                                        label(for='add8') + Переводчик синхронист
-                                        .price(data-price='10000') от 10.000 р.
-                                    .checkbox
-                                        input#add9(type='checkbox' name='add' value='Суфлер')
-                                        label(for='add9') + Суфлер
-                                            .tooltip ?
-                                        .price(data-price='5000') 5.000 р.
-                                        i.tooltiptext.tooltip-bottom Подсказка
-                                    .checkbox
-                                        input#add10(type='checkbox' name='add' value='Плейбэк экран (подсказка спикерам)')
-                                        label(for='add10') + Плейбэк экран (подсказка спикерам)
-                                            .tooltip ?
-                                        .price(data-price='3000') 3.000 р./спикер
-                                        i.tooltiptext.tooltip-bottom Подсказка
-                                    .checkbox
-                                        input#add11(type='checkbox' name='add' value='Кликер (переключатель слайдов на экране)')
-                                        label(for='add11') + Кликер (переключатель слайдов на экране)
-                                        .price(data-price='2500') 2.500 р./мероприятие
-                                    .checkbox
-                                        input#add12(type='checkbox' name='add' value='Обеспечение интернета (если нет)')
-                                        label(for='add12') + Обеспечение интернета (если нет)
-                                        .price(data-price='3500') 3.500 р./мероприятие
-                                    .checkbox
-                                        input#add13(type='checkbox' name='add' value='Усилитель сигнала для интернета (если подвал)')
-                                        label(for='add13') + Усилитель сигнала для интернета (если подвал)
-                                        .price(data-price='10000') 10.000 р./мероприятие
-                                    .checkbox
-                                        input#add14(type='checkbox' name='add' value='Предложить локацию в виде интерьерной студии')
-                                        label(for='add14') + Предложить локацию в виде интерьерной студии
-                                            .tooltip ?
-                                        .price(data-price='') индивидуальная цена
-                                        i.tooltiptext.tooltip-bottom Подсказка
-                                    .checkbox
-                                        input#add15(type='checkbox' name='add' value='Предложить локацию в видео конференцзала')
-                                        label(for='add15') + Предложить локацию в видео конференцзала
-                                            .tooltip ?
-                                        .price(data-price='') индивидуальная цена
-                                        i.tooltiptext.tooltip-bottom Подсказка
+                        .event-calc__section.event-calc__section--5
+                            .event-calc__title Добавим еще опций к вашему мероприятию?
+                            form.event-calc__options.ec-options(action="" method="POST")
+                                .ec-options__flex
+                                    .ec-options__left
+                                        .checkbox
+                                            input#add1(type='checkbox' name='add' value='Квиз (разработка и ведение)')
+                                            label(for='add1') + Квиз (разработка и ведение)
+                                                .tooltip ?
+                                            .price(data-price='45000') 45.000 р.
+                                            i.tooltiptext.tooltip-bottom Подсказка
+                                        .checkbox
+                                            input#add2(type='checkbox' name='add' value='Работа с чатом, модерация')
+                                            label(for='add2') + Работа с чатом, модерация
+                                            .price(data-price='5000') 5.000 р.
+                                        .checkbox
+                                            input#add3(type='checkbox' name='add' value='Оформление заставки/ анимация логотипа')
+                                            label(for='add3') + Оформление заставки/ анимация логотипа
+                                            .price(data-price='8000') 8.000 р.
+                                        .checkbox
+                                            input#add4(type='checkbox' name='add' value='TOP-модератор/ведущий')
+                                            label(for='add4') + TOP-модератор/ведущий
+                                                .tooltip ?
+                                            .price(data-price='80000') от 80.000 р.
+                                            i.tooltiptext.tooltip-bottom Подсказка
+                                        .checkbox
+                                            input#add5(type='checkbox' name='add' value='Разработка Тизера под мероприятие')
+                                            label(for='add5') + Разработка Тизера под мероприятие
+                                                .tooltip ?
+                                            .price(data-price='35000') 35.000 р.
+                                            i.tooltiptext.tooltip-bottom Подсказка
+                                        .checkbox
+                                            input#add6(type='checkbox' name='add' value='Внедрение анимированной инфографики ')
+                                            label(for='add6') + Внедрение анимированной инфографики
+                                                .tooltip ?
+                                            .price(data-price='35000') от 35.000 р.
+                                            i.tooltiptext.tooltip-bottom Подсказка
+                                        .checkbox
+                                            input#add7(type='checkbox' name='add' value='Техническое обеспечение переводчиков-синхронистов')
+                                            label(for='add7') + Техническое обеспечение переводчиков-синхронистов
+                                            .price(data-price='5000') 5.000 р.
+                                        .checkbox
+                                            input#add8(type='checkbox' name='add' value='Переводчик синхронист')
+                                            label(for='add8') + Переводчик синхронист
+                                            .price(data-price='10000') от 10.000 р.
+                                        .checkbox
+                                            input#add9(type='checkbox' name='add' value='Суфлер')
+                                            label(for='add9') + Суфлер
+                                                .tooltip ?
+                                            .price(data-price='5000') 5.000 р.
+                                            i.tooltiptext.tooltip-bottom Подсказка
+                                        .checkbox
+                                            input#add10(type='checkbox' name='add' value='Плейбэк экран (подсказка спикерам)')
+                                            label(for='add10') + Плейбэк экран (подсказка спикерам)
+                                                .tooltip ?
+                                            .price(data-price='3000') 3.000 р./спикер
+                                            i.tooltiptext.tooltip-bottom Подсказка
+                                        .checkbox
+                                            input#add11(type='checkbox' name='add' value='Кликер (переключатель слайдов на экране)')
+                                            label(for='add11') + Кликер (переключатель слайдов на экране)
+                                            .price(data-price='2500') 2.500 р./мероприятие
+                                        .checkbox
+                                            input#add12(type='checkbox' name='add' value='Обеспечение интернета (если нет)')
+                                            label(for='add12') + Обеспечение интернета (если нет)
+                                            .price(data-price='3500') 3.500 р./мероприятие
+                                        .checkbox
+                                            input#add13(type='checkbox' name='add' value='Усилитель сигнала для интернета (если подвал)')
+                                            label(for='add13') + Усилитель сигнала для интернета (если подвал)
+                                            .price(data-price='10000') 10.000 р./мероприятие
+                                        .checkbox
+                                            input#add14(type='checkbox' name='add' value='Предложить локацию в виде интерьерной студии')
+                                            label(for='add14') + Предложить локацию в виде интерьерной студии
+                                                .tooltip ?
+                                            .price(data-price='') индивидуальная цена
+                                            i.tooltiptext.tooltip-bottom Подсказка
+                                        .checkbox
+                                            input#add15(type='checkbox' name='add' value='Предложить локацию в видео конференцзала')
+                                            label(for='add15') + Предложить локацию в видео конференцзала
+                                                .tooltip ?
+                                            .price(data-price='') индивидуальная цена
+                                            i.tooltiptext.tooltip-bottom Подсказка
 
-                                    .ec-options__total
-                                        .es-total.es-total--flex
-                                            .es-total-left ИТОГО:
-                                            .es-total-right 0 р.
-                                            span.es-total__nds НДС <br>не облагается
+                                        .ec-options__total
+                                            .es-total.es-total--flex
+                                                .es-total-left ИТОГО:
+                                                .es-total-right 0 р.
+                                                span.es-total__nds НДС <br>не облагается
 
-                                .ec-options__right
-                                    a.ec-options__video.js-video-popup(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-                                        img(src="images/video-placeholder.png" alt="")
-                                    a.ec-options__video.js-video-popup(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-                                        img(src="images/video-placeholder.png" alt="")
-                                    .ec-options__arrow
-                                        span пара примеров наших работ
-                                        img(src="images/ec-result--arrows.png" alt="")
+                                    .ec-options__right
+                                        a.ec-options__video.js-video-popup(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+                                            img(src="images/video-placeholder.png" alt="")
+                                        a.ec-options__video.js-video-popup(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+                                            img(src="images/video-placeholder.png" alt="")
+                                        .ec-options__arrow
+                                            span пара примеров наших работ
+                                            img(src="images/ec-result--arrows.png" alt="")
 
-                            .ec-options__bottom
+                                .ec-options__bottom
 
-                                .ec-options__info Примечание: Общая сумма договора будет складываться из базовой стоимости вашего мероприятия в сумме с дополнительными опциями. <br>Данный калькулятор позволяет максимально точно и быстро “прикинуть” бюджет на ваше онлайн событие и автоматически сформировать высокого уровня коммерческое предложение. Финализация точной суммы договора будет после брифинга при встрече или онлайн с нашей стороной, чтобы уточнить некоторые детали, чаще всего - по дополнительному оборудованию и его количеству.
-                                .es-options__btn
-                                    button.ec-btn(type="submit") ДОБАВИТЬ ОПЦИИ И ОТПРАВИТЬ КП В ФОРМАТЕ PDF
-
-
+                                    .ec-options__info Примечание: Общая сумма договора будет складываться из базовой стоимости вашего мероприятия в сумме с дополнительными опциями. <br>Данный калькулятор позволяет максимально точно и быстро “прикинуть” бюджет на ваше онлайн событие и автоматически сформировать высокого уровня коммерческое предложение. Финализация точной суммы договора будет после брифинга при встрече или онлайн с нашей стороной, чтобы уточнить некоторые детали, чаще всего - по дополнительному оборудованию и его количеству.
+                                    .es-options__btn
+                                        button.ec-btn(type="submit") ДОБАВИТЬ ОПЦИИ И ОТПРАВИТЬ КП В ФОРМАТЕ PDF
 
 
-                    .event-calc__section.event-calc__section--7
-                        .es-quest
-                            .es-quest__text Мы будем признательны, если вы ответите на вопрос как вам идея онлайн калькулятора вместо ожидания КП от подрядчика?
-                            .es-quest__flex
-                                .es-quest__item(data-id="1")
-                                    .es-quest__item-img
-                                        img(src="images/es-quest-1.png" alt="")
-                                    .es-quest__item-text Норм, но мне все равно, восторга не вызвало
-                                .es-quest__item(data-id="2")
-                                    .es-quest__item-img
-                                        img(src="images/es-quest-2.png" alt="")
-                                    .es-quest__item-text Мне понравилось! Хорошая идея! Это экономит время
-                                .es-quest__item(data-id="3")
-                                    .es-quest__item-img
-                                        img(src="images/es-quest-3.png" alt="")
-                                    .es-quest__item-text Отличная идея, раньше всегда всегда приходилось ожидать пока вышлют КП
-                            .es-quest__thanks Спасибо за обратную связь!
+
+
+                        .event-calc__section.event-calc__section--7
+                            .es-quest
+                                .es-quest__text Мы будем признательны, если вы ответите на вопрос как вам идея онлайн калькулятора вместо ожидания КП от подрядчика?
+                                .es-quest__flex
+                                    .es-quest__item(data-id="1")
+                                        .es-quest__item-img
+                                            img(src="images/es-quest-1.png" alt="")
+                                        .es-quest__item-text Норм, но мне все равно, восторга не вызвало
+                                    .es-quest__item(data-id="2")
+                                        .es-quest__item-img
+                                            img(src="images/es-quest-2.png" alt="")
+                                        .es-quest__item-text Мне понравилось! Хорошая идея! Это экономит время
+                                    .es-quest__item(data-id="3")
+                                        .es-quest__item-img
+                                            img(src="images/es-quest-3.png" alt="")
+                                        .es-quest__item-text Отличная идея, раньше всегда всегда приходилось ожидать пока вышлют КП
+                                .es-quest__thanks Спасибо за обратную связь!
