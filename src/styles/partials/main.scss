@@ -76,8 +76,19 @@
         }
       }
     }
-    &--4{}
+    &--4{
+      #{ $self }{
+        &__subtitle{
+          margin-bottom: 53px;
+          text-align: center;
+        }
+        &__hr{
+          margin-top: 10px;
+        }
+      }
+    }
     &--5{
+      margin-top: 110px;
       #{ $self }{
         &__title{
           margin-bottom: 85px;
@@ -371,17 +382,31 @@
 .ec-grid{
   display: flex;
   flex-wrap: wrap;
-  margin: 0 30px;
   &__item{
     width: 20%;
     box-sizing: border-box;
-    padding: 0 30px;
+    padding: 0 5px 0 30px;
+    margin-bottom: 68px;
   }
   &__inner{
     position: relative;
+    padding-top: 35px;
+    padding-left: 25px;
   }
   &__bg-number{
-
+    color: #f4f3f3;
+    font-family: $secondFont;
+    font-size: 175px;
+    font-weight: 500;
+    line-height: 124px;
+    font-style: normal;
+    text-align: left;
+    letter-spacing: -2.12px;
+    position: absolute;
+    top: 0;
+    left: -5px;
+    z-index: -1;
+    user-select: none;
   }
   &__content{
     &-title{
@@ -416,8 +441,55 @@
     display: flex;
     justify-content: space-between;
   }
-  &__left{}
+  &__left{
+    .checkbox{
+      + .checkbox{
+        margin-top: 17px;
+      }
+      label{
+        margin-bottom: 0;
+      }
+    }
+  }
   &__right{
     width: 461px;
+  }
+}
+
+
+
+.es-quest{
+  &__text{
+    color: #262628;
+    font-family: $mainFont;
+    font-size: 30px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 30px;
+    text-align: left;
+    letter-spacing: 1.77px;
+  }
+  &__flex{
+    display: flex;
+  }
+  &__item{
+    display: flex;
+    align-items: center;
+    &-img{
+      margin-right: 15px;
+      flex-shrink: 0;
+      img{}
+    }
+    &-text{
+      width: 125px;
+      color: #69841c;
+      font-family: $mainFont;
+      font-size: 14px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 14px;
+      text-align: left;
+    }
   }
 }
