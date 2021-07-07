@@ -80,6 +80,8 @@ section.ec-section
                         .event-calc__section.event-calc__section--3
                             .ec-results
                                 .ec-results__info
+                                    .ec-results__col
+                                        .ec-results__col-number (
                                     .ec-results__col.ec-results__col--1
                                         .ec-results__col-number 7.500 р./час * 24 часа
                                         .ec-results__col-text Ставка за час за комплект оборудования со съемочной группой с 1 камерой
@@ -88,6 +90,11 @@ section.ec-section
                                     .ec-results__col.ec-results__col--2
                                         .ec-results__col-number &nbsp;* 12 часов
                                         .ec-results__col-text Параллельные часы/потоки
+                                    .ec-results__col.ec-results__col--4
+                                        .ec-results__col-number &nbsp;+ 2.000 р. * 3
+                                        .ec-results__col-text Спикеры вживую
+                                    .ec-results__col
+                                        .ec-results__col-number )
                                     .ec-results__col.ec-results__col--3
                                         .ec-results__col-number &nbsp;* 1.1 - <span>10% скидка</span>
                                         .ec-results__col-text Коэффициент количества спикеров <br>от 3 до 6
@@ -237,11 +244,6 @@ section.ec-section
                                             .price(data-price='') индивидуальная цена
                                             i.tooltiptext.tooltip-bottom Подсказка по дополнительному пункты к расчету прайса. Заполнить на проде
 
-                                        .ec-options__total
-                                            .es-total.es-total--flex
-                                                .es-total-left ИТОГО:
-                                                .es-total-right 0 р.
-                                                span.es-total__nds НДС <br>не облагается
 
                                     .ec-options__right
                                         a.ec-options__video.js-video-popup(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
@@ -252,10 +254,16 @@ section.ec-section
                                             span пара примеров наших работ
                                             img(src="images/ec-result--arrows.png" alt="")
 
-                                .ec-options__bottom
 
+                                .ec-options__total
+                                    .es-total.es-total--flex
+                                        .es-total__left ИТОГО:
+                                        .es-total__right 0 р.
+                                            span.es-total__nds НДС <br>не облагается
+
+                                .ec-options__bottom
                                     .ec-options__info Примечание: Общая сумма договора будет складываться из базовой стоимости вашего мероприятия в сумме с дополнительными опциями. <br>Данный калькулятор позволяет максимально точно и быстро “прикинуть” бюджет на ваше онлайн событие и автоматически сформировать высокого уровня коммерческое предложение. Финализация точной суммы договора будет после брифинга при встрече или онлайн с нашей стороной, чтобы уточнить некоторые детали, чаще всего - по дополнительному оборудованию и его количеству.
-                                    .es-options__btn
+                                    .ec-options__btn
                                         button.ec-btn(type="submit") ДОБАВИТЬ ОПЦИИ И ОТПРАВИТЬ КП В ФОРМАТЕ PDF
 
 
@@ -269,11 +277,11 @@ section.ec-section
                                         .es-quest__item-img
                                             img(src="images/es-quest-1.png" alt="")
                                         .es-quest__item-text Норм, но мне все равно, восторга не вызвало
-                                    .es-quest__item(data-id="2")
+                                    .es-quest__item.es-quest__item--2(data-id="2")
                                         .es-quest__item-img
                                             img(src="images/es-quest-2.png" alt="")
                                         .es-quest__item-text Мне понравилось! Хорошая идея! Это экономит время
-                                    .es-quest__item(data-id="3")
+                                    .es-quest__item.es-quest__item--3(data-id="3")
                                         .es-quest__item-img
                                             img(src="images/es-quest-3.png" alt="")
                                         .es-quest__item-text Отличная идея, раньше всегда всегда приходилось ожидать пока вышлют КП

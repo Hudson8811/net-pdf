@@ -9,4 +9,10 @@ $(document).ready(function() {
             $(this).closest('.checkbox').find('.tooltiptext').css("visibility", "hidden");
         }
     );
+
+    $('.js-video-popup').magnificPopup({
+        type: 'iframe'
+    });
+
+
 });
