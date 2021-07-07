@@ -1,8 +1,13 @@
-section.partners
-	.container.partners__container
-		+title('Это лишь часть компаний, <br>' +
-		'с которыми мы работали. <br>' +
-		'Есть еще артисты, медицинские ' +
-		'ассоциации и компании, которые <br>' +
-		'мы не успели сюда внести', '', 'partners__title')
-		img(src='./images/partners.jpg', alt='')
+.qodef-content-grid
+	main.qodef-grid.qodef-layout--template
+		.qodef-grid-inner.clear
+			.qodef-grid-item.qodef-page-content-section.qodef-col--12
+
+				section.partners
+					.container.partners__container
+						+title('Это лишь часть компаний, <br>' +
+						'с которыми мы работали. <br>' +
+						'Есть еще артисты, медицинские ' +
+						'ассоциации и компании, которые <br>' +
+						'мы не успели сюда внести', '', 'partners__title')
+						img(src='./images/partners.jpg', alt='')
