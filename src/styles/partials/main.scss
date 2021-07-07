@@ -368,6 +368,46 @@
   }
 }
 
+.ec-grid{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 30px;
+  &__item{
+    width: 20%;
+    box-sizing: border-box;
+    padding: 0 30px;
+  }
+  &__inner{
+    position: relative;
+  }
+  &__bg-number{
+
+  }
+  &__content{
+    &-title{
+      color: #262628;
+      font-family: $mainFont;
+      font-size: 18px;
+      font-weight: 700;
+      font-style: normal;
+      line-height: 22px;
+      letter-spacing: 1.06px;
+      &:not(:last-child){
+        margin-bottom: 10px;
+      }
+    }
+    &-text{
+      color: #5e7222;
+      font-family: $mainFont;
+      font-size: 14px;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 15px;
+      text-align: left;
+      letter-spacing: 0.82px;
+    }
+  }
+}
 
 
 
