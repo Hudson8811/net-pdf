@@ -1,0 +1,254 @@
+.event-calc{
+  $self: &;
+  padding: 108px 0;
+  &__hr{
+    margin: 16px 0 40px;
+    display: flex;
+    justify-content: flex-start;
+    &::before{
+      content: "";
+      display: block;
+      width: 28px;
+      height: 10px;
+      background-color: #000002;
+    }
+  }
+  &__title{
+    color: #000002;
+    font-family: $mainFont;
+    font-size: 75px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 65px;
+    text-align: left;
+    letter-spacing: 1.88px
+  }
+  &__subtitle{
+    color: #000002;
+    font-family: $mainFont;
+    font-size: 30px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 1;
+    text-align: left;
+    letter-spacing: 0.75px;
+  }
+  &__text{
+    color: #9a9898;
+    font-family: $mainFont;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 22px;
+    text-align: left;
+    letter-spacing: 0.4px;
+  }
+
+
+
+
+
+  &__section{
+    &--1{
+      #{ $self }{
+        &__title{
+          margin-bottom: 13px;
+        }
+      }
+    }
+    &--2{
+      margin-top: 70px;
+      padding-bottom: 69px;
+      #{ $self }{
+        &__subtitle{
+          padding: 0 20px;
+          margin-bottom: 28px;
+        }
+      }
+    }
+    &--3{}
+  }
+}
+
+
+
+.ec-form{
+  $self: &;
+  &__section{
+    box-sizing: border-box;
+    min-height: 145px;
+    background-color: #ededed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 23px;
+    &--cols{
+      align-items: flex-start;
+    }
+  }
+  &__section + &__section{
+    margin-top: 3px;
+  }
+  &__left{}
+  &__title{
+    color: #262628;
+    font-family: $mainFont;
+    font-size: 18px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 22px;
+    text-align: left;
+    &:not(:last-child){
+      margin-bottom: 11px;
+    }
+  }
+  &__text{
+    color: #a1a1a1;
+    font-family: $mainFont;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: left;
+    line-height: 22px;
+  }
+  &__right{
+    display: flex;
+    align-items: center;
+    width: 276px;
+    margin-left: 30px;
+    flex-shrink: 0;
+  }
+  &__error{
+    color: #fa0101;
+    font-family: $mainFont;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 14px;
+    margin-left: 12px;
+    max-width: 100px;
+    display: none;
+  }
+  &__field{
+    width: 119px;
+    flex-shrink: 0;
+    input{
+      margin-bottom: 0;
+      border: 2px solid #d5d2d2;
+      background-color: #f5f5f5;
+      padding: 5px 10px;
+      text-align: center;
+      color: #000000;
+      font-family: $mainFont;
+      font-size: 30px;
+      font-weight: 700;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: normal;
+      height: 50px;
+      &:focus{
+        border-color: #d5d2d2;
+        color: #000000;
+      }
+    }
+    &--error{
+      input{
+        border-color: #fa0101;
+      }
+      + #{ $self }__error{
+          display: block;
+      }
+    }
+  }
+
+
+  &__col{
+    width: calc(100% / 3);
+    padding: 0 12px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column-reverse;
+
+    #{ $self }__error{
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 9px;
+      display: block;
+      user-select: none;
+      pointer-events: none;
+      opacity: 0;
+    }
+    &-field{
+      input{
+        margin: 0;
+        font-family: $mainFont;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+        color: #000000;
+        border: 2px solid #d5d2d2;
+        background-color: #f5f5f5;
+        &::placeholder{
+          color: #9e9e9e;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 18px;
+          font-family: $mainFont;
+        }
+        &:focus{
+          border-color: #d5d2d2;
+          color: #000000;
+        }
+      }
+      &--error{
+        input{
+          border-color: #fa0101;
+        }
+        + #{ $self }__error{
+          opacity: 1;
+          user-select: auto;
+          pointer-events: auto;
+        }
+      }
+    }
+  }
+
+  &__info{
+    padding: 0 20px;
+    margin-top: 23px;
+    color: #262628;
+    font-family: $mainFont;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    text-align: left;
+    font-style: normal;
+  }
+  &__btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 112px;
+    button{
+      width: 593px;
+      height: 65px;
+      display: block;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      background: #91AB46;
+      color: #ffffff;
+      font-family: $mainFont;
+      font-size: 18px;
+      font-weight: 700;
+      font-style: normal;
+      text-align: center;
+      letter-spacing: 0.54px;
+      box-sizing: border-box;
+      padding: 15px;
+      max-width: 100%;
+    }
+  }
+}

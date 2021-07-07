@@ -1,0 +1,30 @@
+@import "select";
+@import "checkbox-radio";
+
+.input{
+	width: 100%;
+	border-color: $textMainColor;
+	text-indent: 25px;
+	padding: 14px 0;
+	box-sizing: border-box;
+	border: 1px solid $textMainColor;
+	color: $textTitleColor;
+	font-family: $mainFont;
+	font-size: $fs-main;
+	background: #ffffff;
+	&::placeholder{
+		color: $textMainColor;
+	}
+	&:focus{
+		outline: none;
+		border-color: $selectColor1;
+	}
+	&:disabled{
+		border-color: $disableColor;
+		color: $disableColor;
+		&::placeholder{
+			color: $disableColor;
+		}
+	}
+}
+

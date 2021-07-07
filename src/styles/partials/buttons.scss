@@ -1,0 +1,64 @@
+.btn{
+	display: inline-flex;
+	font-family: $mainFont;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px 25px;
+	line-height: 20px;
+	padding: 14px;
+	box-sizing: border-box;
+	max-width: 100%;
+	align-items: center;
+	border: 1px solid $selectColor1;
+	background: $selectColor1;
+	color: #ffffff;
+	cursor: pointer;
+	text-decoration: none;
+	&:hover{
+		background: $selectColor2;
+		border-color: $selectColor2;
+		color: #ffffff;
+	}
+	&:disabled,
+	&.disabled{
+		background: $disableColor;
+		border-color: $disableColor;
+		cursor: default;
+		&--border{
+			color: $disableColor;
+			background: #ffffff;
+			border-color: $disableColor;
+		}
+	}
+	&--border{
+		background: transparent;
+		color: $selectColor1;
+		&:hover{
+			background: $selectColor1;
+			border-color: $selectColor1;
+			color: #ffffff;
+		}
+		&:disabled,
+		&.disabled{
+			color: $disableColor;
+			background: #ffffff;
+			border-color: $disableColor;
+		}
+	}
+	svg,
+	img{
+		max-width: 20px;
+		height: 20px;
+		object-fit: contain;
+		&:first-child:not(:last-child){
+			margin-right: 10px;
+		}
+		&:last-child:not(:first-child){
+			margin-left: 10px;
+		}
+	}
+
+	&--icon{
+		padding: 15px;
+	}
+}

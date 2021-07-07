@@ -1,0 +1,66 @@
+.navigation{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&__btn{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		padding: 0;
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		color: $textTitleColor;
+		svg,img{
+			max-width: 90%;
+			max-height: 90%;
+		}
+		&:hover{
+			color: $selectColor1;
+		}
+		&--border{
+			border: 1px solid $disableColor;
+			background: #ffffff;
+			&:hover{
+				background-color: $disableColor;
+				color: #ffffff;
+			}
+		}
+	}
+	&__dots{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin: 0 20px;
+		button{
+			border: none;
+			padding: 0;
+			cursor: pointer;
+			background: $bgGrayColor;
+			border-radius: 50%;
+			width: 10px;
+			height: 10px;
+			display: block;
+			margin: 5px;
+			&:hover{
+				&:not(.active){
+					background-color: $selectColor2;
+				}
+			}
+			&.active{
+				background-color: $selectColor1;
+			}
+		}
+		&--line{
+			button{
+				width: 20px;
+				height: 2px;
+				border-radius: 0;
+				margin: 5px 0;
+			}
+		}
+	}
+}

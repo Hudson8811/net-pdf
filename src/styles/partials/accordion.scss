@@ -1,0 +1,92 @@
+.accordion{
+	width: 100%;
+	&__title{
+		padding: 21px 25px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		cursor: pointer;
+		background-color: $bgGrayColor;
+		transition: background 0.3s linear;
+		&-text{
+			color: $textMainColor;
+			transition: color 0.3s linear;
+		}
+		&-icon{
+			flex-shrink: 0;
+			margin-left: 25px;
+			width: 29px;
+			height: 29px;
+			border: 2px solid $disableColor;
+			box-sizing: border-box;
+			border-radius: 3px;
+			position: relative;
+			transition: border 0.3s linear;
+			&::after{
+				content: "";
+				display: block;
+				width: 12px;
+				height: 2px;
+				background: $disableColor;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				transition: background 0.3s linear;
+			}
+			&::before{
+				content: "";
+				display: block;
+				width: 2px;
+				height: 12px;
+				background: $disableColor;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				transition: background 0.3s linear, height 0.3s linear;
+			}
+		}
+		&:hover{
+			.accordion__title{
+				&-text{
+					color: $selectColor1;
+				}
+				&-icon{
+					border-color: $selectColor1;
+					&::after{
+						background: $selectColor1;
+					}
+					&::before{
+						background: $selectColor1;
+					}
+				}
+			}
+		}
+	}
+	&__text{
+		padding: 25px;
+		background-color: $disableColor;
+		color: #ffffff;
+		display: none;
+	}
+
+	&.active{
+		.accordion__title{
+			background-color: $selectColor1;
+			&-text{
+				color: #ffffff;
+			}
+			&-icon{
+				border-color: #ffffff;
+				&::after{
+					background: #ffffff;
+				}
+				&::before{
+					background: #ffffff;
+					height: 0;
+				}
+			}
+		}
+	}
+}

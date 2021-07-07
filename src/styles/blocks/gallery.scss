@@ -1,0 +1,27 @@
+.gal-i{
+	&__inner{
+		display: block;
+		position: relative;
+		text-decoration: none;
+	}
+	&__img{
+		img{}
+	}
+	&__info{}
+	&__title{}
+	&__date{}
+}
+
+.gallery{
+	&__container{}
+	&__title{}
+	&__flex{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__item{}
+	&--col{
+		&-3{}
+		&-2{}
+	}
+}

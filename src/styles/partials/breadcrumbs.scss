@@ -1,0 +1,35 @@
+.breadcrumbs{
+	&__inner{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__link{
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 135%;
+		color: $breadCrumbsColor;
+		text-decoration: none;
+		display: block;
+		@at-root {
+			a#{&} {
+				&:hover{
+					color: $breadCrumbsColorHover;
+					text-decoration: underline;
+				}
+			}
+		}
+		&:last-child{
+			color: $breadCrumbsColorLast;
+		}
+	}
+	&__sep{
+		font-size: 14px;
+		line-height: 135%;
+		color: $breadCrumbsColor;
+		&::before{
+			content: "/";
+			margin: 0 10px;
+		}
+	}
+}
