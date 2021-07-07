@@ -54,6 +54,10 @@
     line-height: 1;
     text-align: left;
     letter-spacing: 0.75px;
+
+    @include max(md) {
+      text-align: center;
+    }
   }
   &__text{
     color: #9a9898;
@@ -146,6 +150,10 @@
   box-sizing: border-box;
   padding: 15px;
   max-width: 100%;
+
+  @include max(xs) {
+    font-size: 15px;
+  }
 }
 
 .ec-form{
@@ -158,6 +166,13 @@
     align-items: center;
     justify-content: space-between;
     padding: 11px 23px;
+
+    @include max(xxs) {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-bottom: 40px;
+    }
+
     &--cols{
       align-items: flex-start;
     }
@@ -198,6 +213,11 @@
       width: 119px;
       height: 50px;
       flex-direction: column;
+    }
+
+    @include max(xxs) {
+      margin-top: 20px;
+      margin-left: 0;
     }
   }
   &__error{
@@ -256,6 +276,10 @@
     @include max(lg) {
       width: calc(100% + 24px);
     }
+
+    @include max(xxs) {
+      flex-direction: column;
+    }
   }
 
   &__col{
@@ -264,6 +288,10 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column-reverse;
+
+    @include max(xxs) {
+      width: 100%;
+    }
 
     #{ $self }__error{
       width: 100%;
@@ -325,6 +353,10 @@
     display: flex;
     justify-content: center;
     margin-top: 112px;
+
+    @include max(md) {
+      margin-top: 60px;
+    }
   }
 }
 
