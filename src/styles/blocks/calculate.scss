@@ -1,0 +1,28 @@
+.calculate {
+	&__container {
+		padding-top: 102px;
+		padding-bottom: 40px;
+	}
+
+	&__subtitle {
+		font-size: 16px;
+		line-height: 22px;
+		font-weight: 700;
+		color: $gray-9e;
+		padding-top: 63px;
+		letter-spacing: 0.4px;
+		position: relative;
+		margin-bottom: 61px;
+
+		&::before {
+			content: '';
+			display: block;
+			width: 28px;
+			height: 10px;
+			background-color: $black;
+			position: absolute;
+			top: 14px;
+			left: 0;
+		}
+	}
+}

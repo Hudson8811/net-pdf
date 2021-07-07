@@ -3,10 +3,20 @@
 
 /* mixin */
 @import "base/mixin";
+@import "base/fonts";
 
-/* main */
+@import "partials/title";
+
+/*blocks*/
+@import "blocks/welcome";
+@import "blocks/advantages";
+@import "blocks/partners";
+@import "blocks/works";
+@import "blocks/works-item";
+@import "blocks/calculate";
+@import "blocks/calculator";
+
+
+
+
 @import "partials/main";
-
-
-
-

@@ -1,0 +1,16 @@
+.works {
+	background-color: $gray-ed;
+
+	&__container {
+		padding-top: 83px;
+		padding-bottom: 177px;
+	}
+
+	&__title {
+		margin-bottom: 104px;
+	}
+
+	&__grid {
+		@include flex-row(112px, 160px);
+	}
+}
