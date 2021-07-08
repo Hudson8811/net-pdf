@@ -1,0 +1,23 @@
+.header {
+	display: flex;
+	align-items: center;
+	height: 116px;
+
+	@include max(sm) {
+        height: 80px;
+    }
+
+	&__row {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+	}
+
+	&__link {
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+	}
+}
