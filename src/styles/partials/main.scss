@@ -1003,3 +1003,7 @@
     }
   }
 }
+
+button.mfp-close::after {
+  content: "×";
+}
