@@ -1,12 +1,22 @@
+.nowrap-span{
+  white-space: nowrap;
+}
+
 .event-calc{
   $self: &;
   padding: 108px 0;
+  @include max(lg) {
+    padding: 40px 0;
+  }
   &__hr{
     margin: 16px 0 40px;
     display: flex;
     justify-content: flex-start;
     @include max(md) {
       justify-content: center;
+    }
+    @include max(xxs) {
+      margin: 15px 0 15px;
     }
     &::before{
       content: "";
@@ -57,6 +67,8 @@
 
     @include max(md) {
       text-align: center;
+      font-size: 25px;
+      letter-spacing: 0.5px;
     }
   }
   &__text{
@@ -87,6 +99,10 @@
       #{ $self }{
         &__title{
           margin-bottom: 13px;
+          max-width: 1170px;
+        }
+        &__text{
+          max-width: 1145px;
         }
       }
     }
@@ -97,10 +113,14 @@
         &__subtitle{
           padding: 0 20px;
           margin-bottom: 28px;
+          @include max(md) {
+            padding: 0;
+          }
         }
       }
     }
     &--3{
+      display: none;
       #{ $self }{
         &__hr{
           margin-top: 40px;
@@ -108,6 +128,7 @@
       }
     }
     &--4{
+      display: none;
       #{ $self }{
         &__subtitle{
           margin-bottom: 53px;
@@ -119,10 +140,17 @@
       }
     }
     &--5{
+      display: none;
       margin-top: 110px;
+      @include max(sm) {
+        margin-top: 50px;
+      }
       #{ $self }{
         &__title{
           margin-bottom: 85px;
+          @include max(sm) {
+            margin-bottom: 40px;
+          }
         }
       }
     }
@@ -134,7 +162,7 @@
 
 .ec-btn{
   width: 593px;
-  height: 65px;
+  min-height: 65px;
   display: block;
   cursor: pointer;
   border: none;
@@ -166,21 +194,28 @@
     align-items: center;
     justify-content: space-between;
     padding: 11px 23px;
-
+    @include max(sm) {
+      min-height: 0;
+      padding: 11px;
+    }
     @include max(xxs) {
       flex-direction: column;
       align-items: flex-start;
-      padding-bottom: 40px;
     }
 
     &--cols{
       align-items: flex-start;
+      @include max(md) {
+        align-items: center;
+      }
     }
   }
   &__section + &__section{
     margin-top: 3px;
   }
-  &__left{}
+  &__left{
+    max-width: 900px;
+  }
   &__title{
     color: #262628;
     font-family: $mainFont;
@@ -189,8 +224,16 @@
     font-style: normal;
     line-height: 22px;
     text-align: left;
+    max-width: 790px;
+    @include max(xs) {
+      font-size: 16px;
+      line-height: 18px;
+    }
     &:not(:last-child){
       margin-bottom: 11px;
+      @include max(xs) {
+        margin-bottom: 7px;
+      }
     }
   }
   &__text{
@@ -202,6 +245,10 @@
     letter-spacing: normal;
     text-align: left;
     line-height: 22px;
+    @include max(xs) {
+      font-size: 14px;
+      line-height: 14px;
+    }
   }
   &__right{
     display: flex;
@@ -214,10 +261,13 @@
       height: 50px;
       flex-direction: column;
     }
-
+    @include max(sm) {
+      height: auto;
+    }
     @include max(xxs) {
       margin-top: 20px;
       margin-left: 0;
+      width: 100%;
     }
   }
   &__error{
@@ -240,6 +290,9 @@
   &__field{
     width: 119px;
     flex-shrink: 0;
+    @include max(xxs) {
+      width: 100%;
+    }
     input{
       margin-bottom: 0;
       border: 2px solid #d5d2d2;
@@ -276,8 +329,10 @@
     @include max(lg) {
       width: calc(100% + 24px);
     }
-
-    @include max(xxs) {
+    @include max(md) {
+      align-items: flex-end;
+    }
+    @include max(sm) {
       flex-direction: column;
     }
   }
@@ -288,19 +343,36 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column-reverse;
-
-    @include max(xxs) {
+    @include max(md) {
+      justify-content: space-between;
+    }
+    @include max(sm) {
       width: 100%;
+      flex-direction: column;
+      &:not(:last-child){
+        margin-bottom: 15px;
+      }
     }
 
     #{ $self }__error{
       width: 100%;
       max-width: 100%;
       margin-bottom: 9px;
+      padding-left: 0;
       display: block;
       user-select: none;
       pointer-events: none;
       opacity: 0;
+      @include max(lg) {
+        margin-top: 0;
+      }
+      @include max(sm) {
+        margin-bottom: 0;
+        margin-top: 7px;
+      }
+      @include max(md) {
+        display: none;
+      }
     }
     &-field{
       input{
@@ -333,6 +405,9 @@
           opacity: 1;
           user-select: auto;
           pointer-events: auto;
+          @include max(md) {
+            display: block;
+          }
         }
       }
     }
@@ -348,6 +423,14 @@
     line-height: 22px;
     text-align: left;
     font-style: normal;
+    @include max(md) {
+      padding: 0;
+    }
+    @include max(xs) {
+      margin-top: 15px;
+      font-size: 16px;
+      line-height: 18px;
+    }
   }
   &__btn{
     display: flex;
@@ -357,6 +440,9 @@
     @include max(md) {
       margin-top: 60px;
     }
+    @include max(xxs) {
+      margin-top: 30px;
+    }
   }
 }
 
@@ -365,6 +451,9 @@
   position: relative;
   &--flex{
     display: flex;
+    @include max(md) {
+      justify-content: center;
+    }
   }
   > div{
     color: #262628;
@@ -391,6 +480,13 @@
   }
   &__left{
     width: 468px;
+    @include max(lg) {
+      width: 426px;
+    }
+    @include max(md) {
+      width: auto;
+      margin-right: 0.2em;
+    }
   }
   &__right{
     position: relative;
@@ -413,6 +509,18 @@
     height: 60px;
     display: flex;
     align-items: flex-end;
+    @include max(xs) {
+      width: 100%;
+      text-align: right;
+      position: static;
+      transform: none;
+      display: block;
+      margin-top: 5px;
+      height: auto;
+      br{
+        display: none;
+      }
+    }
   }
 }
 
@@ -421,6 +529,9 @@
   &__info{
     display: flex;
     justify-content: center;
+    @include max(sm) {
+      display: none;
+    }
   }
   &__col{
     $self: &;
@@ -433,6 +544,9 @@
       letter-spacing: normal;
       line-height: 1;
       text-align: left;
+      @include max(md) {
+        font-size: 20px;
+      }
       span{
         color: #f40341;
       }
@@ -458,18 +572,28 @@
       #{ $self }-text{
         width: 90px;
         margin-left: 26px;
+        @include max(md) {
+          margin-left: 1px;
+        }
       }
     }
     &--3{
       #{ $self }-text{
         width: 90px;
         margin-left: 26px;
+        @include max(md) {
+          margin-left: 17px;
+        }
       }
     }
     &--4{
       #{ $self }-text{
         width: 120px;
         margin-left: 31px;
+        @include max(md) {
+          margin-left: 21px;
+          width: 80px;
+        }
       }
     }
   }
@@ -477,22 +601,43 @@
     display: flex;
     justify-content: center;
     margin-top: 63px;
+    @include max(sm) {
+      margin-top: 0;
+    }
   }
 }
 
 .ec-grid{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   &__item{
     width: 20%;
     box-sizing: border-box;
     padding: 0 5px 0 30px;
     margin-bottom: 68px;
+    min-height: 124px;
+    @include max(md) {
+      width: 33.333%;
+      margin-bottom: 45px;
+    }
+    @include max(xs) {
+      width: 50%;
+      margin-bottom: 30px;
+    }
+    @include max(xxs) {
+      padding: 0;
+      min-height: 114px;
+    }
   }
   &__inner{
     position: relative;
     padding-top: 35px;
     padding-left: 25px;
+    @include max(xxs) {
+      padding-top: 23px;
+      padding-left: 20px;
+    }
   }
   &__bg-number{
     color: #f4f3f3;
@@ -508,6 +653,10 @@
     left: -5px;
     z-index: -1;
     user-select: none;
+    @include max(xxs) {
+      font-size: 145px;
+      line-height: 114px;
+    }
   }
   &__content{
     &-title{
@@ -518,8 +667,15 @@
       font-style: normal;
       line-height: 22px;
       letter-spacing: 1.06px;
+      @include max(xxs) {
+        font-size: 16px;
+        line-height: 18px;
+      }
       &:not(:last-child){
         margin-bottom: 10px;
+        @include max(xxs) {
+          margin-bottom: 8px;
+        }
       }
     }
     &-text{
@@ -531,6 +687,10 @@
       line-height: 15px;
       text-align: left;
       letter-spacing: 0.82px;
+      @include max(xxs) {
+        line-height: 14px;
+        letter-spacing: normal;
+      }
     }
   }
 }
@@ -544,10 +704,27 @@
   }
   &__left{
     width: calc(100% - 481px);
+    @include max(lg) {
+      width: calc(100% - 260px);
+    }
+    @include max(md) {
+      width: 100%;
+    }
     .checkbox{
       justify-content: flex-start;
+      @include max(sm) {
+        justify-content: space-between;
+      }
+      @include max(xxs) {
+        display: block;
+      }
       + .checkbox{
         margin-top: 19px;
+        @include max(xxs) {
+          margin-top: 8px;
+          padding-top: 8px;
+          border-top: 1px solid #d9d9d9;
+        }
       }
       label{
         margin-bottom: 0;
@@ -561,6 +738,16 @@
         font-style: normal;
         line-height: 22px;
         text-align: left;
+        @include max(lg) {
+          width: 445px;
+        }
+        @include max(sm) {
+          width: auto;
+        }
+        @include max(xxs) {
+          font-size: 15px;
+          line-height: 17px;
+        }
       }
       .tooltip{
         width: 20px;
@@ -582,6 +769,20 @@
         text-align: left;
         font-style: normal;
         letter-spacing: normal;
+        @include max(lg) {
+          width: calc(100% - 445px);
+        }
+        @include max(sm) {
+          font-size: 18px;
+          line-height: 20px;
+          width: auto;
+          text-align: right;
+        }
+        @include max(xxs) {
+          text-align: left;
+          margin-top: 2px;
+          padding-left: 40px;
+        }
       }
     }
   }
@@ -591,6 +792,9 @@
     @include max(lg) {
       width: 240px;
       padding-top: 30px;
+    }
+    @include max(md) {
+      display: none;
     }
   }
   &__video{
@@ -649,9 +853,27 @@
     line-height: 22px;
     text-align: left;
     letter-spacing: 1.06px;
+    @include max(xs) {
+      font-size: 15px;
+      line-height: 17px;
+      letter-spacing: 0.3px;
+    }
+    @include max(xxs) {
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: 400;
+      letter-spacing: 0.1px;
+    }
   }
   &__btn{
     margin-top: 66px;
+    @include max(md) {
+      display: flex;
+      justify-content: center;
+    }
+    @include max(sm) {
+      margin-top: 30px;
+    }
   }
 }
 
@@ -660,6 +882,12 @@
 .es-quest{
   padding: 64px 45px;
   max-width: 750px;
+  @include max(md) {
+    padding: 50px 30px;
+  }
+  @include max(sm) {
+    padding: 30px 0;
+  }
   &__text{
     color: #262628;
     font-family: $mainFont;
@@ -669,9 +897,26 @@
     line-height: 30px;
     text-align: left;
     margin-bottom: 64px;
+    @include max(sm) {
+      font-size: 25px;
+      line-height: 28px;
+      margin-bottom: 45px;
+    }
+    @include max(xs) {
+      font-size: 20px;
+      line-height: 23px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
   }
   &__flex{
     display: flex;
+    @include max(sm) {
+      justify-content: space-between;
+    }
+    @include max(xs) {
+      display: block;
+    }
   }
   &__item{
     $self: &;
@@ -680,13 +925,29 @@
     cursor: pointer;
     + #{ $self }{
       margin-left: 75px;
+      @include max(sm) {
+        margin-left: 10px;
+      }
+      @include max(xs) {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+      }
     }
     &-img{
       margin-right: 15px;
       flex-shrink: 0;
       transition: transform 0.2s;
+      @include max(xs) {
+        width: 73px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
       img{
         display: block;
+        max-width: 100%;
       }
     }
     &-text{
@@ -699,10 +960,14 @@
       letter-spacing: normal;
       line-height: 14px;
       text-align: left;
+      @include max(xs) {
+        width: auto !important;
+        max-width: 100%;
+      }
     }
     @include min('sm'){
       &:hover{
-        #{ $self }__img{
+        #{ $self }-img{
           transform: scale(1.1);
         }
       }
@@ -732,6 +997,9 @@
     font-style: normal;
     line-height: 1;
     letter-spacing: 1.77px;
-    padding: 60px 0;
+    display: none;
+    @include max(sm) {
+      text-align: center;
+    }
   }
 }
