@@ -82,6 +82,7 @@
 			top: 50%;
 			left: 45px;
 			transform: translateY(-50%);
+			margin: 0;
 
 			@include max(lg) {
 				font-size: 26px;

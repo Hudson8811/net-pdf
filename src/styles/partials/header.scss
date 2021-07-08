@@ -15,9 +15,19 @@
 
 	&__link {
         text-decoration: underline;
+        padding-bottom: 13px;
 
         &:hover {
             text-decoration: none;
         }
 	}
+
+	&--fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        transition: transform 0.5s ease;
+    }
 }

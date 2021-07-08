@@ -171,6 +171,41 @@ $(document).ready(function() {
         $('.es-quest__flex').hide();
         $('.es-quest__thanks').show();
     });
+
+  // Fixed header
+	(function() {
+		var body = $('body');
+		var header = $('.header');
+		var headerOffset = header.offset().top;
+		var classes = 'header--fixed';
+		var headerHeight = header.outerHeight();
+		var scroll = $(window).scrollTop();
+		var isScroll = false;
+		var isNotStatic = header.hasClass('header--half') && $(window).width() >= 1024 ? true : false;//(header.css('position') === 'absolute') || (header.css('position') === 'fixed') ? true : false;
+
+		$(window).on('scroll', function() {
+			scroll = $(window).scrollTop();
+
+			if (scroll >= headerOffset + headerHeight) {
+				isScroll = true;
+
+				headerHeight = isScroll ? header.outerHeight() : null;
+				header.addClass(classes);
+
+				if (!header.hasClass('is-fixed')) {
+					header.css({'top': -headerHeight + 'px', 'transform': 'translateY(' + headerHeight + 'px)'}).addClass('is-fixed');
+
+					if (!isNotStatic) {
+						body.css('padding-top', headerHeight + 'px');
+					}
+				}
+			} else {
+				isScroll = false;
+				header.removeClass(classes + ' is-fixed').removeAttr('style');
+				body.css('padding-top', 0);
+			}
+		});
+	})();
 });
 
 function declOfNum(n, text_forms) {

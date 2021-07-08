@@ -72,14 +72,14 @@
     }
   }
   &__text{
-    color: #9a9898;
+    color: $gray-9e;
     font-family: $mainFont;
     font-size: 16px;
     font-weight: 400;
     font-style: normal;
     line-height: 22px;
     text-align: left;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.36px;
     @include max(md) {
       text-align: center;
     }
