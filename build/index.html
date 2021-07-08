@@ -153,7 +153,7 @@
                   <div class="event-calc">
                     <div class="event-calc__section event-calc__section--1">
                       <div class="event-calc__title">Наш онлайн калькулятор составит вам смету прямо сейчас, и вы сразу сможете отправить ее в формате КП себе на почту</div>
-                      <div class="event-calc__text">Если вы сомневаетесь как заполнить калькулятор, чтобы рассчитать максимально точную стоимость вашего мероприятия, напишите в вотсап аккаунт менеджеру или позвоните ей, она поможет: +7 /966/ 362-32-62</div>
+                      <div class="event-calc__text">Если вы сомневаетесь как заполнить калькулятор, чтобы рассчитать максимально точную стоимость вашего мероприятия, напишите в вотсап аккаунт менеджеру или позвоните ей, она поможет: <span class="nowrap-span">+7 /966/ 362-32-62</span></div>
                       <div class="event-calc__hr"></div>
                       <div class="event-calc__text">Данная смета рассчитывается для всех онлайн мероприятий с выездом на локацию Заказчика, или мы сами можем предложить вам как конференцзал, так и небольшую студию, если зрителей “вживую” в любом случае не будет. В дополнительных услугах (ниже) вы сможете учесть приблизительный бюджет, а мы вам вышлем на почту варианты студий с ценами - за час или за день.</div>
                     </div>
@@ -167,7 +167,7 @@
                           </div>
                           <div class="ec-form__right">
                             <div class="ec-form__field field">
-                              <input class="required" type="text" required="required">
+                              <input class="required" type="text" required="required" name="es_field_1">
                             </div>
                             <div class="ec-form__error">Заполните ячейку!</div>
                           </div>
@@ -177,8 +177,8 @@
                             <div class="ec-form__title">Сколько дней будет проходить ваше мероприятие?</div>
                           </div>
                           <div class="ec-form__right">
-                            <div class="ec-form__field field ec-form__field--error">
-                              <input class="required" type="text" required="required">
+                            <div class="ec-form__field field">
+                              <input class="required" type="text" required="required" name="es_field_2">
                             </div>
                             <div class="ec-form__error">Заполните ячейку!</div>
                           </div>
@@ -190,7 +190,7 @@
                           </div>
                           <div class="ec-form__right">
                             <div class="ec-form__field field">
-                              <input class="required" type="text" required="required">
+                              <input class="required" type="text" required="required" name="es_field_3">
                             </div>
                             <div class="ec-form__error">Заполните ячейку!</div>
                           </div>
@@ -202,7 +202,7 @@
                           </div>
                           <div class="ec-form__right">
                             <div class="ec-form__field field">
-                              <input class="required" type="text" required="required">
+                              <input class="required number-limit" type="text" required="required" name="es_field_4">
                             </div>
                             <div class="ec-form__error">Заполните ячейку!</div>
                           </div>
@@ -213,7 +213,7 @@
                           </div>
                           <div class="ec-form__right">
                             <div class="ec-form__field field">
-                              <input class="required" type="text" required="required">
+                              <input class="required" type="text" required="required" name="es_field_5">
                             </div>
                             <div class="ec-form__error">Заполните ячейку!</div>
                           </div>
@@ -224,7 +224,7 @@
                           </div>
                           <div class="ec-form__right">
                             <div class="ec-form__field field">
-                              <input class="required" type="text" required="required">
+                              <input class="required" type="text" required="required" name="es_field_6">
                             </div>
                             <div class="ec-form__error">Заполните ячейку!</div>
                           </div>
@@ -233,19 +233,19 @@
                           <div class="ec-form__cols">
                             <div class="ec-form__col">
                               <div class="ec-form__col-field field">
-                                <input class="required" type="text" required="required" placeholder="Название компании">
+                                <input class="required" type="text" required="required" placeholder="Название компании" name="es_field_company">
                               </div>
                               <div class="ec-form__error">КП должно быть персонифицировано, мы же делаем его именно для вас! Заполните ячейку!</div>
                             </div>
                             <div class="ec-form__col">
-                              <div class="ec-form__col-field field ec-form__col-field--error">
-                                <input class="required" type="text" required="required" placeholder="Дата/даты проведения мероприятия">
+                              <div class="ec-form__col-field field">
+                                <input class="required" type="text" required="required" placeholder="Дата/даты проведения мероприятия" name="es_field_date">
                               </div>
                               <div class="ec-form__error">Заполните дату, нам это важно, чтобы свериться с расписанием других забронированных мероприятий</div>
                             </div>
                             <div class="ec-form__col">
                               <div class="ec-form__col-field field">
-                                <input class="required" type="email" required="required" placeholder="E-mail, куда отправить КП в PDF">
+                                <input class="required" type="email" required="required" placeholder="E-mail, куда отправить КП в PDF" name="es_field_email">
                               </div>
                               <div class="ec-form__error">Почта нужна, чтобы выслать вам КП. <br>Заполните ячейку!</div>
                             </div>
@@ -260,14 +260,14 @@
                     <div class="event-calc__section event-calc__section--3">
                       <div class="ec-results">
                         <div class="ec-results__info">
-                          <div class="ec-results__col">
+                          <div class="ec-results__col ec-results__col--sep">
                             <div class="ec-results__col-number">(</div>
                           </div>
                           <div class="ec-results__col ec-results__col--1">
                             <div class="ec-results__col-number">7.500 р./час * 24 часа</div>
                             <div class="ec-results__col-text">Ставка за час за комплект оборудования со съемочной группой с 1 камерой</div>
                           </div>
-                          <div class="ec-results__col">
+                          <div class="ec-results__col ec-results__col--5">
                             <div class="ec-results__col-number">&nbsp;+ 7.500 р.</div>
                           </div>
                           <div class="ec-results__col ec-results__col--2">
@@ -278,7 +278,7 @@
                             <div class="ec-results__col-number">&nbsp;+ 2.000 р. * 3</div>
                             <div class="ec-results__col-text">Спикеры вживую</div>
                           </div>
-                          <div class="ec-results__col">
+                          <div class="ec-results__col ec-results__col--sep">
                             <div class="ec-results__col-number">)</div>
                           </div>
                           <div class="ec-results__col ec-results__col--3">
@@ -389,95 +389,95 @@
                         <div class="ec-options__flex">
                           <div class="ec-options__left">
                             <div class="checkbox">
-                              <input id="add1" type="checkbox" name="add" value="Квиз (разработка и ведение)">
+                              <input id="add1" type="checkbox" name="add" value="Квиз (разработка и ведение)" data-price="45000">
                               <label for="add1">+ Квиз (разработка и ведение)
                                 <div class="tooltip">?</div>
                               </label>
-                              <div class="price" data-price="45000">45.000 р.</div><i class="tooltiptext tooltip-bottom">Подсказка по дополнительному пункты к расчету прайса. Заполнить на проде</i>
+                              <div class="price">45.000&nbsp;р.</div><i class="tooltiptext tooltip-bottom">Подсказка по дополнительному пункты к расчету прайса. Заполнить на проде</i>
                             </div>
                             <div class="checkbox">
-                              <input id="add2" type="checkbox" name="add" value="Работа с чатом, модерация">
+                              <input id="add2" type="checkbox" name="add" value="Работа с чатом, модерация" data-price="5000">
                               <label for="add2">+ Работа с чатом, модерация</label>
-                              <div class="price" data-price="5000">5.000 р.</div>
+                              <div class="price">5.000&nbsp;р.</div>
                             </div>
                             <div class="checkbox">
-                              <input id="add3" type="checkbox" name="add" value="Оформление заставки/ анимация логотипа">
+                              <input id="add3" type="checkbox" name="add" value="Оформление заставки/ анимация логотипа" data-price="8000">
                               <label for="add3">+ Оформление заставки/ анимация логотипа</label>
-                              <div class="price" data-price="8000">8.000 р.</div>
+                              <div class="price">8.000&nbsp;р.</div>
                             </div>
                             <div class="checkbox">
-                              <input id="add4" type="checkbox" name="add" value="TOP-модератор/ведущий">
+                              <input id="add4" type="checkbox" name="add" value="TOP-модератор/ведущий" data-price="80000">
                               <label for="add4">+ TOP-модератор/ведущий
                                 <div class="tooltip">?</div>
                               </label>
-                              <div class="price" data-price="80000">от 80.000 р.</div><i class="tooltiptext tooltip-bottom">Подсказка по дополнительному пункты к расчету прайса. Заполнить на проде</i>
+                              <div class="price">от&nbsp;80.000&nbsp;р.</div><i class="tooltiptext tooltip-bottom">Подсказка по дополнительному пункты к расчету прайса. Заполнить на проде</i>
                             </div>
                             <div class="checkbox">
-                              <input id="add5" type="checkbox" name="add" value="Разработка Тизера под мероприятие">
+                              <input id="add5" type="checkbox" name="add" value="Разработка Тизера под мероприятие" data-price="35000">
                               <label for="add5">+ Разработка Тизера под мероприятие
                                 <div class="tooltip">?</div>
                               </label>
-                              <div class="price" data-price="35000">35.000 р.</div><i class="tooltiptext tooltip-bottom">Подсказка по дополнительному пункты к расчету прайса. Заполнить на проде</i>
+                              <div class="price">35.000&nbsp;р.</div><i class="tooltiptext tooltip-bottom">Подсказка по дополнительному пункты к расчету прайса. Заполнить на проде</i>
                             </div>
                             <div class="checkbox">
-                              <input id="add6" type="checkbox" name="add" value="Внедрение анимированной инфографики ">
+                              <input id="add6" type="checkbox" name="add" value="Внедрение анимированной инфографики " data-price="35000">
                               <label for="add6">+ Внедрение анимированной инфографики
                                 <div class="tooltip">?</div>
                               </label>
-                              <div class="price" data-price="35000">от 35.000 р.</div><i class="tooltiptext tooltip-bottom">Подсказка по дополнительному пункты к расчету прайса. Заполнить на проде</i>
+                              <div class="price">от&nbsp;35.000&nbsp;р.</div><i class="tooltiptext tooltip-bottom">Подсказка по дополнительному пункты к расчету прайса. Заполнить на проде</i>
                             </div>
                             <div class="checkbox">
-                              <input id="add7" type="checkbox" name="add" value="Техническое обеспечение переводчиков-синхронистов">
+                              <input id="add7" type="checkbox" name="add" value="Техническое обеспечение переводчиков-синхронистов" data-price="5000">
                               <label for="add7">+ Техническое обеспечение переводчиков-синхронистов</label>
-                              <div class="price" data-price="5000">5.000 р.</div>
+                              <div class="price">5.000&nbsp;р.</div>
                             </div>
                             <div class="checkbox">
-                              <input id="add8" type="checkbox" name="add" value="Переводчик синхронист">
+                              <input id="add8" type="checkbox" name="add" value="Переводчик синхронист" data-price="10000">
                               <label for="add8">+ Переводчик синхронист</label>
-                              <div class="price" data-price="10000">от 10.000 р.</div>
+                              <div class="price">от&nbsp;10.000&nbsp;р.</div>
                             </div>
                             <div class="checkbox">
-                              <input id="add9" type="checkbox" name="add" value="Суфлер">
+                              <input id="add9" type="checkbox" name="add" value="Суфлер" data-price="5000">
                               <label for="add9">+ Суфлер
                                 <div class="tooltip">?</div>
                               </label>
-                              <div class="price" data-price="5000">5.000 р.</div><i class="tooltiptext tooltip-bottom">Подсказка по дополнительному пункты к расчету прайса. Заполнить на проде</i>
+                              <div class="price">5.000&nbsp;р.</div><i class="tooltiptext tooltip-bottom">Подсказка по дополнительному пункты к расчету прайса. Заполнить на проде</i>
                             </div>
                             <div class="checkbox">
-                              <input id="add10" type="checkbox" name="add" value="Плейбэк экран (подсказка спикерам)">
+                              <input id="add10" type="checkbox" name="add" value="Плейбэк экран (подсказка спикерам)" data-price="3000">
                               <label for="add10">+ Плейбэк экран (подсказка спикерам)
                                 <div class="tooltip">?</div>
                               </label>
-                              <div class="price" data-price="3000">3.000 р./спикер</div><i class="tooltiptext tooltip-bottom">Подсказка по дополнительному пункты к расчету прайса. Заполнить на проде</i>
+                              <div class="price">3.000&nbsp;р./спикер</div><i class="tooltiptext tooltip-bottom">Подсказка по дополнительному пункты к расчету прайса. Заполнить на проде</i>
                             </div>
                             <div class="checkbox">
-                              <input id="add11" type="checkbox" name="add" value="Кликер (переключатель слайдов на экране)">
+                              <input id="add11" type="checkbox" name="add" value="Кликер (переключатель слайдов на экране)" data-price="2500">
                               <label for="add11">+ Кликер (переключатель слайдов на экране)</label>
-                              <div class="price" data-price="2500">2.500 р./мероприятие</div>
+                              <div class="price">2.500&nbsp;р./мероприятие</div>
                             </div>
                             <div class="checkbox">
-                              <input id="add12" type="checkbox" name="add" value="Обеспечение интернета (если нет)">
+                              <input id="add12" type="checkbox" name="add" value="Обеспечение интернета (если нет)" data-price="3500">
                               <label for="add12">+ Обеспечение интернета (если нет)</label>
-                              <div class="price" data-price="3500">3.500 р./мероприятие</div>
+                              <div class="price">3.500&nbsp;р./мероприятие</div>
                             </div>
                             <div class="checkbox">
-                              <input id="add13" type="checkbox" name="add" value="Усилитель сигнала для интернета (если подвал)">
+                              <input id="add13" type="checkbox" name="add" value="Усилитель сигнала для интернета (если подвал)" data-price="10000">
                               <label for="add13">+ Усилитель сигнала для интернета (если подвал)</label>
-                              <div class="price" data-price="10000">10.000 р./мероприятие</div>
+                              <div class="price">10.000&nbsp;р./мероприятие</div>
                             </div>
                             <div class="checkbox">
-                              <input id="add14" type="checkbox" name="add" value="Предложить локацию в виде интерьерной студии">
+                              <input id="add14" type="checkbox" name="add" value="Предложить локацию в виде интерьерной студии" data-price="0">
                               <label for="add14">+ Предложить локацию в виде интерьерной студии
                                 <div class="tooltip">?</div>
                               </label>
-                              <div class="price" data-price="">индивидуальная цена</div><i class="tooltiptext tooltip-bottom">Подсказка по дополнительному пункты к расчету прайса. Заполнить на проде</i>
+                              <div class="price">индивидуальная цена</div><i class="tooltiptext tooltip-bottom">Подсказка по дополнительному пункты к расчету прайса. Заполнить на проде</i>
                             </div>
                             <div class="checkbox">
-                              <input id="add15" type="checkbox" name="add" value="Предложить локацию в видео конференцзала">
+                              <input id="add15" type="checkbox" name="add" value="Предложить локацию в видео конференцзала" data-price="0">
                               <label for="add15">+ Предложить локацию в видео конференцзала
                                 <div class="tooltip">?</div>
                               </label>
-                              <div class="price" data-price="">индивидуальная цена</div><i class="tooltiptext tooltip-bottom">Подсказка по дополнительному пункты к расчету прайса. Заполнить на проде</i>
+                              <div class="price">индивидуальная цена</div><i class="tooltiptext tooltip-bottom">Подсказка по дополнительному пункты к расчету прайса. Заполнить на проде</i>
                             </div>
                           </div>
                           <div class="ec-options__right"><a class="ec-options__video js-video-popup" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="images/video-placeholder.png" alt=""></a><a class="ec-options__video js-video-popup" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="images/video-placeholder.png" alt=""></a>
@@ -487,7 +487,9 @@
                         <div class="ec-options__total">
                           <div class="es-total es-total--flex">
                             <div class="es-total__left">ИТОГО:</div>
-                            <div class="es-total__right">0 р.<span class="es-total__nds">НДС <br>не облагается</span></div>
+                            <div class="es-total__right">
+                              <div>0 р.</div><span class="es-total__nds">НДС <br>не облагается</span>
+                            </div>
                           </div>
                         </div>
                         <div class="ec-options__bottom">
