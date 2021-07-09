@@ -880,10 +880,10 @@
 
 
 .es-quest{
-  padding: 64px 45px;
+  padding: 64px 45px 64px 0;
   max-width: 750px;
   @include max(md) {
-    padding: 50px 30px;
+    padding: 50px 30px 50px 0;
   }
   @include max(sm) {
     padding: 30px 0;
