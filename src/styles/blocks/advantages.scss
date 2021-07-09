@@ -43,13 +43,20 @@
 	&__item {
 		@include flex-block(208px, 226px, 115px);
 		position: relative;
+		height: 202px;
+
+		@include max(lg) {
+			height: 180px;
+		}
 
 		@include max(md) {
 			@include flex-block(180px, 200px, 40px);
+			height: 180px;
 		}
 
 		@include max(sm) {
 			@include flex-block(40px, 60px, 20px);
+			height: 160px;
 		}
 
 		.digit {
