@@ -178,6 +178,15 @@
   box-sizing: border-box;
   padding: 15px;
   max-width: 100%;
+  transition: color 0.2s;
+
+  &:hover{
+    background: #6f8133;
+  }
+  &:disabled,
+  &:active{
+    background: #62722d;
+  }
 
   @include max(xs) {
     font-size: 15px;
