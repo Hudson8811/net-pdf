@@ -3,7 +3,7 @@
 
 	&__container {
 		padding-top: 73px;
-		padding-bottom: 121px;
+		padding-bottom: 60px;
 
 		@include max(lg) {
 			padding-top: 40px;
@@ -12,51 +12,50 @@
 	}
 
 	&__title {
-		margin-bottom: 147px;
+		margin-bottom: 44px;
 
 		@include max(lg) {
-			margin-bottom: 100px;
+			margin-bottom: 40px;
 		}
 
 		@include max(md) {
-			margin-bottom: 65px;
+			margin-bottom: 15px;
 		}
 	}
 
 	&__grid {
-		@include flex-row(240px, 160px);
-		padding-right: 50px;
-
-		@include max(lg) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		@include max(xxs) {
 			justify-content: center;
-		}
-
-		@include max(md) {
-			@include flex-row(210px, 60px);
-		}
-
-		@include max(sm) {
-			@include flex-row(60px, 40px);
 		}
 	}
 
 	&__item {
-		@include flex-block(208px, 226px, 115px);
 		position: relative;
-		height: 202px;
+		width: 30%;
+		box-sizing: border-box;
+		padding: 58px 0;
 
 		@include max(lg) {
-			height: 180px;
+			padding: 25px 0;
 		}
 
 		@include max(md) {
-			@include flex-block(180px, 200px, 40px);
-			height: 180px;
 		}
 
 		@include max(sm) {
-			@include flex-block(40px, 60px, 20px);
-			height: 160px;
+			width: 45%;
+			padding: 15px 0;
+		}
+		@include max(xs) {
+			width: 50%;
+			padding: 10px 0;
+		}
+
+		@include max(xxs) {
+			width: 60%;
 		}
 
 		.digit {
@@ -66,6 +65,7 @@
 			font-weight: 500;
 			color: $gray-de;
 			letter-spacing: -2.12px;
+			margin: 0;
 
 			@include max(lg) {
 				font-size: 200px;
@@ -87,17 +87,29 @@
 			letter-spacing: 0.75px;
 			position: absolute;
 			top: 50%;
-			left: 45px;
+			left: 46px;
 			transform: translateY(-50%);
 			margin: 0;
+			margin-top: 8px;
+			min-height: 92px;
+			white-space: nowrap;
 
 			@include max(lg) {
 				font-size: 26px;
 				letter-spacing: normal;
+				margin-top: 4px;
+				left: 35px;
 			}
 
 			@include max(sm) {
 				font-size: 24px;
+			}
+
+			@include max(xs) {
+				font-size: 21px;
+				line-height: 1;
+				min-height: 84px;
+				left: 31px;
 			}
 		}
 	}
