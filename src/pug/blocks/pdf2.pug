@@ -9,15 +9,15 @@ section.ec-section
                             .event-calc__title Наш онлайн калькулятор составит вам смету прямо сейчас, и вы сразу сможете отправить ее в формате КП себе на почту
                             .event-calc__text Если вы сомневаетесь как заполнить калькулятор, чтобы рассчитать максимально точную стоимость вашего мероприятия, напишите в вотсап аккаунт менеджеру или позвоните ей, она поможет: <span class="nowrap-span">+7 /966/ 362-32-62</span>
                             .event-calc__hr
-                            .event-calc__text Данная смета рассчитывается для всех онлайн мероприятий с выездом на локацию Заказчика, или мы сами можем предложить вам как конференцзал, так и небольшую студию, если зрителей “вживую” в любом случае не будет. В дополнительных услугах (ниже) вы сможете учесть приблизительный бюджет, а мы вам вышлем на почту варианты студий с ценами - за час или за день.
+                            .event-calc__text Данный калькулятор рассчитает стоимость проведения вебинара, обучающего видео или съемки обзора вашего продукта онлайн или в записи. <br>Мы сможем предложить вам концептуальную студию или приехать к вам.
 
                         .event-calc__section.event-calc__section--2
                             .event-calc__subtitle Заполните все ячейки онлайн калькулятора
-                            form.event-calc__form.ec-form(action="" method="POST" data-id="1")
+                            form.event-calc__form.ec-form(action="" method="POST" data-id="2")
                                 .ec-form__section
                                     .ec-form__left
-                                        .ec-form__title Сколько часов в сумме будет длиться ваше мероприятие? <br>Даже если оно длится несколько дней и делится на несколько потоков.
-                                        .ec-form__text Например, мероприятие 2 дня, в 2-х залах - 5 часов в одном и 6 часов в другом будет рассчитано, как (5+6)*2 = 22 часа.
+                                        .ec-form__title Сколько часов в сумме будет длиться ваше мероприятие? <br>Даже если оно длится несколько дней.
+                                        .ec-form__text Например, мероприятие 2 дня, один день - 4 часа, второй - 5 часов: будет рассчитано, как 4+5 = 9 часов. Если в случае с обучающими видео вы не уверены сколько по времени займет данный процесс, то можете указать приблизительное количество часов или позвонить менеджеру, мы поможем посчитать.
                                     .ec-form__right
                                         .ec-form__field.field
                                             input.required(type="text" required="required" name="es_field_1")
@@ -31,48 +31,61 @@ section.ec-section
                                         .ec-form__error Заполните ячейку!
                                 .ec-form__section
                                     .ec-form__left
-                                        .ec-form__title Накладываются ли эти часы друг на друга? Другими словами, в рамках вашего мероприятия есть ли параллельные потоки? Если так, то сколько часов в рамках этого мероприятия будут параллельными?
-                                        .ec-form__text Например, в одном зале 6 часов и в другом - 6 часов в то же самое время, значит кол-во параллельных часов = 6. Если нисколько, укажите цифру ноль!
+                                        .ec-form__title Нужна ли прямая трансляция для данного мероприятия - укажите ДА или НЕТ в ячейке?
+                                        .ec-form__text Варианты такие: или это полностью прямой эфир, когда весь монтаж и внедрения презентационных слайдов проходят онлайн, это может быть запись или “гибрид” - когда мы записываем мероприятие заранее, а потом выводим его в прямой эфир. В записи можно более качественно подойти к монтажу и инфографике.
                                     .ec-form__right
                                         .ec-form__field.field
-                                            input.required(type="text" required="required" name="es_field_3")
-                                        .ec-form__error Заполните ячейку!
+                                            select.required(required="required" name="es_field_3")
+                                                option(value="n" selected) Нет
+                                                option(value="y") Да
+                                        .ec-form__error Выберите значение!
                                 .ec-form__section
                                     .ec-form__left
-                                        .ec-form__title Вы хотите один ракурс, два или съемку сразу с трех камер? <br>Укажите 1, 2 или 3 камеры?
-                                        .ec-form__text Чем больше ракурсов, тем динамичнее смена кадров и более увлекательно смотрится мероприятие. <br>Мы советуем заказывать 2 камеры - одна статичная на штативе лицом, другая подвижная работает с более крупными планами с других ракурсов - на стедикаме (подвижная камера), для более масштабных мероприятий - на кране или на рельсах.
+                                        .ec-form__title Вы хотите один ракурс, два или съемку сразу с трех камер? Если вы заказываете вебинар без съемки, то есть только техническое обеспечение и подключения участников, то укажите 0. <br>ЮУкажите 0, 1, 2 или 3 камеры?
+
                                     .ec-form__right
                                         .ec-form__field.field
                                             input.required.number-limit(type="text" required="required" name="es_field_4")
                                         .ec-form__error Заполните ячейку!
                                 .ec-form__section
                                     .ec-form__left
-                                        .ec-form__title Сколько будет спикеров вживую?
+                                        .ec-form__title Нужен ли постпродакшн материала? То есть - монтаж, цветокоррекция, упаковка материала в готовый ролик? Укажите ДА или НЕТ в ячейке!
+                                        .ec-form__text Чем больше ракурсов, тем динамичнее смена кадров и более увлекательно смотрится мероприятие. <br>Мы советуем заказывать 2 камеры - одна статичная на штативе лицом, другая подвижная работает с более крупными планами с других ракурсов - на стедикаме (подвижная камера).
                                     .ec-form__right
                                         .ec-form__field.field
-                                            input.required(type="text" required="required" name="es_field_5")
+                                            select.required(required="required" name="es_field_5")
+                                                option(value="n" selected) Нет
+                                                option(value="y") Да
+                                        .ec-form__error Выберите значение!
+                                .ec-form__section
+                                    .ec-form__left
+                                        .ec-form__title Хотите в запись своего видео внедрить моушен графику? То есть инфографику, которая будет анимирована? <br>Если есть понимание сколько элементов хотите анимировать, то внесите сюда число. Или просто НОЛЬ, если понимания нет или моушен графика вам не нужна.
+                                        .ec-form__text Например, вы хотите таймер или любой визуальный эффект или анимировать таблицу с данными или бегущую строку. <br>Посчитайте каждый такой элемент и укажите здесь их общее количество.
+                                    .ec-form__right
+                                        .ec-form__field.field
+                                            input.required(type="text" required="required" name="es_field_6")
                                         .ec-form__error Заполните ячейку!
                                 .ec-form__section
                                     .ec-form__left
                                         .ec-form__title Сколько будет подключаться спикеров?
                                     .ec-form__right
                                         .ec-form__field.field
-                                            input.required(type="text" required="required" name="es_field_6")
+                                            input.required(type="text" required="required" name="es_field_7")
                                         .ec-form__error Заполните ячейку!
                                 .ec-form__section.ec-form__section--cols
                                     .ec-form__cols
-                                        .ec-form__col
-                                            .ec-form__col-field.field
-                                                input.required(type="text" required="required" placeholder="ФИО" name="es_field_company")
-                                            .ec-form__error КП должно быть персонифицировано, мы же делаем его именно для вас! <br>Заполните ячейку!
                                         .ec-form__col
                                             .ec-form__col-field.field
                                                 input.required(type="text" required="required" placeholder="Название компании" name="es_field_company")
                                             .ec-form__error КП должно быть персонифицировано, мы же делаем его именно для вас! <br>Заполните ячейку!
                                         .ec-form__col
                                             .ec-form__col-field.field
-                                                input.required(type="text" required="required" placeholder="Дата/даты проведения мероприятия" name="es_field_date")
+                                                input.required(type="text" required="required" placeholder="Дата/даты мероприятия" name="es_field_date")
                                             .ec-form__error Заполните дату, нам это важно, чтобы свериться с расписанием других забронированных мероприятий
+                                        .ec-form__col
+                                            .ec-form__col-field.field
+                                                input.required(type="text" required="required" placeholder="Представьтесь, пожалуйста!" name="es_field_name")
+                                            .ec-form__error КП должно быть персонифицировано, мы же делаем его именно для вас! <br>Заполните ячейку!
                                         .ec-form__col
                                             .ec-form__col-field.field
                                                 input.required(type="email" required="required" placeholder="E-mail, куда отправить КП в PDF" name="es_field_email")
@@ -82,7 +95,7 @@ section.ec-section
                                     button.ec-btn(type="submit") РАССЧИТАТЬ БАЗОВУЮ СТОИМОСТЬ МОЕГО МЕРОПРИЯТИЯ
 
                         .event-calc__section.event-calc__section--3
-                            .ec-results
+                            .ec-results.ec-results--type-2
                                 .ec-results__info
                                     .ec-results__col.ec-results__col--sep
                                         .ec-results__col-number (
@@ -108,7 +121,7 @@ section.ec-section
                                         span.es-total__nds НДС <br>не облагается
                             .event-calc__hr.event-calc__hr--center
 
-                        .event-calc__section.event-calc__section--4
+                        //.event-calc__section.event-calc__section--4
                             .event-calc__subtitle Что включено в данную сумму
                             .ec-grid
                                 .ec-grid__item
@@ -172,37 +185,26 @@ section.ec-section
                                 .ec-options__flex
                                     .ec-options__left
                                         .checkbox
-                                            input#add1(type='checkbox' name='add' value='Квиз (разработка и ведение)' data-price='45000')
-                                            label(for='add1') + Квиз (разработка и ведение)
+                                            input#add1(type='checkbox' name='add' value='Звукорежиссура' data-price='10000')
+                                            label(for='add1') + Звукорежиссура
                                                 .tooltip ?
                                             .price 45.000&nbsp;р.
-                                            i.tooltiptext.tooltip-bottom Такую опцию чаще заказывают для онлайн корпоративов, чтобы развлечь сотрудников-зрителей, однако, иногда и организаторы деловых мероприятий хотят при помощи квиза повысить количество зрителей. Мы разработаем вопросы в тематике мероприятия с вариантами ответов, а также оформим квиз и внедрим в мероприятие онлайн. Не забывайте, что если есть квиз, то должен быть и ведущий, который сможет озвучивать все, что происходит на экране, рассказывать о призах за победу. Ведущий может быть или с нашей стороны, или ваш. В любом случае, если хотите квиз, выберите этот пункт, детали обсудим позже.
+                                            i.tooltiptext.tooltip-bottom ???
                                         .checkbox
-                                            input#add2(type='checkbox' name='add' value='Работа с чатом, модерация' data-price='5000')
-                                            label(for='add2') + Работа с чатом, модерация
+                                            input#add2(type='checkbox' name='add' value='Внедрение сторонних материалов в видео' data-price='5000')
+                                            label(for='add2') + Внедрение сторонних материалов в видео
                                             .price 5.000&nbsp;р.
+                                            i.tooltiptext.tooltip-bottom ???
                                         .checkbox
                                             input#add3(type='checkbox' name='add' value='Оформление заставки/ анимация логотипа' data-price='8000')
                                             label(for='add3') + Оформление заставки/ анимация логотипа
                                             .price 8.000&nbsp;р.
                                         .checkbox
-                                            input#add4(type='checkbox' name='add' value='TOP-модератор/ведущий' data-price='80000')
-                                            label(for='add4') + TOP-модератор/ведущий
-                                                .tooltip ?
-                                            .price от&nbsp;80.000&nbsp;р.
-                                            i.tooltiptext.tooltip-bottom Мы подберем для вас ведущего бизнес-мероприятия, который лично провел более 100 мероприятий, получил несколько образований, в том числе по теме бизнеса,  возможно, работал на топовых должностях, а кто-то успешно ведет несколько своих бизнес-проектов и сейчас.
-                                        .checkbox
-                                            input#add5(type='checkbox' name='add' value='Разработка Тизера под мероприятие' data-price='35000')
-                                            label(for='add5') + Разработка Тизера под мероприятие
+                                            input#add5(type='checkbox' name='add' value='Разработка Тизера (короткий рекламный ролик)' data-price='35000')
+                                            label(for='add5') + Разработка Тизера (короткий рекламный ролик)
                                                 .tooltip ?
                                             .price 35.000&nbsp;р.
                                             i.tooltiptext.tooltip-bottom Выше можете еще раз посмотреть пример Тизера под мероприятие - это короткий ролик с современной анимацией под онлайн событие. Часто адаптируем под вертикальные форматы для сторисов в соцсетях.
-                                        .checkbox
-                                            input#add6(type='checkbox' name='add' value='Внедрение анимированной инфографики ' data-price='35000')
-                                            label(for='add6') + Внедрение анимированной инфографики
-                                                .tooltip ?
-                                            .price от&nbsp;35.000&nbsp;р.
-                                            i.tooltiptext.tooltip-bottom Если вы хотите более сложное визуальное оформление своего онлайн мероприятия - хотите анимированные заставки спикеров, более сложное intro (вступление), перебивки - мы сделаем все заготовки заранее и внедрим уже их по сценарию во время эфира. Точная стоимость определяется количеством таких заставок, уточним после обсуждения деталей.
                                         .checkbox
                                             input#add7(type='checkbox' name='add' value='Техническое обеспечение перевода на другие языки' data-price='5000')
                                             label(for='add7') + Техническое обеспечение перевода на другие языки
@@ -221,12 +223,6 @@ section.ec-section
                                                 .tooltip ?
                                             .price 5.000&nbsp;р.
                                             i.tooltiptext.tooltip-bottom Заготовленный бегущий текст на экране для незаметного чтения спикером.
-                                        .checkbox
-                                            input#add10(type='checkbox' name='add' value='Плейбэк экран (подсказка спикерам)' data-price='3000')
-                                            label(for='add10') + Плейбэк экран (подсказка спикерам)
-                                                .tooltip ?
-                                            .price 3.000&nbsp;р./спикер
-                                            i.tooltiptext.tooltip-bottom Чтобы ваши спикеры не оборачивались назад каждый раз, когда хотят свериться с презентацией, мы можем предоставить им экраны-компьютеры перед глазами.
                                         .checkbox
                                             input#add11(type='checkbox' name='add' value='Кликер (переключатель слайдов на экране)' data-price='2500')
                                             label(for='add11') + Кликер (переключатель слайдов на экране)
@@ -257,13 +253,6 @@ section.ec-section
                                                 .tooltip ?
                                             .price 6.000&nbsp;р
                                             i.tooltiptext.tooltip-bottom У вас есть свой аккаунт под онлайн мероприятие, но вы хотите помощь в настройке? Отметьте этот пункт, мы поможем.
-                                        .checkbox
-                                            input#add17(type='checkbox' name='add' value='Помощь спикерам выйти в ZOOM' data-price='6000')
-                                            label(for='add17') + Помощь спикерам выйти в ZOOM
-                                                .tooltip ?
-                                            .price от&nbsp;6.000&nbsp;р.
-                                            i.tooltiptext.tooltip-bottom Не все спикеры, особенно преклонного возраста могут быстро выйти в ZOOM. Наш модератор проекта будет всегда готов им помочь. Точная стоимость зависит от количества спикеров.
-
 
                                     .ec-options__right
                                         a.ec-options__video.js-video-popup(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
