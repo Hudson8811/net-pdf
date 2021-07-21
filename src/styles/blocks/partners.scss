@@ -18,9 +18,11 @@
 	}
 
 	&__icons {
-		svg {
+		img {
+			display: block;
 			width: calc(100% + 200px);
 			margin-left: -100px;
+			max-width: none;
 
 			@include max(lg) {
 				width: calc(100% + 140px);
