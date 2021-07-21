@@ -20,7 +20,8 @@
 	&__icons {
 		img {
 			display: block;
-			width: calc(100% + 200px);
+			width: 100%;
+			/*width: calc(100% + 200px);
 			margin-left: -100px;
 			max-width: none;
 
@@ -37,7 +38,7 @@
 			@include max(xxs) {
 				width: calc(100% + 20px);
 				margin-left: -10px;
-			}
+			}*/
 		}
 	}
 }

@@ -11,4 +11,6 @@
 						'ассоциации и компании, которые <br>' +
 						'мы не успели сюда внести', '', 'partners__title')
 						.partners__icons
-							img(src="images/partners.png" alt="partners")
+							picture
+								source(srcset="images/partners.png" media="(min-width: 769px)")
+								img(src="images/partners-mobile.png" alt="partners")
