@@ -14,11 +14,14 @@ $(document).ready(function() {
         type: 'iframe'
     });
 
-    $(".ec-form__field input.required:not(.number-limit)").inputFilter(function(value) {
+    $(".ec-form__field input.required:not(.number-limit):not(.number-limit-2)").inputFilter(function(value) {
         return /^\d*$/.test(value);
     });
     $(".ec-form__field input.required.number-limit").inputFilter(function(value) {
         return /^[123]?$/.test(value);
+    });
+    $(".ec-form__field input.required.number-limit-2").inputFilter(function(value) {
+        return /^[0123]?$/.test(value);
     });
     $('.ec-form__field input.required').on('change',function (){
         let value = $(this).val();
@@ -27,6 +30,19 @@ $(document).ready(function() {
         } else {
             $(this).closest('.ec-form__field').removeClass('ec-form__field--error');
         }
+    });
+
+    $('.e-select-1').on('change',function (){
+       let value = $(this).val();
+       if (value === 'n') {
+           $(".e-select-2").val("y").change();
+       }
+    });
+    $('.e-select-2').on('change',function (){
+       let value = $(this).val();
+       if (value === 'n') {
+           $(".e-select-1").val("y").change();
+       }
     });
 
     $('.ec-form__col-field input.required').on('change',function (){
@@ -39,6 +55,7 @@ $(document).ready(function() {
     });
 
 
+
     $('.ec-form .ec-btn').on('click',function (){
         checkESform();
     });
@@ -46,106 +63,208 @@ $(document).ready(function() {
     $('.ec-form').on('submit',function (){
         event.preventDefault();
         let form = $('.ec-form');
-        let es_field_1 = parseInt(form.find('input[name="es_field_1"]').val()),
-            es_field_2 = parseInt(form.find('input[name="es_field_2"]').val()),
-            es_field_3 = parseInt(form.find('input[name="es_field_3"]').val()),
-            es_field_4 = parseInt(form.find('input[name="es_field_4"]').val()),
-            es_field_5 = parseInt(form.find('input[name="es_field_5"]').val()),
-            es_field_6 = parseInt(form.find('input[name="es_field_6"]').val());
+        let formId = parseInt(form.data('id'));
+        if (formId === 1){
+            let es_field_1 = parseInt(form.find('input[name="es_field_1"]').val()),
+                es_field_2 = parseInt(form.find('input[name="es_field_2"]').val()),
+                es_field_3 = parseInt(form.find('input[name="es_field_3"]').val()),
+                es_field_4 = parseInt(form.find('input[name="es_field_4"]').val()),
+                es_field_5 = parseInt(form.find('input[name="es_field_5"]').val()),
+                es_field_6 = parseInt(form.find('input[name="es_field_6"]').val());
 
-        let htmlText1 = '1 камерой';
-        let htmlText2 = '';
-        let htmlText3 = '';
+            let htmlText1 = '1 камерой';
+            let htmlText2 = '';
+            let htmlText3 = '';
 
-        let baseHourPrice = 7500;
-        let multiple = 1;
-        if (es_field_4 === 2) {
-            baseHourPrice = 8500;
-            htmlText1 = '2 камерами';
-        } else if (es_field_4 === 3) {
-            baseHourPrice = 9500;
-            htmlText1 = '3 камерами';
-        }
+            let baseHourPrice = 7500;
+            let multiple = 1;
+            if (es_field_4 === 2) {
+                baseHourPrice = 8500;
+                htmlText1 = '2 камерами';
+            } else if (es_field_4 === 3) {
+                baseHourPrice = 9500;
+                htmlText1 = '3 камерами';
+            }
 
-        let totalPrice = 0;
-        totalPrice += baseHourPrice*es_field_1*2;
-        totalPrice += baseHourPrice*es_field_3;
+            let totalPrice = 0;
+            totalPrice += baseHourPrice*es_field_1*2;
+            totalPrice += baseHourPrice*es_field_3;
 
-        if (es_field_5 > 2){
-            totalPrice += 2000*es_field_5;
-        }
-        if (es_field_6 > 20){
-            multiple = 1.4;
-            htmlText3 = 'от 21';
-        } else if (es_field_6 > 15) {
-            multiple = 1.35;
-            htmlText3 = 'от 16 до 20';
-        } else if (es_field_6 > 10) {
-            multiple = 1.3;
-            htmlText3 = 'от 11 до 15';
-        } else if (es_field_6 > 6) {
-            multiple = 1.2;
-            htmlText3 = 'от 7 до 10';
-        } else if (es_field_6 > 3) {
-            multiple = 1.1;
-            htmlText3 = 'от 3 до 6';
-        }
-        totalPrice = totalPrice*multiple;
-        if (totalPrice >=500000){
-            totalPrice = totalPrice*0.85;
-            htmlText2 = ' - <span>15% скидка</span>'
-        } else if (totalPrice >=260000){
-            totalPrice = totalPrice*0.9;
-            htmlText2 = ' - <span>10% скидка</span>'
-        } else if (totalPrice >=180000){
-            totalPrice = totalPrice*0.95;
-            htmlText2 = ' - <span>5% скидка</span>'
-        }
+            if (es_field_5 > 2){
+                totalPrice += 2000*es_field_5;
+            }
+            if (es_field_6 > 20){
+                multiple = 1.4;
+                htmlText3 = 'от 21';
+            } else if (es_field_6 > 15) {
+                multiple = 1.35;
+                htmlText3 = 'от 16 до 20';
+            } else if (es_field_6 > 10) {
+                multiple = 1.3;
+                htmlText3 = 'от 11 до 15';
+            } else if (es_field_6 > 6) {
+                multiple = 1.2;
+                htmlText3 = 'от 7 до 10';
+            } else if (es_field_6 > 3) {
+                multiple = 1.1;
+                htmlText3 = 'от 3 до 6';
+            }
+            totalPrice = totalPrice*multiple;
+            if (totalPrice >=500000){
+                totalPrice = totalPrice*0.85;
+                htmlText2 = ' - <span>15% скидка</span>'
+            } else if (totalPrice >=260000){
+                totalPrice = totalPrice*0.9;
+                htmlText2 = ' - <span>10% скидка</span>'
+            } else if (totalPrice >=180000){
+                totalPrice = totalPrice*0.95;
+                htmlText2 = ' - <span>5% скидка</span>'
+            }
 
-        totalPrice = Math.round(totalPrice);
-        globalEsPrice = totalPrice;
+            totalPrice = Math.round(totalPrice);
+            globalEsPrice = totalPrice;
 
 
-        $('.ec-results__total .es-total > div').html('ИТОГО: '+echoNumber(totalPrice)+' р.');
-        $('.ec-results__col--1 .ec-results__col-number').html(echoNumber(baseHourPrice)+' р./час * '+es_field_1*2+' '+declOfNum(es_field_1*2, ['час', 'часа', 'часов']));
-        $('.ec-results__col--1 .ec-results__col-text').html('Ставка за час за комплект оборудования со съемочной группой с '+htmlText1);
-        if (es_field_3 > 0){
-            $('.ec-results__col--5 .ec-results__col-number').html('&nbsp;+ '+echoNumber(baseHourPrice)+' р.');
-            $('.ec-results__col--2 .ec-results__col-number').html('&nbsp;* '+es_field_3+' '+declOfNum(es_field_3, ['час', 'часа', 'часов']));
-            $('.ec-results__col--5, .ec-results__col--2').show();
-        } else {
-            $('.ec-results__col--5, .ec-results__col--2').hide();
-        }
-        if (es_field_5 > 2){
-            $('.ec-results__col--4 .ec-results__col-number').html('&nbsp;+ 2.000 р. * '+es_field_5);
-            $('.ec-results__col--4').show();
-        } else {
-            $('.ec-results__col--4').hide();
-        }
-
-        if (htmlText2 || htmlText3){
-            let tempHtml = '&nbsp;';
-            if (htmlText3) {
-                tempHtml += '* '+multiple;
-                $('.ec-results__col--3 .ec-results__col-text').html('Коэффициент количества спикеров <br>'+htmlText3).show();
+            $('.ec-results__total .es-total > div').html('ИТОГО: '+echoNumber(totalPrice)+' р.');
+            $('.ec-results__col--1 .ec-results__col-number').html(echoNumber(baseHourPrice)+' р./час * '+es_field_1*2+' '+declOfNum(es_field_1*2, ['час', 'часа', 'часов']));
+            $('.ec-results__col--1 .ec-results__col-text').html('Ставка за час за комплект оборудования со съемочной группой с '+htmlText1);
+            if (es_field_3 > 0){
+                $('.ec-results__col--5 .ec-results__col-number').html('&nbsp;+ '+echoNumber(baseHourPrice)+' р.');
+                $('.ec-results__col--2 .ec-results__col-number').html('&nbsp;* '+es_field_3+' '+declOfNum(es_field_3, ['час', 'часа', 'часов']));
+                $('.ec-results__col--5, .ec-results__col--2').show();
             } else {
-                $('.ec-results__col--3 .ec-results__col-text').html('Коэффициент количества спикеров <br>'+htmlText3).hide();
+                $('.ec-results__col--5, .ec-results__col--2').hide();
             }
-            if (htmlText2) {
-                tempHtml += htmlText2;
+            if (es_field_5 > 2){
+                $('.ec-results__col--4 .ec-results__col-number').html('&nbsp;+ 2.000 р. * '+es_field_5);
+                $('.ec-results__col--4').show();
+            } else {
+                $('.ec-results__col--4').hide();
             }
-            $('.ec-results__col--3 .ec-results__col-number').html(tempHtml);
-            $('.ec-results__col--3, .ec-results__col--sep').show();
-        } else {
-            $('.ec-results__col--3, .ec-results__col--sep').hide();
-        }
-        addEsCalc(globalEsPrice);
 
-        $('.event-calc__section--3').slideDown(200,'linear',function (){
-            $('.event-calc__section--4').slideDown(300,'linear',function (){
-                $('.event-calc__section--5').slideDown(300,'linear');
+            if (htmlText2 || htmlText3){
+                let tempHtml = '&nbsp;';
+                if (htmlText3) {
+                    tempHtml += '* '+multiple;
+                    $('.ec-results__col--3 .ec-results__col-text').html('Коэффициент количества спикеров <br>'+htmlText3).show();
+                } else {
+                    $('.ec-results__col--3 .ec-results__col-text').html('Коэффициент количества спикеров <br>'+htmlText3).hide();
+                }
+                if (htmlText2) {
+                    tempHtml += htmlText2;
+                }
+                $('.ec-results__col--3 .ec-results__col-number').html(tempHtml);
+                $('.ec-results__col--3, .ec-results__col--sep').show();
+            } else {
+                $('.ec-results__col--3, .ec-results__col--sep').hide();
+            }
+            addEsCalc(globalEsPrice);
+
+            $('.event-calc__section--3').slideDown(200,'linear',function (){
+                $('.event-calc__section--4').slideDown(300,'linear',function (){
+                    $('.event-calc__section--5').slideDown(300,'linear');
+                });
             });
-        });
+        } else if (formId === 2){
+            let es_field_1 = parseInt(form.find('input[name="es_field_1"]').val()),
+                es_field_2 = parseInt(form.find('input[name="es_field_2"]').val()),
+                es_field_3 = form.find('select[name="es_field_3"]').val(),
+                es_field_4 = parseInt(form.find('input[name="es_field_4"]').val()),
+                es_field_5 = form.find('select[name="es_field_5"]').val(),
+                es_field_6 = parseInt(form.find('input[name="es_field_6"]').val()),
+                es_field_7 = parseInt(form.find('input[name="es_field_7"]').val());
+
+            let htmlText1 = 'Ставка за час за комплект оборудования';
+            let htmlText2 = '';
+            let htmlText3 = '';
+
+            let baseHourPrice = 4500;
+            let multiple = 1;
+            if (es_field_4 === 1) {
+                baseHourPrice = 7500;
+                htmlText1 = 'Ставка за час за комплект оборудования со съемочной группой с 1 камерой';
+            } else if (es_field_4 === 2) {
+                baseHourPrice = 8500;
+                htmlText1 = 'Ставка за час за комплект оборудования со съемочной группой с 2 камерами';
+            } if (es_field_4 === 3) {
+                baseHourPrice = 9500;
+                htmlText1 = 'Ставка за час за комплект оборудования со съемочной группой с 3 камерами';
+            }
+
+            let totalPrice = 0;
+            totalPrice += baseHourPrice*(es_field_1+2);
+
+            if (es_field_5 === 'y'){
+                totalPrice += 5500*(es_field_1+2);
+            }
+            if (es_field_6 > 0){
+                totalPrice += 2500*es_field_6;
+            }
+
+            if (es_field_7 > 20){
+                multiple = 1.4;
+                htmlText3 = 'от 21';
+            } else if (es_field_6 > 15) {
+                multiple = 1.35;
+                htmlText3 = 'от 16 до 20';
+            } else if (es_field_6 > 10) {
+                multiple = 1.3;
+                htmlText3 = 'от 11 до 15';
+            } else if (es_field_6 > 6) {
+                multiple = 1.2;
+                htmlText3 = 'от 7 до 10';
+            } else if (es_field_6 > 3) {
+                multiple = 1.1;
+                htmlText3 = 'от 3 до 6';
+            }
+            totalPrice = totalPrice*multiple;
+
+            totalPrice = Math.round(totalPrice);
+            globalEsPrice = totalPrice;
+
+
+            $('.ec-results__total .es-total > div').html('ИТОГО: '+echoNumber(totalPrice)+' р.');
+            $('.ec-results__col--1 .ec-results__col-number').html(echoNumber(baseHourPrice)+' р./час * '+es_field_1*2+' '+declOfNum(es_field_1+2, ['час', 'часа', 'часов']));
+            $('.ec-results__col--1 .ec-results__col-text').html(htmlText1);
+
+            if (es_field_5 === 'y'){
+                $('.ec-results__col--11 .ec-results__col-number').html('&nbsp;+ 5.500 р. * '+declOfNum(es_field_1+2, ['час', 'часа', 'часов']));
+                $('.ec-results__col--11').show();
+            } else {
+                $('.ec-results__col--11').hide();
+            }
+            if (es_field_6 > 0){
+                $('.ec-results__col--12 .ec-results__col-number').html('&nbsp;+ 2.500 р. * '+declOfNum(es_field_6, ['час', 'часа', 'часов']));
+                $('.ec-results__col--12').show();
+            } else {
+                $('.ec-results__col--12').hide();
+            }
+
+            if (htmlText2 || htmlText3){
+                let tempHtml = '&nbsp;';
+                if (htmlText3) {
+                    tempHtml += '* '+multiple;
+                    $('.ec-results__col--3 .ec-results__col-text').html('Коэффициент количества спикеров <br>'+htmlText3).show();
+                } else {
+                    $('.ec-results__col--3 .ec-results__col-text').html('Коэффициент количества спикеров <br>'+htmlText3).hide();
+                }
+                if (htmlText2) {
+                    tempHtml += htmlText2;
+                }
+                $('.ec-results__col--3 .ec-results__col-number').html(tempHtml);
+                $('.ec-results__col--3, .ec-results__col--sep').show();
+            } else {
+                $('.ec-results__col--3, .ec-results__col--sep').hide();
+            }
+            addEsCalc(globalEsPrice);
+
+            $('.event-calc__section--3').slideDown(200,'linear',function (){
+                $('.event-calc__section--4').slideDown(300,'linear',function (){
+                    $('.event-calc__section--5').slideDown(300,'linear');
+                });
+            });
+        }
+
     });
 
     function addEsCalc(globalEsPrice){

@@ -51,10 +51,20 @@ function scripts() {
 	])
 		.pipe(plumber())
 		.pipe(rigger())
-		//.pipe(sourcemaps.init())
+		.pipe(sourcemaps.init())
+		.pipe(concat('main.min.js'))
+		.pipe(uglify())
+		.pipe(sourcemaps.write('./maps'))
+		.pipe(dest('build/js/'))
+		.pipe(browserSync.stream())
+}
+function scriptsMax() {
+	return src([
+		//'node_modules/jquery/dist/jquery.min.js',
+		'src/js/main.js',
+	])
+		.pipe(plumber())
 		.pipe(concat('main.js'))
-		//.pipe(uglify())
-		//.pipe(sourcemaps.write('./maps'))
 		.pipe(dest('build/js/'))
 		.pipe(browserSync.stream())
 }
@@ -132,6 +142,7 @@ exports.browsersync = browsersync;
 exports.startwatch = startwatch;
 exports.pugHtml = pugHtml;
 exports.scripts = scripts;
+exports.scriptsMax = scriptsMax;
 exports.styles = styles;
 exports.fonts = fonts;
 exports.images = images;

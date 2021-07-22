@@ -302,6 +302,7 @@
     @include max(xxs) {
       width: 100%;
     }
+    select,
     input{
       margin-bottom: 0;
       border: 2px solid #d5d2d2;
@@ -316,12 +317,14 @@
       letter-spacing: normal;
       line-height: normal;
       height: 50px;
+      text-align-last:center;
       &:focus{
         border-color: #d5d2d2;
         color: #000000;
       }
     }
     &--error{
+      select,
       input{
         border-color: #fa0101;
       }
@@ -336,6 +339,9 @@
     margin: 0 -12px;
     width: calc(100% - 133px);
     flex-wrap: wrap;
+    @include min(lg) {
+      width: 100%;
+    }
     @include max(lg) {
       width: calc(100% + 24px);
     }
@@ -353,6 +359,9 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column-reverse;
+    @include min(lg) {
+      width: calc(100% / 4);
+    }
     @include max(md) {
       justify-content: space-between;
     }
@@ -595,6 +604,24 @@
         @include max(md) {
           margin-left: 21px;
           width: 80px;
+        }
+      }
+    }
+    &--11{
+      #{ $self }-text{
+        width: 140px;
+        margin-left: 33px;
+        @include max(md) {
+          margin-left: 22px;
+        }
+      }
+    }
+    &--12{
+      #{ $self }-text{
+        width: 120px;
+        margin-left: 33px;
+        @include max(md) {
+          margin-left: 22px;
         }
       }
     }

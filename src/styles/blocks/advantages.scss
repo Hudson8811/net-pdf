@@ -112,5 +112,148 @@
 				left: 31px;
 			}
 		}
+
+		.subtext{
+			font-family: $mainFont;
+			font-size: 16px;
+			color: rgb(158, 158, 158);
+			line-height: 1.375;
+			@include max(sm) {
+				font-size: 15px;
+			}
+		}
+	}
+}
+
+
+.advantages2 {
+	&__grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		@include max(xxs) {
+			justify-content: center;
+		}
+	}
+
+
+	&__content{
+		padding-left: 46px;
+		padding-top: 65px;
+		position: relative;
+		z-index: 2;
+		@include max(lg) {
+			padding-left: 35px;
+			padding-top: 50px;
+		}
+
+		@include max(sm) {
+			font-size: 24px;
+			padding-top: 45px;
+		}
+
+		@include max(xs) {
+			padding-left: 31px;
+			padding-top: 40px;
+		}
+	}
+	&__item {
+		position: relative;
+		width: 30%;
+		box-sizing: border-box;
+		padding: 58px 0 26px;
+		min-height: 235px;
+		@include max(lg) {
+			padding: 25px 0;
+			min-height: 200px;
+		}
+
+		@include max(md) {
+		}
+
+		@include max(sm) {
+			width: 50%;
+			padding: 15px 0;
+			min-height: 175px;
+		}
+		@include max(xs) {
+			width: 100%;
+			padding: 10px 0;
+		}
+
+		@include max(xxs) {
+			width: 100%;
+		}
+		&-inner{
+			position: relative;
+			z-index: 2;
+		}
+
+		.digit {
+			font-family: $secondFont;
+			font-size: 269px;
+			line-height: 235px;
+			font-weight: 500;
+			color: $gray-de;
+			letter-spacing: -2.12px;
+			margin: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			user-select: none;
+
+			@include max(lg) {
+				font-size: 200px;
+				line-height: 200px;
+			}
+
+			@include max(sm) {
+				font-size: 175px;
+				line-height: 175px;
+			}
+		}
+
+		.text {
+			font-family: $mainFont;
+			font-size: 30px;
+			line-height: 23px;
+			font-weight: 700;
+			color: $mainColor;
+			letter-spacing: 0.75px;
+			margin: 0;
+			white-space: nowrap;
+
+			@include max(lg) {
+				font-size: 26px;
+				letter-spacing: normal;
+			}
+
+			@include max(sm) {
+				font-size: 24px;
+			}
+
+			@include max(xs) {
+				font-size: 21px;
+				line-height: 1;
+			}
+		}
+
+		.subtext{
+			font-family: $mainFont;
+			font-size: 16px;
+			color: rgb(158, 158, 158);
+			line-height: 1.375;
+			margin: 0;
+			margin-top: 11px;
+			@include max(lg) {
+				font-size: 15px;
+				line-height: 1.2;
+			}
+			@include max(sm) {
+				font-size: 14px;
+				line-height: 1.1;
+			}
+		}
 	}
 }

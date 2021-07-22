@@ -35,25 +35,26 @@ section.ec-section
                                         .ec-form__text Варианты такие: или это полностью прямой эфир, когда весь монтаж и внедрения презентационных слайдов проходят онлайн, это может быть запись или “гибрид” - когда мы записываем мероприятие заранее, а потом выводим его в прямой эфир. В записи можно более качественно подойти к монтажу и инфографике.
                                     .ec-form__right
                                         .ec-form__field.field
-                                            select.required(required="required" name="es_field_3")
-                                                option(value="n" selected) Нет
-                                                option(value="y") Да
+                                            select.e-select-1.required(required="required" name="es_field_3")
+                                                option(value="n") Нет
+                                                option(value="y" selected) Да
                                         .ec-form__error Выберите значение!
                                 .ec-form__section
                                     .ec-form__left
                                         .ec-form__title Вы хотите один ракурс, два или съемку сразу с трех камер? Если вы заказываете вебинар без съемки, то есть только техническое обеспечение и подключения участников, то укажите 0. <br>ЮУкажите 0, 1, 2 или 3 камеры?
+                                        .ec-form__text Чем больше ракурсов, тем динамичнее смена кадров и более увлекательно смотрится мероприятие. <br>Мы советуем заказывать 2 камеры - одна статичная на штативе лицом, другая подвижная работает с более крупными планами с других ракурсов - на стедикаме (подвижная камера).
 
                                     .ec-form__right
                                         .ec-form__field.field
-                                            input.required.number-limit(type="text" required="required" name="es_field_4")
+                                            input.required.number-limit-2(type="text" required="required" name="es_field_4")
                                         .ec-form__error Заполните ячейку!
                                 .ec-form__section
                                     .ec-form__left
                                         .ec-form__title Нужен ли постпродакшн материала? То есть - монтаж, цветокоррекция, упаковка материала в готовый ролик? Укажите ДА или НЕТ в ячейке!
-                                        .ec-form__text Чем больше ракурсов, тем динамичнее смена кадров и более увлекательно смотрится мероприятие. <br>Мы советуем заказывать 2 камеры - одна статичная на штативе лицом, другая подвижная работает с более крупными планами с других ракурсов - на стедикаме (подвижная камера).
+                                        .ec-form__text Если съемка в прямом эфире, вам может понадобиться более качественный материал в записи. - без лишних/ненужных деталей, возможно, захотите вставить инфографику и иметь более высокго качества видео в записи. Если съемка будет исключительно в записи, то здесь нужно ответить Да, вам в любом случае нужен будет постпродакшн.
                                     .ec-form__right
                                         .ec-form__field.field
-                                            select.required(required="required" name="es_field_5")
+                                            select.e-select-2.required(required="required" name="es_field_5")
                                                 option(value="n" selected) Нет
                                                 option(value="y") Да
                                         .ec-form__error Выберите значение!
@@ -95,25 +96,23 @@ section.ec-section
                                     button.ec-btn(type="submit") РАССЧИТАТЬ БАЗОВУЮ СТОИМОСТЬ МОЕГО МЕРОПРИЯТИЯ
 
                         .event-calc__section.event-calc__section--3
-                            .ec-results.ec-results--type-2
+                            .ec-results
                                 .ec-results__info
                                     .ec-results__col.ec-results__col--sep
                                         .ec-results__col-number (
                                     .ec-results__col.ec-results__col--1
                                         .ec-results__col-number 7.500 р./час * 24 часа
                                         .ec-results__col-text Ставка за час за комплект оборудования со съемочной группой с 1 камерой
-                                    .ec-results__col.ec-results__col--5
-                                        .ec-results__col-number &nbsp;+ 7.500 р.
-                                    .ec-results__col.ec-results__col--2
-                                        .ec-results__col-number &nbsp;* 12 часов
-                                        .ec-results__col-text Параллельные часы/потоки
-                                    .ec-results__col.ec-results__col--4
-                                        .ec-results__col-number &nbsp;+ 2.000 р. * 3
-                                        .ec-results__col-text Спикеры вживую
+                                    .ec-results__col.ec-results__col--11
+                                        .ec-results__col-number &nbsp;+ 5.500 р. * 12 часов
+                                        .ec-results__col-text Цена за монтаж 1 часа чернового материала и цветокоррекция
+                                    .ec-results__col.ec-results__col--12
+                                        .ec-results__col-number &nbsp;+ 2.500 р. * 12 часов
+                                        .ec-results__col-text Цена за моушен графику (1&nbsp;внедрение)
                                     .ec-results__col.ec-results__col--sep
                                         .ec-results__col-number )
                                     .ec-results__col.ec-results__col--3
-                                        .ec-results__col-number &nbsp;* 1.1 - <span>10% скидка</span>
+                                        .ec-results__col-number &nbsp;* 1.1
                                         .ec-results__col-text Коэффициент количества спикеров <br>от 3 до 6
                                 .ec-results__total
                                     .es-total
@@ -121,7 +120,7 @@ section.ec-section
                                         span.es-total__nds НДС <br>не облагается
                             .event-calc__hr.event-calc__hr--center
 
-                        //.event-calc__section.event-calc__section--4
+                        //-.event-calc__section.event-calc__section--4
                             .event-calc__subtitle Что включено в данную сумму
                             .ec-grid
                                 .ec-grid__item
@@ -193,6 +192,7 @@ section.ec-section
                                         .checkbox
                                             input#add2(type='checkbox' name='add' value='Внедрение сторонних материалов в видео' data-price='5000')
                                             label(for='add2') + Внедрение сторонних материалов в видео
+                                                .tooltip ?
                                             .price 5.000&nbsp;р.
                                             i.tooltiptext.tooltip-bottom ???
                                         .checkbox
