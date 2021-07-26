@@ -66,7 +66,7 @@ section.ec-section
                                         .ec-form__field.field
                                             input.required(type="text" required="required" name="es_field_6")
                                         .ec-form__error Заполните ячейку!
-                                .ec-form__section
+                                .ec-form__section.ec-form__section--sel-1
                                     .ec-form__left
                                         .ec-form__title Сколько будет подключаться спикеров?
                                     .ec-form__right
@@ -109,6 +109,9 @@ section.ec-section
                                     .ec-results__col.ec-results__col--12
                                         .ec-results__col-number &nbsp;+ 2.500 р. * 12 часов
                                         .ec-results__col-text Цена за моушен графику (1&nbsp;внедрение)
+                                    .ec-results__col.ec-results__col--6
+                                        .ec-results__col-number &nbsp;+ 10.000 р. * 3
+                                        .ec-results__col-text Логистика за 1 день
                                     .ec-results__col.ec-results__col--sep
                                         .ec-results__col-number )
                                     .ec-results__col.ec-results__col--3
@@ -184,6 +187,10 @@ section.ec-section
                                 .ec-options__flex
                                     .ec-options__left
                                         .checkbox
+                                            input#add3(type='checkbox' name='add' value='Оформление заставки/ анимация логотипа' data-price='8000')
+                                            label(for='add3') + Оформление заставки/ анимация логотипа
+                                            .price 8.000&nbsp;р.
+                                        .checkbox
                                             input#add1(type='checkbox' name='add' value='Звукорежиссура' data-price='10000')
                                             label(for='add1') + Звукорежиссура
                                                 .tooltip ?
@@ -195,10 +202,6 @@ section.ec-section
                                                 .tooltip ?
                                             .price 5.000&nbsp;р.
                                             i.tooltiptext.tooltip-bottom ???
-                                        .checkbox
-                                            input#add3(type='checkbox' name='add' value='Оформление заставки/ анимация логотипа' data-price='8000')
-                                            label(for='add3') + Оформление заставки/ анимация логотипа
-                                            .price 8.000&nbsp;р.
                                         .checkbox
                                             input#add5(type='checkbox' name='add' value='Разработка Тизера (короткий рекламный ролик)' data-price='35000')
                                             label(for='add5') + Разработка Тизера (короткий рекламный ролик)
@@ -257,7 +260,7 @@ section.ec-section
                                     .ec-options__right
                                         a.ec-options__video.js-video-popup(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
                                             img(src="images/video-placeholder.png" alt="")
-                                        .ec-options__arrow
+                                        .ec-options__arrow.ec-options__arrow--top
                                             span пара примеров наших работ
                                             img(src="images/ec-result--arrow.png" alt="")
 

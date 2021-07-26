@@ -64,6 +64,7 @@ function scriptsMax() {
 		'src/js/main.js',
 	])
 		.pipe(plumber())
+		.pipe(rigger())
 		.pipe(concat('main.js'))
 		.pipe(dest('build/js/'))
 		.pipe(browserSync.stream())

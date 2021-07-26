@@ -36,12 +36,16 @@ $(document).ready(function() {
        let value = $(this).val();
        if (value === 'n') {
            $(".e-select-2").val("y").change();
+           $(".ec-form__section--sel-1").hide().find('input').removeClass('required').prop('required',false);
+       } else {
+           $(".ec-form__section--sel-1").show().find('input').addClass('required').prop('required',true);
        }
     });
     $('.e-select-2').on('change',function (){
        let value = $(this).val();
        if (value === 'n') {
            $(".e-select-1").val("y").change();
+           $(".ec-form__section--sel-1").show().find('input').addClass('required').prop('required',true);
        }
     });
 
@@ -90,6 +94,8 @@ $(document).ready(function() {
             totalPrice += baseHourPrice*es_field_1*2;
             totalPrice += baseHourPrice*es_field_3;
 
+            totalPrice += 10000*es_field_2;
+
             if (es_field_5 > 2){
                 totalPrice += 2000*es_field_5;
             }
@@ -128,6 +134,12 @@ $(document).ready(function() {
             $('.ec-results__total .es-total > div').html('ИТОГО: '+echoNumber(totalPrice)+' р.');
             $('.ec-results__col--1 .ec-results__col-number').html(echoNumber(baseHourPrice)+' р./час * '+es_field_1*2+' '+declOfNum(es_field_1*2, ['час', 'часа', 'часов']));
             $('.ec-results__col--1 .ec-results__col-text').html('Ставка за час за комплект оборудования со съемочной группой с '+htmlText1);
+            if (es_field_2 > 0){
+                $('.ec-results__col--6 .ec-results__col-number').html('&nbsp;+ 10.000 р. * '+es_field_2);
+                $('.ec-results__col--6, .ec-results__col--2').show();
+            } else {
+                $('.ec-results__col--6, .ec-results__col--2').hide();
+            }
             if (es_field_3 > 0){
                 $('.ec-results__col--5 .ec-results__col-number').html('&nbsp;+ '+echoNumber(baseHourPrice)+' р.');
                 $('.ec-results__col--2 .ec-results__col-number').html('&nbsp;* '+es_field_3+' '+declOfNum(es_field_3, ['час', 'часа', 'часов']));
@@ -178,6 +190,16 @@ $(document).ready(function() {
             let htmlText2 = '';
             let htmlText3 = '';
 
+            let addHoues = 2;
+
+            if (es_field_1 >= 14){
+                addHoues = 6;
+            } else if (es_field_1 >= 10){
+                addHoues = 5;
+            } else if (es_field_1 >= 6){
+                addHoues = 4;
+            }
+
             let baseHourPrice = 4500;
             let multiple = 1;
             if (es_field_4 === 1) {
@@ -192,49 +214,69 @@ $(document).ready(function() {
             }
 
             let totalPrice = 0;
-            totalPrice += baseHourPrice*(es_field_1+2);
+            totalPrice += baseHourPrice*(es_field_1+addHoues);
+
+            totalPrice += 10000*es_field_2;
 
             if (es_field_5 === 'y'){
-                totalPrice += 5500*(es_field_1+2);
+                totalPrice += 5500*(es_field_1+addHoues);
             }
             if (es_field_6 > 0){
                 totalPrice += 2500*es_field_6;
             }
 
-            if (es_field_7 > 20){
-                multiple = 1.4;
-                htmlText3 = 'от 21';
-            } else if (es_field_6 > 15) {
-                multiple = 1.35;
-                htmlText3 = 'от 16 до 20';
-            } else if (es_field_6 > 10) {
-                multiple = 1.3;
-                htmlText3 = 'от 11 до 15';
-            } else if (es_field_6 > 6) {
-                multiple = 1.2;
-                htmlText3 = 'от 7 до 10';
-            } else if (es_field_6 > 3) {
-                multiple = 1.1;
-                htmlText3 = 'от 3 до 6';
+            if (es_field_3 === 'y') {
+                if (es_field_7 > 20) {
+                    multiple = 1.4;
+                    htmlText3 = 'от 21';
+                } else if (es_field_6 > 15) {
+                    multiple = 1.35;
+                    htmlText3 = 'от 16 до 20';
+                } else if (es_field_6 > 10) {
+                    multiple = 1.3;
+                    htmlText3 = 'от 11 до 15';
+                } else if (es_field_6 > 6) {
+                    multiple = 1.2;
+                    htmlText3 = 'от 7 до 10';
+                } else if (es_field_6 > 3) {
+                    multiple = 1.1;
+                    htmlText3 = 'от 3 до 6';
+                }
             }
             totalPrice = totalPrice*multiple;
+
+            if (totalPrice >=500000){
+                totalPrice = totalPrice*0.85;
+                htmlText2 = ' - <span>15% скидка</span>'
+            } else if (totalPrice >=260000){
+                totalPrice = totalPrice*0.9;
+                htmlText2 = ' - <span>10% скидка</span>'
+            } else if (totalPrice >=180000){
+                totalPrice = totalPrice*0.95;
+                htmlText2 = ' - <span>5% скидка</span>'
+            }
 
             totalPrice = Math.round(totalPrice);
             globalEsPrice = totalPrice;
 
 
             $('.ec-results__total .es-total > div').html('ИТОГО: '+echoNumber(totalPrice)+' р.');
-            $('.ec-results__col--1 .ec-results__col-number').html(echoNumber(baseHourPrice)+' р./час * '+es_field_1*2+' '+declOfNum(es_field_1+2, ['час', 'часа', 'часов']));
+            $('.ec-results__col--1 .ec-results__col-number').html(echoNumber(baseHourPrice)+' р./час * '+(es_field_1+addHoues)+' '+declOfNum(es_field_1+addHoues, ['час', 'часа', 'часов']));
             $('.ec-results__col--1 .ec-results__col-text').html(htmlText1);
-
+            if (es_field_2 > 0){
+                $('.ec-results__col--6 .ec-results__col-number').html('&nbsp;+ 10.000 р. * '+es_field_2);
+                $('.ec-results__col--6, .ec-results__col--2').show();
+            } else {
+                $('.ec-results__col--6, .ec-results__col--2').hide();
+            }
             if (es_field_5 === 'y'){
-                $('.ec-results__col--11 .ec-results__col-number').html('&nbsp;+ 5.500 р. * '+declOfNum(es_field_1+2, ['час', 'часа', 'часов']));
+                $('.ec-results__col--11 .ec-results__col-number').html('&nbsp;+ 5.500 р. * '+(es_field_1+addHoues)+' '+declOfNum(es_field_1+addHoues, ['час', 'часа', 'часов']));
                 $('.ec-results__col--11').show();
             } else {
                 $('.ec-results__col--11').hide();
             }
             if (es_field_6 > 0){
-                $('.ec-results__col--12 .ec-results__col-number').html('&nbsp;+ 2.500 р. * '+declOfNum(es_field_6, ['час', 'часа', 'часов']));
+                $('.ec-results__col--12 .ec-results__col-number').html('&nbsp;+ 2.500 р. * '+es_field_6+' '+declOfNum(es_field_6, ['час', 'часа', 'часов']));
                 $('.ec-results__col--12').show();
             } else {
                 $('.ec-results__col--12').hide();
@@ -242,7 +284,7 @@ $(document).ready(function() {
 
             if (htmlText2 || htmlText3){
                 let tempHtml = '&nbsp;';
-                if (htmlText3) {
+                if (htmlText3 && es_field_3 === 'y') {
                     tempHtml += '* '+multiple;
                     $('.ec-results__col--3 .ec-results__col-text').html('Коэффициент количества спикеров <br>'+htmlText3).show();
                 } else {
