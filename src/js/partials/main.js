@@ -94,7 +94,6 @@ $(document).ready(function() {
             totalPrice += baseHourPrice*es_field_1*2;
             totalPrice += baseHourPrice*es_field_3;
 
-            totalPrice += 10000*es_field_2;
 
             if (es_field_5 > 2){
                 totalPrice += 2000*es_field_5;
@@ -116,6 +115,9 @@ $(document).ready(function() {
                 htmlText3 = 'от 3 до 6';
             }
             totalPrice = totalPrice*multiple;
+
+            totalPrice += 10000*es_field_2;
+
             if (totalPrice >=500000){
                 totalPrice = totalPrice*0.85;
                 htmlText2 = ' - <span>15% скидка</span>'
@@ -135,7 +137,7 @@ $(document).ready(function() {
             $('.ec-results__col--1 .ec-results__col-number').html(echoNumber(baseHourPrice)+' р./час * '+es_field_1*2+' '+declOfNum(es_field_1*2, ['час', 'часа', 'часов']));
             $('.ec-results__col--1 .ec-results__col-text').html('Ставка за час за комплект оборудования со съемочной группой с '+htmlText1);
             if (es_field_2 > 0){
-                $('.ec-results__col--6 .ec-results__col-number').html('&nbsp;+ 10.000 р. * '+es_field_2);
+                $('.ec-results__col--6 .ec-results__col-number').html('10.000 р. * '+es_field_2+' +&nbsp;');
                 $('.ec-results__col--6, .ec-results__col--2').show();
             } else {
                 $('.ec-results__col--6, .ec-results__col--2').hide();
@@ -168,7 +170,12 @@ $(document).ready(function() {
                 $('.ec-results__col--3 .ec-results__col-number').html(tempHtml);
                 $('.ec-results__col--3, .ec-results__col--sep').show();
             } else {
-                $('.ec-results__col--3, .ec-results__col--sep').hide();
+                $('.ec-results__col--3').hide();
+                if (es_field_2 > 0){
+                    $('.ec-results__col--sep').show();
+                } else {
+                    $('.ec-results__col--sep').hide();
+                }
             }
             addEsCalc(globalEsPrice);
 
@@ -216,7 +223,6 @@ $(document).ready(function() {
             let totalPrice = 0;
             totalPrice += baseHourPrice*(es_field_1+addHoues);
 
-            totalPrice += 10000*es_field_2;
 
             if (es_field_5 === 'y'){
                 totalPrice += 5500*(es_field_1+addHoues);
@@ -244,7 +250,9 @@ $(document).ready(function() {
                 }
             }
             totalPrice = totalPrice*multiple;
-
+            if (es_field_4 > 0) {
+                totalPrice += 10000*es_field_2;
+            }
             if (totalPrice >=500000){
                 totalPrice = totalPrice*0.85;
                 htmlText2 = ' - <span>15% скидка</span>'
@@ -263,8 +271,8 @@ $(document).ready(function() {
             $('.ec-results__total .es-total > div').html('ИТОГО: '+echoNumber(totalPrice)+' р.');
             $('.ec-results__col--1 .ec-results__col-number').html(echoNumber(baseHourPrice)+' р./час * '+(es_field_1+addHoues)+' '+declOfNum(es_field_1+addHoues, ['час', 'часа', 'часов']));
             $('.ec-results__col--1 .ec-results__col-text').html(htmlText1);
-            if (es_field_2 > 0){
-                $('.ec-results__col--6 .ec-results__col-number').html('&nbsp;+ 10.000 р. * '+es_field_2);
+            if (es_field_2 > 0 && es_field_4 > 0){
+                $('.ec-results__col--6 .ec-results__col-number').html('10.000 р. * '+es_field_2+' +&nbsp;');
                 $('.ec-results__col--6, .ec-results__col--2').show();
             } else {
                 $('.ec-results__col--6, .ec-results__col--2').hide();
@@ -296,14 +304,23 @@ $(document).ready(function() {
                 $('.ec-results__col--3 .ec-results__col-number').html(tempHtml);
                 $('.ec-results__col--3, .ec-results__col--sep').show();
             } else {
-                $('.ec-results__col--3, .ec-results__col--sep').hide();
+                $('.ec-results__col--3').hide();
+                if (es_field_2 > 0  && es_field_4 > 0){
+                    $('.ec-results__col--sep').show();
+                } else {
+                    $('.ec-results__col--sep').hide();
+                }
             }
             addEsCalc(globalEsPrice);
 
+            if (es_field_4 > 0){
+                $('.ec-options__checkbox--type-2').show();
+            } else {
+                $('.ec-options__checkbox--type-2').hide().find('input').prop('checked',false);
+            }
+
             $('.event-calc__section--3').slideDown(200,'linear',function (){
-                $('.event-calc__section--4').slideDown(300,'linear',function (){
-                    $('.event-calc__section--5').slideDown(300,'linear');
-                });
+                $('.event-calc__section--5').slideDown(300,'linear');
             });
         }
 

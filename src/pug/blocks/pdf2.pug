@@ -98,6 +98,9 @@ section.ec-section
                         .event-calc__section.event-calc__section--3
                             .ec-results
                                 .ec-results__info
+                                    .ec-results__col.ec-results__col--6
+                                        .ec-results__col-number &nbsp;+ 10.000 р. * 3
+                                        .ec-results__col-text Логистика за 1 день
                                     .ec-results__col.ec-results__col--sep
                                         .ec-results__col-number (
                                     .ec-results__col.ec-results__col--1
@@ -109,9 +112,6 @@ section.ec-section
                                     .ec-results__col.ec-results__col--12
                                         .ec-results__col-number &nbsp;+ 2.500 р. * 12 часов
                                         .ec-results__col-text Цена за моушен графику (1&nbsp;внедрение)
-                                    .ec-results__col.ec-results__col--6
-                                        .ec-results__col-number &nbsp;+ 10.000 р. * 3
-                                        .ec-results__col-text Логистика за 1 день
                                     .ec-results__col.ec-results__col--sep
                                         .ec-results__col-number )
                                     .ec-results__col.ec-results__col--3
@@ -187,75 +187,90 @@ section.ec-section
                                 .ec-options__flex
                                     .ec-options__left
                                         .checkbox
-                                            input#add3(type='checkbox' name='add' value='Оформление заставки/ анимация логотипа' data-price='8000')
+                                            input#add3(type='checkbox' name='add[]' value='Оформление заставки/ анимация логотипа' data-price='8000')
                                             label(for='add3') + Оформление заставки/ анимация логотипа
                                             .price 8.000&nbsp;р.
+                                        .checkbox.ec-options__checkbox--type-2
+                                            input#add1(type='checkbox' name='add[]' value='Звукорежиссура' data-price='10000')
+                                            label(for='add1') + Нужна ли звукорежиссура
+                                            .price 10.000&nbsp;р.
                                         .checkbox
-                                            input#add1(type='checkbox' name='add' value='Звукорежиссура' data-price='10000')
-                                            label(for='add1') + Звукорежиссура
-                                                .tooltip ?
-                                            .price 45.000&nbsp;р.
-                                            i.tooltiptext.tooltip-bottom ???
-                                        .checkbox
-                                            input#add2(type='checkbox' name='add' value='Внедрение сторонних материалов в видео' data-price='5000')
-                                            label(for='add2') + Внедрение сторонних материалов в видео
-                                                .tooltip ?
-                                            .price 5.000&nbsp;р.
-                                            i.tooltiptext.tooltip-bottom ???
-                                        .checkbox
-                                            input#add5(type='checkbox' name='add' value='Разработка Тизера (короткий рекламный ролик)' data-price='35000')
+                                            input#add5(type='checkbox' name='add[]' value='Разработка Тизера (короткий рекламный ролик)' data-price='35000')
                                             label(for='add5') + Разработка Тизера (короткий рекламный ролик)
                                                 .tooltip ?
                                             .price 35.000&nbsp;р.
                                             i.tooltiptext.tooltip-bottom Выше можете еще раз посмотреть пример Тизера под мероприятие - это короткий ролик с современной анимацией под онлайн событие. Часто адаптируем под вертикальные форматы для сторисов в соцсетях.
                                         .checkbox
-                                            input#add7(type='checkbox' name='add' value='Техническое обеспечение перевода на другие языки' data-price='5000')
+                                            input#add2(type='checkbox' name='add[]' value='Внедрение сторонних материалов в видео' data-price='5000')
+                                            label(for='add2') + Нужно ли внедрять сторонние материалы в ваше видео
+                                                .tooltip ?
+                                            .price 5.000&nbsp;р.
+                                        .checkbox
+                                            input#add6(type='checkbox' name='add[]' value='Внедрение анимированной инфографики' data-price='35000')
+                                            label(for='add6') + Внедрение анимированной инфографики
+                                                .tooltip ?
+                                            .price от&nbsp;35.000&nbsp;р.
+                                            i.tooltiptext.tooltip-bottom Если вы хотите более сложное визуальное оформление своего онлайн мероприятия - хотите анимированные заставки спикеров, более сложное intro (вступление), перебивки - мы сделаем все заготовки заранее и внедрим уже их по сценарию во время эфира. Точная стоимость определяется количеством таких заставок, уточним после обсуждения деталей.
+                                        .checkbox
+                                            input#add7(type='checkbox' name='add[]' value='Техническое обеспечение перевода на другие языки' data-price='5000')
                                             label(for='add7') + Техническое обеспечение перевода на другие языки
                                                 .tooltip ?
                                             .price 5.000&nbsp;р.
                                             i.tooltiptext.tooltip-bottom Подсказка по дополнительному пункты к расчету прайса. Заполнить на проде
                                         .checkbox
-                                            input#add8(type='checkbox' name='add' value='Переводчик синхронист' data-price='3800')
+                                            input#add8(type='checkbox' name='add[]' value='Переводчик синхронист' data-price='3800')
                                             label(for='add8') + Переводчик синхронист
                                                 .tooltip ?
                                             .price 3.800&nbsp;р./час
                                             i.tooltiptext.tooltip-bottom Подсказка по дополнительному пункты к расчету прайса. Заполнить на проде
-                                        .checkbox
-                                            input#add9(type='checkbox' name='add' value='Суфлер' data-price='5000')
-                                            label(for='add9') + Суфлер
-                                                .tooltip ?
-                                            .price 5.000&nbsp;р.
-                                            i.tooltiptext.tooltip-bottom Заготовленный бегущий текст на экране для незаметного чтения спикером.
-                                        .checkbox
-                                            input#add11(type='checkbox' name='add' value='Кликер (переключатель слайдов на экране)' data-price='2500')
+                                        .checkbox.ec-options__checkbox--type-2
+                                            input#add11(type='checkbox' name='add[]' value='Кликер (переключатель слайдов на экране)' data-price='2500')
                                             label(for='add11') + Кликер (переключатель слайдов на экране)
                                             .price 2.500&nbsp;р./мероприятие
-                                        .checkbox
-                                            input#add12(type='checkbox' name='add' value='Обеспечение интернета (если нет)' data-price='3500')
+                                        .checkbox.ec-options__checkbox--type-2
+                                            input#add12(type='checkbox' name='add[]' value='Обеспечение интернета (если нет)' data-price='3500')
                                             label(for='add12') + Обеспечение интернета (если нет)
                                             .price 3.500&nbsp;р./мероприятие
                                         .checkbox
-                                            input#add13(type='checkbox' name='add' value='Усилитель сигнала для интернета (если подвал)' data-price='10000')
-                                            label(for='add13') + Усилитель сигнала для интернета (если подвал)
-                                            .price 10.000&nbsp;р./мероприятие
-                                        .checkbox
-                                            input#add14(type='checkbox' name='add' value='Предложить локацию в виде интерьерной студии' data-price='0')
+                                            input#add14(type='checkbox' name='add[]' value='Предложить локацию в виде интерьерной студии' data-price='0')
                                             label(for='add14') + Предложить локацию в виде интерьерной студии
                                                 .tooltip ?
                                             .price индивидуальная цена
                                             i.tooltiptext.tooltip-bottom Хотите получить большой выбор интерьерных студий с ценами? Отметьте этот пункт, чтобы получить подборку. Это именно те студии, которые не подразумевают мест для зрителей, только для спикеров.
                                         .checkbox
-                                            input#add15(type='checkbox' name='add' value='Предложить локацию в виде конференцзала' data-price='0')
+                                            input#add15(type='checkbox' name='add[]' value='Предложить локацию в виде конференцзала' data-price='0')
                                             label(for='add15') + Предложить локацию в виде конференцзала
                                                 .tooltip ?
                                             .price индивидуальная цена
                                             i.tooltiptext.tooltip-bottom Вам нужен конференцзал? Отметьте этот пункт, чтобы получить подборку вариантов с ценами.
                                         .checkbox
-                                            input#add16(type='checkbox' name='add' value='Настройка Facecast аккаунта под мероприятие' data-price='6000')
+                                            input#add16(type='checkbox' name='add[]' value='Настройка Facecast аккаунта под мероприятие' data-price='5000')
                                             label(for='add16') + Настройка Facecast аккаунта под мероприятие
                                                 .tooltip ?
-                                            .price 6.000&nbsp;р
+                                            .price 5.000&nbsp;р
                                             i.tooltiptext.tooltip-bottom У вас есть свой аккаунт под онлайн мероприятие, но вы хотите помощь в настройке? Отметьте этот пункт, мы поможем.
+                                        .checkbox
+                                            input#add18(type='checkbox' name='add[]' value='Использование бизнес аккаунта Facecast' data-price='9500')
+                                            label(for='add18') + Использование бизнес аккаунта Facecast
+                                            .price 9.500&nbsp;р
+                                        .checkbox
+                                            input#add17(type='checkbox' name='add[]' value='Использование бизнес аккаунта ZOOM' data-price='6500')
+                                            label(for='add17') + Использование бизнес аккаунта ZOOM
+                                            .price от&nbsp;6.500&nbsp;р.
+                                        .checkbox.ec-options__checkbox--type-2
+                                            input#add20(type='checkbox' name='add[]' value='Помощь спикерам выйти в ZOOM' data-price='6000')
+                                            label(for='add20') + Помощь спикерам выйти в ZOOM
+                                                .tooltip ?
+                                            .price от&nbsp;6.000&nbsp;р.
+                                            i.tooltiptext.tooltip-bottom Не все спикеры, особенно преклонного возраста могут быстро выйти в ZOOM. Наш модератор проекта будет всегда готов им помочь. Точная стоимость зависит от количества спикеров.
+                                        .checkbox
+                                            input#add19(type='checkbox' name='add[]' value='Настройка любой другой платформы под мероприятие' data-price='4000')
+                                            label(for='add19') + Настройка любой другой платформы под мероприятие
+                                            .price от&nbsp;4.000&nbsp;р.
+
+
+
+
 
                                     .ec-options__right
                                         a.ec-options__video.js-video-popup(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")

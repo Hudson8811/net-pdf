@@ -549,7 +549,7 @@
     &-number{
       color: #262628;
       font-family: $mainFont;
-      font-size: 30px;
+      font-size: 28px;
       font-weight: 700;
       font-style: normal;
       letter-spacing: normal;
@@ -613,9 +613,8 @@
     &--6{
       #{ $self }-text{
         width: 90px;
-        margin-left: 31px;
+        margin-left: 0;
         @include max(lg) {
-          margin-left: 21px;
           width: 80px;
         }
       }
