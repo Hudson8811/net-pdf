@@ -1,0 +1,12 @@
+.qodef-content-grid
+	main.qodef-grid.qodef-layout--template
+		.qodef-grid-inner.clear
+			.qodef-grid-item.qodef-page-content-section.qodef-col--12
+
+				section.partners
+					.container.partners__container
+						+title('Это лишь часть компаний, <br> с которыми мы работали. <br>Есть еще артисты, медицинские <br>ассоциации и компании, которые <br>мы не успели сюда внести', '', 'partners__title')
+						.partners__icons
+							picture
+								source(srcset="images/partners.png" media="(min-width: 769px)")
+								img(src="images/partners-mobile.png" alt="partners")
