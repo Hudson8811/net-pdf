@@ -34,30 +34,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const calcTotal = () => {
       total = +es_field_1.dataset.price;
 
-      // createTotalText();
+      createTotalText();
     };
 
-    // const createTotalText = () => {
-    //   total = 80000000;
-    //   let totalTemp = total.toString(),
-    //     totalPart = "";
+    const createTotalText = () => {
+      let totalString = total.toString(),
+        totalArray = [];
 
-    //   while (totalTemp.length > 3) {
-    //     console.log(totalTemp.length);
-    //     if (totalTemp.length > 6) {
-    //       totalText += totalTemp / 1000 + ".";
-    //       totalPart = totalTemp / 1000;
-    //       totalTemp = totalPart.toString();
-    //     } else if (totalTemp.length > 3) {
-    //       totalText += totalTemp / 1000 + ".";
-    //       totalTemp = totalTemp.slice(-3);
-    //     }
-    //   }
+      while (totalString.length > 3) {
+        totalArray.push(totalString.slice(-3));
+        totalString = totalString.slice(0, -3);
+      }
 
-    //   totalText += total.toString().slice(-3);
-    // };
+      totalArray.push(totalString);
+
+      for (let i = totalArray.length; i > 0; i--) {
+        totalText += totalArray[i - 1];
+
+        if (i !== 1) {
+          totalText += ".";
+        }
+      }
+    };
 
     calcTotal();
-    totalSpan.textContent = `${total} `;
+    totalSpan.textContent = `${totalText} `;
   }
 });
