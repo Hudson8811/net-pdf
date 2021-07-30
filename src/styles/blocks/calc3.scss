@@ -354,9 +354,31 @@
       &__row {
         display: flex;
         justify-content: space-between;
+        margin: 0;
+
+        @include max("lg") {
+          width: 100%;
+        }
 
         @include max("xs") {
           flex-direction: column;
+        }
+
+        .ec-form__col {
+          width: 50%;
+
+          &:nth-child(n + 1) {
+            padding-left: 0;
+          }
+
+          &:nth-child(n + 2) {
+            padding-right: 0;
+          }
+
+          @include max("sm") {
+            width: 100%;
+            padding: 12px 0;
+          }
         }
       }
 
