@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
       es_field_2_1 = document.querySelector('select[name="es_field_2-1"]'),
       es_field_3 = document.querySelector('select[name="es_field_3"]'),
       es_field_4 = document.querySelector('input[name="es_field_4"]'),
+      es_field_4_1 = document.querySelector('select[name="es_field_4-1"]'),
       es_field_5 = document.querySelector('input[name="es_field_5"]'),
       es_field_6 = document.querySelector('input[name="es_field_6"]'),
       es_field_21 = document.querySelector('input[name="es_field_21"]'),
@@ -62,10 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+    // Высчитывает стоимость конкретной услуги
     function calcValues() {
       es1val = isChecked(es_field_1);
       es2val = es_field_2.dataset.price * es_field_2_1.value;
-      es4val = es_field_4.dataset.price;
+      es3val = es_field_3.value;
+      es4val = es_field_4.dataset.price * es_field_4_1.value;
       es21val = isChecked(es_field_21) * es_field_21_1.value;
       es7val = isChecked(es_field_7) * es_field_7_1.value;
       es8val = isChecked(es_field_8);
@@ -74,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
       es17val = isChecked(es_field_17);
       es18val = isChecked(es_field_18);
 
-      // Зависят от длительности ролика
+      // Зависят от длительности ролика (es3val)
       if (es3val === "1") {
         es5val = es_field_5.dataset.price * 1;
         es6val = es_field_6.dataset.price * 1;
@@ -166,7 +169,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     calc.addEventListener("change", () => {
-      es3val = es_field_3.value;
       calcTotal();
     });
 
