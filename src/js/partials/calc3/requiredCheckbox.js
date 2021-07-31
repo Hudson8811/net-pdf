@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
           item.checked = "checked";
           item.closest("label").classList.add("form-checkbox__error");
           item.closest(".form-calc__item").classList.add("form-calc__item-error");
+
+          setTimeout(() => {
+            item.closest("label").classList.remove("form-checkbox__error");
+            item.closest(".form-calc__item").classList.remove("form-calc__item-error");
+          }, 3000);
         }
       });
     });
