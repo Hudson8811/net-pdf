@@ -141,13 +141,16 @@ section.ec-section.calc3
                                                 |  10.000 р.
                                         .form-calc__item-section.form-calc__item-section--3
                                             label.form-checkbox.form-calc__checkbox
-                                                input(type="checkbox" name="es_field_21" value="Ассистент съемочной группы" data-price="10000").form-checkbox__input
+                                                input(type="checkbox" checked='checked' name="es_field_21" value="Ассистент съемочной группы" data-price="10000").form-checkbox__input.js-required-checkbox
                                                 span.form-checkbox__checkmark
                                         .form-calc__item-section.form-calc__item-section--4
                                             select(name="es_field_21-1").form-select.form-calc__select
                                                 option(value="1") 1 день
                                                 option(value="2") 2 дня
-                                            img(src="images/arrow.svg", alt="").form-calc__select-arrow  
+                                            img(src="images/arrow.svg", alt="").form-calc__select-arrow
+                                        .form-calc__item-section.form-calc__item-section--error
+                                            .form-calc__error.form-error 
+                                                | Это обязательная статья для создания ролика                                              
                                     
                                     //- Calc item 7
                                     .form-calc__item
