@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
       es_field_5 = document.querySelector('input[name="es_field_5"]'),
       es_field_6 = document.querySelector('input[name="es_field_6"]'),
       es_field_21 = document.querySelector('input[name="es_field_21"]'),
-      es_field_21_1 = document.querySelector('select[name="es_field_21-1"]'),
       es_field_7 = document.querySelector('input[name="es_field_7"]'),
       es_field_7_1 = document.querySelector('select[name="es_field_7-1"]'),
       es_field_8 = document.querySelector('input[name="es_field_8"]'),
@@ -92,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       es2val = es_field_2.dataset.price * es_field_2_1.value;
       es3val = es_field_3.value;
       es4val = es_field_4.dataset.price * es_field_4_1.value;
-      es21val = isChecked(es_field_21) * es_field_21_1.value;
+      es21val = isChecked(es_field_21) * es_field_2_1.value;
       es7val = isChecked(es_field_7) * es_field_7_1.value;
       es8val = isChecked(es_field_8);
       es10val = isChecked(es_field_10);
@@ -166,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Цены на услуги, которые не выбраны по умолчанию
-      es21text.textContent = createTotalText(es_field_21.dataset.price * es_field_21_1.value) + "р.";
+      es21text.textContent = createTotalText(es_field_21.dataset.price * es_field_2_1.value) + "р.";
       es7text.textContent = createTotalText(es_field_7.dataset.price * es_field_7_1.value) + "р.";
       es8text.textContent = createTotalText(es_field_8.dataset.price) + "р.";
       es10text.textContent = createTotalText(es_field_10.dataset.price) + "р.";
