@@ -1,0 +1,448 @@
+section.ec-section.calc4
+
+  main.qodef-grid.qodef-layout--template
+    .qodef-grid-inner.clear
+      .qodef-grid-item.qodef-page-content-section.qodef-col--12
+
+        .event-calc.event-calc--4
+          .qodef-content-grid
+            .event-calc__section.event-calc__section--1
+              .event-calc__subtitle 
+                | Расскажите - вы планируете съемку
+                br
+                | с людьми в кадре или предметную?
+              
+              .event-calc__buttons
+                a(href="#" data-tab="people").ec-btn.event-calc__buttons-item.event-calc__buttons-item--selected
+                  | СЪЕМКА С ЛЮДЬМИ - С ОДНИМ ЧЕЛОВЕКОМ И БОЛЕЕ
+                a(href="#" data-tab="objects").ec-btn.event-calc__buttons-item
+                  | ПРЕДМЕТНАЯ СЪЕМКА: В СТУДИИ ИЛИ С ВЫЕЗДОМ К ВАМ
+            
+            .event-calc__section.event-calc__section--2
+              .event-calc__subtitle 
+                | Заполните все ячейки онлайн калькулятора,
+                br
+                | чтобы получить стоимость съемки
+            
+          form.event-calc__form.ec-form.form(action="" method="POST" data-id="3")
+            .qodef-content-grid
+              #people.form-calc.form-calc--active
+
+                //- Calc item 1. People only form
+                .form-calc__item.first-el.js-form-people
+                  .form-calc__item-section.form-calc__item-section--1.form-calc__item-section--1-full
+                    .form-calc__title
+                        | Какой квалификации люди потребуются в кадре? Модели, простые люди...
+
+                  .form-calc__item-section.form-calc__item-section--checkboxes
+                    label.form-checkbox.form-calc__checkbox
+                      input(type="checkbox" name="es_field_1-1" value="Профессиональные модели" data-price="12000").form-checkbox__input
+                      span.form-checkbox__checkmark
+                      span.form-checkbox__text
+                        | Профессиональные модели <br>от 12.000 р./чел.
+                    
+                    label.form-checkbox.form-calc__checkbox
+                      input(type="checkbox" name="es_field_1-2" value="Люди под концепцию съемки" data-price="6000").form-checkbox__input
+                      span.form-checkbox__checkmark
+                      span.form-checkbox__text
+                        | Люди <br>под концепцию съемки <br>от 6.000 р./чел
+
+                    label.form-checkbox.form-calc__checkbox
+                      input(type="checkbox" name="es_field_1-3" value="Только части тела" data-price="5000").form-checkbox__input
+                      span.form-checkbox__checkmark
+                      span.form-checkbox__text
+                        | Только части тела: руки/ноги/шея <br>от 5000 р./чел
+
+                    label.form-checkbox.form-calc__checkbox
+                      input(type="checkbox" name="es_field_1-4" value="Только части тела" data-price="8000").form-checkbox__input
+                      span.form-checkbox__checkmark
+                      span.form-checkbox__text
+                        | Дети в возрасте <br>от 4 лет <br>от 8.000 р./чел.
+
+                    label.form-checkbox.form-calc__checkbox
+                      input(type="checkbox" name="es_field_1-5" value="Только части тела" data-price="8000").form-checkbox__input
+                      span.form-checkbox__checkmark
+                      span.form-checkbox__text
+                        | Животные: собаки/<br>кошки/кролики...
+                
+                //- Calc item 2. People only form
+                .form-calc__item.js-form-people
+                    .form-calc__item-section.form-calc__item-section--1
+                        .form-calc__title
+                            | Сколько требуется людей для съемки?
+
+                    .form-calc__item-section.form-calc__item-section--2
+                        .form-calc__price
+                            |  ~ 6.000 р.
+
+                    .form-calc__item-section.form-calc__item-section--select
+                        select(name="es_field_2").form-select.form-calc__select
+                            option(value="1") 1 человек
+                            option(value="3") 2-3 человека
+                            option(value="6") 4-6 человек
+                            option(value="7") 7 и более
+                        img(src="images/arrow.svg", alt="").form-calc__select-arrow
+
+                //- Calc item 3
+                .form-calc__item
+                    .form-calc__item-section.form-calc__item-section--1
+                        .form-calc__title
+                            | Где планируете снимать?
+
+                    .form-calc__item-section.form-calc__item-section--2
+                        .form-calc__price
+                            |  от 1.700 р./час
+                            
+                    .form-calc__item-section.form-calc__item-section--select
+                        select(name="es_field_3").form-select.form-calc__select
+                            option(value="В студии" data-price="1700") В студии
+                            option(value="На улице") На улице
+                            option(value="На своей локации") На своей локации
+                            option(value="На концептуальной локации" data-price="40000") На концептуальной локации
+                        img(src="images/arrow.svg", alt="").form-calc__select-arrow     
+
+                //- Calc item 4
+                .form-calc__item
+                    .form-calc__item-section.form-calc__item-section--1
+                        .form-calc__title
+                            | Сколько приблизительно часов планируется съемка? 
+
+                    .form-calc__item-section.form-calc__item-section--2
+                        .form-calc__price
+                            |  ~ 12.000 р.
+
+                    .form-calc__item-section.form-calc__item-section--select
+                        select(name="es_field_4").form-select.form-calc__select
+                            option(value="3") До 3-х часов
+                            option(value="6") 4-6 часов
+                            option(value="8") 7-8 часов
+                        img(src="images/arrow.svg", alt="").form-calc__select-arrow
+
+                //- Calc item 4-1. Objects only form
+                .form-calc__item
+                    .form-calc__item-section.form-calc__item-section--1
+                        .form-calc__title
+                            | Нужен ли стилист  (внедрение реквизита, раскладка, построение кадра)?
+
+                    .form-calc__item-section.form-calc__item-section--2
+                        .form-calc__price
+                            |  15.000 р.
+
+                    .form-calc__item-section.form-calc__item-section--select
+                        select(name="es_field_4-1").form-select.form-calc__select
+                            option(value="1") Потребуется
+                            option(value="0") Не потребуется
+                        img(src="images/arrow.svg", alt="").form-calc__select-arrow                        
+
+                //- Calc item 5. People only form
+                .form-calc__item.js-form-people
+                    .form-calc__item-section.form-calc__item-section--1
+                        .form-calc__title
+                            | Сколько всего образов (луков) потребуется создать для всех людей в съемке?  
+
+                    .form-calc__item-section.form-calc__item-section--2
+                        .form-calc__price
+
+                    .form-calc__item-section.form-calc__item-section--select
+                        select(name="es_field_5").form-select.form-calc__select
+                            option(value="3") 1 - 3 лука
+                            option(value="7") 4 - 7 лука 
+                            option(value="11") 8 - 11 луков 
+                            option(value="15") 12 - 15 луков 
+                            option(value="20") 16 - 20 луков 
+                            option(value="21") 21 и более 
+                        img(src="images/arrow.svg", alt="").form-calc__select-arrow  
+
+                //- Calc item 6. People only form
+                .form-calc__item.js-form-people
+                  .form-calc__item-section.form-calc__item-section--1.form-calc__item-section--1-full
+                    .form-calc__title
+                        | Потребуется создание Total Look’ов или простые сочетания в стиле Casual<br>(работа стилиста и ассистента, если моделей больше четырех, то два ассистента)?
+
+                  .form-calc__item-section.form-calc__item-section--radio
+                    label.form-radio.form-calc__radio
+                      input(type="radio" name="es_field_6" value="Потребуется Total Look" data-price="25000").form-radio__input
+                      span.form-radio__dot
+                      span.form-radio__text.form-checkbox__text
+                        | Потребуется <br>Total Look
+                    
+                    label.form-radio.form-calc__radio
+                      input(type="radio" name="es_field_6" checked value="Не потребуется Total Look" data-price="0").form-radio__input
+                      span.form-radio__dot
+                      span.form-radio__text.form-checkbox__text
+                        | Не потребуется. <br>Нужны простые <br>сочетания в стиле <br>Casual
+
+                  .form-calc__item-section.form-calc__item-section--2.form-calc__item-section--2-radio
+                      .form-calc__price
+                          |  25.000 р.
+
+                //- Calc item 6-1. Objects only form
+                .form-calc__item.js-form-people
+                  .form-calc__item-section.form-calc__item-section--1.form-calc__item-section--1-full
+                    .form-calc__title
+                        | Кто предоставляет реквизит в кадре (вспомогательные предметы для полноты образа)?
+
+                  .form-calc__item-section.form-calc__item-section--radio
+                    label.form-radio.form-calc__radio
+                      input(type="radio" name="es_field_6-1" value="Исполнитель" data-price="15000").form-radio__input
+                      span.form-radio__dot
+                      span.form-radio__text.form-checkbox__text
+                        | Агентство <br>NetClip, 15.000 р./усл. <br>(Исполнитель)
+                    
+                    label.form-radio.form-calc__radio
+                      input(type="radio" name="es_field_6-1" checked value="Заказчик" data-price="0").form-radio__input
+                      span.form-radio__dot
+                      span.form-radio__text.form-checkbox__text
+                        | Мы предоставим <br>все, что нужно для съемки <br>(Заказчик)
+
+                  .form-calc__item-section.form-calc__item-section--2.form-calc__item-section--2-radio
+                      .form-calc__price
+                          |  0 р.                          
+
+                //- Calc item 7. People only form
+                .form-calc__item.js-form-people
+                  .form-calc__item-section.form-calc__item-section--1.form-calc__item-section--1-full
+                    .form-calc__title
+                        | Кто предоставляет одежду моделям?
+
+                  .form-calc__item-section.form-calc__item-section--radio
+                    label.form-radio.form-calc__radio
+                      input(type="radio" name="es_field_7" value="Исполнитель" data-price="15000").form-radio__input
+                      span.form-radio__dot
+                      span.form-radio__text.form-checkbox__text
+                        | Агентство <br>NetClip, 15.000 р./усл. <br>(Исполнитель)
+                    
+                    label.form-radio.form-calc__radio
+                      input(type="radio" name="es_field_7" checked value="Заказчик" data-price="0").form-radio__input
+                      span.form-radio__dot
+                      span.form-radio__text.form-checkbox__text
+                        | Мы предоставим <br>одежду <br>(Заказчик)
+
+                  .form-calc__item-section.form-calc__item-section--2.form-calc__item-section--2-radio
+                      .form-calc__price
+                          |  0 р.  
+
+                //- Calc item 8. People only form
+                .form-calc__item.js-form-people
+                  .form-calc__item-section.form-calc__item-section--1.form-calc__item-section--1-full
+                    .form-calc__title
+                        | Кто предоставляет обувь/аксессуары моделям?
+
+                  .form-calc__item-section.form-calc__item-section--radio
+                    label.form-radio.form-calc__radio
+                      input(type="radio" name="es_field_8" checked value="Исполнитель" data-price="10000").form-radio__input
+                      span.form-radio__dot
+                      span.form-radio__text.form-checkbox__text
+                        | Агентство <br>NetClip, 10.000 р./усл. <br>(Исполнитель)
+                    
+                    label.form-radio.form-calc__radio
+                      input(type="radio" name="es_field_8"  value="Заказчик" data-price="0").form-radio__input
+                      span.form-radio__dot
+                      span.form-radio__text.form-checkbox__text
+                        | Мы предоставим <br>одежду <br>(Заказчик)
+
+                  .form-calc__item-section.form-calc__item-section--2.form-calc__item-section--2-radio
+                      .form-calc__price
+                          |  10.000 р.    
+
+                //- Calc item 9
+                .form-calc__item
+                    .form-calc__item-section.form-calc__item-section--1
+                        .form-calc__title
+                            | Выберите уровень фотографа:
+
+                    .form-calc__item-section.form-calc__item-section--2
+                        .form-calc__price
+                            |  20.000 р.
+
+                    .form-calc__item-section.form-calc__item-section--select
+                        select(name="es_field_9").form-select.form-calc__select
+                            option(value="20000") Профессионал для каталога
+                            option(value="30000") Профессионал для имиджевой съемки
+                            option(value="25000") Профессионал + для каталога
+                            option(value="40000") Профессонал + для ииджевой съемки
+                            option(value="60000") Профи под нестандартную задачу
+                            option(value="80000") Именитый фотограф/большое портф.
+                        img(src="images/arrow.svg", alt="").form-calc__select-arrow
+
+                //- Calc item 10. People only form
+                .form-calc__item.js-form-people
+                    .form-calc__item-section.form-calc__item-section--1
+                        .form-calc__title
+                            | Визажист (мейк и прическа, цена зависит от количества моделей)
+
+                    .form-calc__item-section.form-calc__item-section--2
+                        .form-calc__price#makeup-price
+                            |  8.000 р.  
+
+                //- Calc item 11. People only form
+                .form-calc__item.js-form-people
+                    .form-calc__item-section.form-calc__item-section--1
+                        .form-calc__title
+                            | Вам нужны будут люди под концепцию съемки, а значит и кастинг
+
+                    .form-calc__item-section.form-calc__item-section--2
+                        .form-calc__price#casting-price
+                            |  10.000 р.                   
+                
+                //- Calc item 12
+                .form-calc__item
+                    .form-calc__item-section.form-calc__item-section--1
+                        .form-calc__title
+                            | Продюсирование проекта 
+
+                    .form-calc__item-section.form-calc__item-section--2
+                        .form-calc__price#production-price
+                            |  20.000 р. 
+
+              //- Calc item 13. Common for both calcs
+              .form-calc__item.first-el
+                .form-calc__item-section.form-calc__item-section--1.form-calc__item-section--1-full
+                  .form-calc__title
+                      | Выберите тип арт-дирекшена вашего проекта: 
+
+                .form-calc__item-section.form-calc__item-section--radio
+                  label.form-radio.form-calc__radio
+                    input(type="radio" name="es_field_13" checked value="Базовый арт-дирекшн" data-price="20000").form-radio__input
+                    span.form-radio__dot
+                    span.form-radio__text.form-checkbox__text
+                      | Базовый арт-дирекшн <br>в рамках концепции <br>Заказчика <br>20.000 р.
+                  
+                  label.form-radio.form-calc__radio.form-radio--long
+                    input(type="radio" name="es_field_13"  value="Заказчик" data-price="90000").form-radio__input
+                    span.form-radio__dot
+                    span.form-radio__text.form-checkbox__text
+                      | Разработка продакшн-брифа и ведение проекта <br>с точки зрения полного соответствия продакшн-брифу: <br>пре-продакшн + пост-продакшн <br>90.000 р.
+                      br
+                      br
+                      a(href="#").form-radio__text-link
+                        | Скачать пример, <br>который мы разработали <br>для YOTA 
+
+                .form-calc__item-section.form-calc__item-section--2.form-calc__item-section--2-radio
+                    .form-calc__price
+                        |  20.000 р.  
+
+            //- Days counter on grey bg
+            .bg-grey
+              .qodef-content-grid
+
+                //- Calc item 14
+                .form-calc__item.first-el
+                  .form-calc__item-section.form-calc__item-section--1
+                      .form-calc__title
+                          | Выберите длительность съемок?
+
+                  .form-calc__item-section.form-calc__item-section--2
+                      .form-calc__price
+                          |  327.600 р.
+
+                  .form-calc__item-section.form-calc__item-section--select
+                      select(name="es_field_14").form-select.form-calc__select
+                          option(value="1") 1 день
+                          option(value="1.5") 1,5 дня
+                          option(value="2") 2 дня
+                          option(value="2.5") 2,5 дня
+                          option(value="3") 3 дня
+                          option(value="3.5") 3,5 дня
+                          option(value="4") 4 дня
+                          option(value="4.5") 4,5 дня
+                          option(value="5") 5 дней
+                          option(value="6") 6 дней
+                          option(value="7") 7 дней
+                          option(value="8") 8 дней
+                          option(value="9") 9 дней
+                      img(src="images/arrow.svg", alt="").form-calc__select-arrow
+
+            //- Total sum counter
+            .form-total.form-calc__total
+              .qodef-content-grid
+                .form-total__text
+                    span.form-total__text-1
+                        | Итого: 
+                    span.form-total__text-final
+                        | 
+                    span.form-total__text-currency
+                        | р.
+                    span.form-total__text-vat
+                        | НДС
+                        br
+                        | не облагается
+
+            //- Post-prod on grey bg
+            .bg-grey
+              .qodef-content-grid
+                .form-postprod.form-calc__postprod
+                  .event-calc__subtitle 
+                    | Цены на постпродакшн 
+
+                  //- Item 1
+                  .form-calc__item.form-calc__item-postprod.first-el
+                    .form-calc__item-section.form-calc__item-section--1.form-calc__item-section--1-postprod
+                      .form-calc__title
+                        | Выбор стилевого решения в вопросе постпродакшена (опционально)
+                      .form-calc__tooltip.tooltip
+                        | ?
+                    i.tooltiptext.tooltip-bottom(visibility="hidden")
+                      | Такую опцию чаще заказывают для онлайн корпоративов, чтобы развлечь сотрудников-зрителей, однако, иногда и организаторы деловых мероприятий хотят при помощи квиза повысить количество зрителей. Мы разработаем вопросы в тематике мероприятия с вариантами ответов, а также оформим квиз и внедрим в мероприятие онлайн. Не забывайте, что если есть квиз, то должен быть и ведущий, который сможет озвучивать все, что происходит на экране, рассказывать о призах за победу. Ведущий может быть или с нашей стороны, или ваш. В любом случае, если хотите квиз, выберите этот пункт, детали обсудим позже.
+                    .form-calc__item-section.form-calc__item-section--2
+                      .form-calc__price
+                        |  15.000 р.
+
+                  //- Item 2
+                  .form-calc__item.form-calc__item-postprod
+                    .form-calc__item-section.form-calc__item-section--1.form-calc__item-section--1-postprod
+                      .form-calc__title
+                        | Цветокоррекция и ретушь фотографий с людьми в кадре
+
+                    .form-calc__item-section.form-calc__item-section--2
+                      .form-calc__price
+                        |  800 р./1 шт.
+
+                  //- Item 3
+                  .form-calc__item.form-calc__item-postprod
+                    .form-calc__item-section.form-calc__item-section--1.form-calc__item-section--1-postprod
+                      .form-calc__title
+                        | Цветокоррекция и ретушь фотографий с лицами крупным планом
+                      .form-calc__tooltip.tooltip
+                        | ?
+                    i.tooltiptext.tooltip-bottom(visibility="hidden")
+                      | Такую опцию чаще заказывают для онлайн корпоративов, чтобы развлечь сотрудников-зрителей, однако, иногда и организаторы деловых мероприятий хотят при помощи квиза повысить количество зрителей. Мы разработаем вопросы в тематике мероприятия с вариантами ответов, а также оформим квиз и внедрим в мероприятие онлайн. Не забывайте, что если есть квиз, то должен быть и ведущий, который сможет озвучивать все, что происходит на экране, рассказывать о призах за победу. Ведущий может быть или с нашей стороны, или ваш. В любом случае, если хотите квиз, выберите этот пункт, детали обсудим позже.
+                    .form-calc__item-section.form-calc__item-section--2
+                      .form-calc__price
+                        |  1.000 р. - 1.500 р./1 шт. 
+
+                  //- Item 4
+                  .form-calc__item.form-calc__item-postprod
+                    .form-calc__item-section.form-calc__item-section--1.form-calc__item-section--1-postprod
+                      .form-calc__title
+                        | Ресайзы фотографий под любую площадку: сайт, маркетплейсы, каталоги, баннеры и т.д.
+
+                    .form-calc__item-section.form-calc__item-section--2
+                      .form-calc__price
+                        |  500 р./1 шт.             
+
+            .form-contacts.form-calc__contacts
+              .qodef-content-grid
+                .form-contacts__wrapper
+                  .ec-form__cols.form-contacts__row
+                    .ec-form__col
+                      .ec-form__col-field.field
+                        input.required(type="text" required="required" placeholder="ФИО" name="es_field_company")
+                      .ec-form__error КП должно быть персонифицировано, мы же делаем его именно для вас! <br>Заполните ячейку!
+                    .ec-form__col
+                      .ec-form__col-field.field
+                        input.required(type="text" required="required" placeholder="Название компании" name="es_field_company")
+                      .ec-form__error КП должно быть персонифицировано, мы же делаем его именно для вас! <br>Заполните ячейку!
+                  
+                  .ec-form__cols.form-contacts__row
+                    .ec-form__col
+                      .ec-form__col-field.field
+                        input.required(type="text" required="required" placeholder="Дата/даты проведения мероприятия" name="es_field_date")
+                      .ec-form__error Заполните дату, нам это важно, чтобы свериться с расписанием других забронированных мероприятий
+                    .ec-form__col
+                      .ec-form__col-field.field
+                        input.required(type="email" required="required" placeholder="E-mail, куда отправить КП в PDF" name="es_field_email")
+                      .ec-form__error Почта нужна, чтобы выслать вам КП. <br>Заполните ячейку!                                                
+                  
+                  button(class="ec-btn" type="submit").form-button.form-calc__button
+                    | ОТПРАВИТЬ КП НА ПОЧТУ В ФОРМАТЕ PDF                        
