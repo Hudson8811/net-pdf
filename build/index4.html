@@ -83,7 +83,7 @@
                     <div class="event-calc__section event-calc__section--1">
                       <div class="event-calc__subtitle">
                          Расскажите - вы планируете съемку<br>с людьми в кадре или предметную?</div>
-                      <div class="event-calc__buttons"><a class="ec-btn event-calc__buttons-item event-calc__buttons-item--selected" href="#" data-tab="people">СЪЕМКА С ЛЮДЬМИ - С ОДНИМ ЧЕЛОВЕКОМ И БОЛЕЕ</a><a class="ec-btn event-calc__buttons-item" href="#" data-tab="objects">ПРЕДМЕТНАЯ СЪЕМКА: В СТУДИИ ИЛИ С ВЫЕЗДОМ К ВАМ</a></div>
+                      <div class="event-calc__buttons"><a class="ec-btn event-calc__buttons-item event-calc__buttons-item--selected" href="#" data-tab="people" id="people">СЪЕМКА С ЛЮДЬМИ - С ОДНИМ ЧЕЛОВЕКОМ И БОЛЕЕ</a><a class="ec-btn event-calc__buttons-item" href="#" data-tab="objects" id="objects">ПРЕДМЕТНАЯ СЪЕМКА: В СТУДИИ ИЛИ С ВЫЕЗДОМ К ВАМ</a></div>
                     </div>
                     <div class="event-calc__section event-calc__section--2">
                       <div class="event-calc__subtitle">
@@ -97,7 +97,7 @@
                           <div class="form-calc__item-section form-calc__item-section--1 form-calc__item-section--1-full">
                             <div class="form-calc__title">Какой квалификации люди потребуются в кадре? Модели, простые люди...</div>
                           </div>
-                          <div class="form-calc__item-section form-calc__item-section--checkboxes">
+                          <div class="form-calc__item-section form-calc__item-section--checkboxes" id="es_field_1">
                             <label class="form-checkbox form-calc__checkbox">
                               <input class="form-checkbox__input" type="checkbox" name="es_field_1-1" value="Профессиональные модели" data-price="12000"><span class="form-checkbox__checkmark"></span><span class="form-checkbox__text">Профессиональные модели <br>от 12.000 р./чел.</span>
                             </label>
@@ -111,7 +111,7 @@
                               <input class="form-checkbox__input" type="checkbox" name="es_field_1-4" value="Только части тела" data-price="8000"><span class="form-checkbox__checkmark"></span><span class="form-checkbox__text">Дети в возрасте <br>от 4 лет <br>от 8.000 р./чел.</span>
                             </label>
                             <label class="form-checkbox form-calc__checkbox">
-                              <input class="form-checkbox__input" type="checkbox" name="es_field_1-5" value="Только части тела" data-price="8000"><span class="form-checkbox__checkmark"></span><span class="form-checkbox__text">Животные: собаки/<br>кошки/кролики...</span>
+                              <input class="form-checkbox__input" type="checkbox" name="es_field_1-5" value="Только части тела" data-price="0"><span class="form-checkbox__checkmark"></span><span class="form-checkbox__text">Животные: собаки/<br>кошки/кролики...</span>
                             </label>
                           </div>
                         </div>
@@ -141,8 +141,8 @@
                           <div class="form-calc__item-section form-calc__item-section--select">
                             <select class="form-select form-calc__select" name="es_field_3">
                               <option value="В студии" data-price="1700">В студии</option>
-                              <option value="На улице">На улице</option>
-                              <option value="На своей локации">На своей локации</option>
+                              <option value="На улице" data-price="0">На улице</option>
+                              <option value="На своей локации" data-price="0">На своей локации</option>
                               <option value="На концептуальной локации" data-price="40000">На концептуальной локации</option>
                             </select><img class="form-calc__select-arrow" src="images/arrow.svg" alt="">
                           </div>
@@ -162,7 +162,7 @@
                             </select><img class="form-calc__select-arrow" src="images/arrow.svg" alt="">
                           </div>
                         </div>
-                        <div class="form-calc__item">
+                        <div class="form-calc__item js-form-objects">
                           <div class="form-calc__item-section form-calc__item-section--1">
                             <div class="form-calc__title">Нужен ли стилист  (внедрение реквизита, раскладка, построение кадра)?</div>
                           </div>
@@ -185,12 +185,12 @@
                           </div>
                           <div class="form-calc__item-section form-calc__item-section--select">
                             <select class="form-select form-calc__select" name="es_field_5">
-                              <option value="3">1 - 3 лука</option>
-                              <option value="7">4 - 7 лука </option>
-                              <option value="11">8 - 11 луков </option>
-                              <option value="15">12 - 15 луков </option>
-                              <option value="20">16 - 20 луков </option>
-                              <option value="21">21 и более </option>
+                              <option value="3" data-price="15000">1 - 3 лука</option>
+                              <option value="7" data-price="20000">4 - 7 лука </option>
+                              <option value="11" data-price="20000">8 - 11 луков </option>
+                              <option value="15" data-price="20000">12 - 15 луков </option>
+                              <option value="20" data-price="25000">16 - 20 луков </option>
+                              <option value="21" data-price="25000">21 и более </option>
                             </select><img class="form-calc__select-arrow" src="images/arrow.svg" alt="">
                           </div>
                         </div>
@@ -198,23 +198,23 @@
                           <div class="form-calc__item-section form-calc__item-section--1 form-calc__item-section--1-full">
                             <div class="form-calc__title">Потребуется создание Total Look’ов или простые сочетания в стиле Casual<br>(работа стилиста и ассистента, если моделей больше четырех, то два ассистента)?</div>
                           </div>
-                          <div class="form-calc__item-section form-calc__item-section--radio">
+                          <div class="form-calc__item-section form-calc__item-section--radio" id="es_field_6">
                             <label class="form-radio form-calc__radio">
                               <input class="form-radio__input" type="radio" name="es_field_6" value="Потребуется Total Look" data-price="25000"><span class="form-radio__dot"></span><span class="form-radio__text form-checkbox__text">Потребуется <br>Total Look</span>
                             </label>
                             <label class="form-radio form-calc__radio">
-                              <input class="form-radio__input" type="radio" name="es_field_6" checked value="Не потребуется Total Look" data-price="0"><span class="form-radio__dot"></span><span class="form-radio__text form-checkbox__text">Не потребуется. <br>Нужны простые <br>сочетания в стиле <br>Casual</span>
+                              <input class="form-radio__input" type="radio" name="es_field_6" checked="checked" value="Не потребуется Total Look" data-price="0"><span class="form-radio__dot"></span><span class="form-radio__text form-checkbox__text">Не потребуется. <br>Нужны простые <br>сочетания в стиле <br>Casual</span>
                             </label>
                           </div>
                           <div class="form-calc__item-section form-calc__item-section--2 form-calc__item-section--2-radio">
                             <div class="form-calc__price"> 25.000 р.</div>
                           </div>
                         </div>
-                        <div class="form-calc__item js-form-people">
+                        <div class="form-calc__item js-form-objects">
                           <div class="form-calc__item-section form-calc__item-section--1 form-calc__item-section--1-full">
                             <div class="form-calc__title">Кто предоставляет реквизит в кадре (вспомогательные предметы для полноты образа)?</div>
                           </div>
-                          <div class="form-calc__item-section form-calc__item-section--radio">
+                          <div class="form-calc__item-section form-calc__item-section--radio" id="es_field_6-1">
                             <label class="form-radio form-calc__radio">
                               <input class="form-radio__input" type="radio" name="es_field_6-1" value="Исполнитель" data-price="15000"><span class="form-radio__dot"></span><span class="form-radio__text form-checkbox__text">Агентство <br>NetClip, 15.000 р./усл. <br>(Исполнитель)</span>
                             </label>
@@ -230,7 +230,7 @@
                           <div class="form-calc__item-section form-calc__item-section--1 form-calc__item-section--1-full">
                             <div class="form-calc__title">Кто предоставляет одежду моделям?</div>
                           </div>
-                          <div class="form-calc__item-section form-calc__item-section--radio">
+                          <div class="form-calc__item-section form-calc__item-section--radio" id="es_field_7">
                             <label class="form-radio form-calc__radio">
                               <input class="form-radio__input" type="radio" name="es_field_7" value="Исполнитель" data-price="15000"><span class="form-radio__dot"></span><span class="form-radio__text form-checkbox__text">Агентство <br>NetClip, 15.000 р./усл. <br>(Исполнитель)</span>
                             </label>
@@ -246,7 +246,7 @@
                           <div class="form-calc__item-section form-calc__item-section--1 form-calc__item-section--1-full">
                             <div class="form-calc__title">Кто предоставляет обувь/аксессуары моделям?</div>
                           </div>
-                          <div class="form-calc__item-section form-calc__item-section--radio">
+                          <div class="form-calc__item-section form-calc__item-section--radio" id="es_field_8">
                             <label class="form-radio form-calc__radio">
                               <input class="form-radio__input" type="radio" name="es_field_8" checked value="Исполнитель" data-price="10000"><span class="form-radio__dot"></span><span class="form-radio__text form-checkbox__text">Агентство <br>NetClip, 10.000 р./усл. <br>(Исполнитель)</span>
                             </label>
@@ -305,7 +305,7 @@
                         <div class="form-calc__item-section form-calc__item-section--1 form-calc__item-section--1-full">
                           <div class="form-calc__title">Выберите тип арт-дирекшена вашего проекта: </div>
                         </div>
-                        <div class="form-calc__item-section form-calc__item-section--radio">
+                        <div class="form-calc__item-section form-calc__item-section--radio" id="es_field_13">
                           <label class="form-radio form-calc__radio">
                             <input class="form-radio__input" type="radio" name="es_field_13" checked value="Базовый арт-дирекшн" data-price="20000"><span class="form-radio__dot"></span><span class="form-radio__text form-checkbox__text">Базовый арт-дирекшн <br>в рамках концепции <br>Заказчика <br>20.000 р.</span>
                           </label>
@@ -325,7 +325,7 @@
                             <div class="form-calc__title">Выберите длительность съемок?</div>
                           </div>
                           <div class="form-calc__item-section form-calc__item-section--2">
-                            <div class="form-calc__price"> 327.600 р.</div>
+                            <div class="form-calc__price" id="dailySum"> 327.600 р.</div>
                           </div>
                           <div class="form-calc__item-section form-calc__item-section--select">
                             <select class="form-select form-calc__select" name="es_field_14">
@@ -349,7 +349,7 @@
                     </div>
                     <div class="form-total form-calc__total">
                       <div class="qodef-content-grid">
-                        <div class="form-total__text"><span class="form-total__text-1">Итого: </span><span class="form-total__text-final"> </span><span class="form-total__text-currency">р.</span><span class="form-total__text-vat">НДС<br>не облагается</span></div>
+                        <div class="form-total__text"><span class="form-total__text-1">Итого: </span><span class="form-total__text-final" id="finalSum"> </span><span class="form-total__text-currency">р.</span><span class="form-total__text-vat">НДС<br>не облагается</span></div>
                       </div>
                     </div>
                     <div class="bg-grey">

@@ -13,9 +13,9 @@ section.ec-section.calc4
                 | с людьми в кадре или предметную?
               
               .event-calc__buttons
-                a(href="#" data-tab="people").ec-btn.event-calc__buttons-item.event-calc__buttons-item--selected
+                a(href="#" data-tab="people")#people.ec-btn.event-calc__buttons-item.event-calc__buttons-item--selected
                   | СЪЕМКА С ЛЮДЬМИ - С ОДНИМ ЧЕЛОВЕКОМ И БОЛЕЕ
-                a(href="#" data-tab="objects").ec-btn.event-calc__buttons-item
+                a(href="#" data-tab="objects")#objects.ec-btn.event-calc__buttons-item
                   | ПРЕДМЕТНАЯ СЪЕМКА: В СТУДИИ ИЛИ С ВЫЕЗДОМ К ВАМ
             
             .event-calc__section.event-calc__section--2
@@ -34,7 +34,7 @@ section.ec-section.calc4
                     .form-calc__title
                         | Какой квалификации люди потребуются в кадре? Модели, простые люди...
 
-                  .form-calc__item-section.form-calc__item-section--checkboxes
+                  .form-calc__item-section.form-calc__item-section--checkboxes#es_field_1
                     label.form-checkbox.form-calc__checkbox
                       input(type="checkbox" name="es_field_1-1" value="Профессиональные модели" data-price="12000").form-checkbox__input
                       span.form-checkbox__checkmark
@@ -60,7 +60,7 @@ section.ec-section.calc4
                         | Дети в возрасте <br>от 4 лет <br>от 8.000 р./чел.
 
                     label.form-checkbox.form-calc__checkbox
-                      input(type="checkbox" name="es_field_1-5" value="Только части тела" data-price="8000").form-checkbox__input
+                      input(type="checkbox" name="es_field_1-5" value="Только части тела" data-price="0").form-checkbox__input
                       span.form-checkbox__checkmark
                       span.form-checkbox__text
                         | Животные: собаки/<br>кошки/кролики...
@@ -96,8 +96,8 @@ section.ec-section.calc4
                     .form-calc__item-section.form-calc__item-section--select
                         select(name="es_field_3").form-select.form-calc__select
                             option(value="В студии" data-price="1700") В студии
-                            option(value="На улице") На улице
-                            option(value="На своей локации") На своей локации
+                            option(value="На улице" data-price="0") На улице
+                            option(value="На своей локации" data-price="0") На своей локации
                             option(value="На концептуальной локации" data-price="40000") На концептуальной локации
                         img(src="images/arrow.svg", alt="").form-calc__select-arrow     
 
@@ -118,8 +118,8 @@ section.ec-section.calc4
                             option(value="8") 7-8 часов
                         img(src="images/arrow.svg", alt="").form-calc__select-arrow
 
-                //- Calc item 4-1. Objects only form
-                .form-calc__item
+                //- Calc item 4-1. Objects only form 
+                .form-calc__item.js-form-objects
                     .form-calc__item-section.form-calc__item-section--1
                         .form-calc__title
                             | Нужен ли стилист  (внедрение реквизита, раскладка, построение кадра)?
@@ -145,12 +145,12 @@ section.ec-section.calc4
 
                     .form-calc__item-section.form-calc__item-section--select
                         select(name="es_field_5").form-select.form-calc__select
-                            option(value="3") 1 - 3 лука
-                            option(value="7") 4 - 7 лука 
-                            option(value="11") 8 - 11 луков 
-                            option(value="15") 12 - 15 луков 
-                            option(value="20") 16 - 20 луков 
-                            option(value="21") 21 и более 
+                            option(value="3" data-price='15000') 1 - 3 лука
+                            option(value="7" data-price='20000') 4 - 7 лука 
+                            option(value="11" data-price='20000') 8 - 11 луков 
+                            option(value="15" data-price='20000') 12 - 15 луков 
+                            option(value="20" data-price='25000') 16 - 20 луков 
+                            option(value="21" data-price='25000') 21 и более 
                         img(src="images/arrow.svg", alt="").form-calc__select-arrow  
 
                 //- Calc item 6. People only form
@@ -159,7 +159,7 @@ section.ec-section.calc4
                     .form-calc__title
                         | Потребуется создание Total Look’ов или простые сочетания в стиле Casual<br>(работа стилиста и ассистента, если моделей больше четырех, то два ассистента)?
 
-                  .form-calc__item-section.form-calc__item-section--radio
+                  .form-calc__item-section.form-calc__item-section--radio#es_field_6
                     label.form-radio.form-calc__radio
                       input(type="radio" name="es_field_6" value="Потребуется Total Look" data-price="25000").form-radio__input
                       span.form-radio__dot
@@ -167,7 +167,7 @@ section.ec-section.calc4
                         | Потребуется <br>Total Look
                     
                     label.form-radio.form-calc__radio
-                      input(type="radio" name="es_field_6" checked value="Не потребуется Total Look" data-price="0").form-radio__input
+                      input(type="radio" name="es_field_6" checked="checked" value="Не потребуется Total Look" data-price="0").form-radio__input
                       span.form-radio__dot
                       span.form-radio__text.form-checkbox__text
                         | Не потребуется. <br>Нужны простые <br>сочетания в стиле <br>Casual
@@ -177,12 +177,12 @@ section.ec-section.calc4
                           |  25.000 р.
 
                 //- Calc item 6-1. Objects only form
-                .form-calc__item.js-form-people
+                .form-calc__item.js-form-objects
                   .form-calc__item-section.form-calc__item-section--1.form-calc__item-section--1-full
                     .form-calc__title
                         | Кто предоставляет реквизит в кадре (вспомогательные предметы для полноты образа)?
 
-                  .form-calc__item-section.form-calc__item-section--radio
+                  .form-calc__item-section.form-calc__item-section--radio#es_field_6-1
                     label.form-radio.form-calc__radio
                       input(type="radio" name="es_field_6-1" value="Исполнитель" data-price="15000").form-radio__input
                       span.form-radio__dot
@@ -205,7 +205,7 @@ section.ec-section.calc4
                     .form-calc__title
                         | Кто предоставляет одежду моделям?
 
-                  .form-calc__item-section.form-calc__item-section--radio
+                  .form-calc__item-section.form-calc__item-section--radio#es_field_7
                     label.form-radio.form-calc__radio
                       input(type="radio" name="es_field_7" value="Исполнитель" data-price="15000").form-radio__input
                       span.form-radio__dot
@@ -228,7 +228,7 @@ section.ec-section.calc4
                     .form-calc__title
                         | Кто предоставляет обувь/аксессуары моделям?
 
-                  .form-calc__item-section.form-calc__item-section--radio
+                  .form-calc__item-section.form-calc__item-section--radio#es_field_8
                     label.form-radio.form-calc__radio
                       input(type="radio" name="es_field_8" checked value="Исполнитель" data-price="10000").form-radio__input
                       span.form-radio__dot
@@ -301,7 +301,7 @@ section.ec-section.calc4
                   .form-calc__title
                       | Выберите тип арт-дирекшена вашего проекта: 
 
-                .form-calc__item-section.form-calc__item-section--radio
+                .form-calc__item-section.form-calc__item-section--radio#es_field_13
                   label.form-radio.form-calc__radio
                     input(type="radio" name="es_field_13" checked value="Базовый арт-дирекшн" data-price="20000").form-radio__input
                     span.form-radio__dot
@@ -333,7 +333,7 @@ section.ec-section.calc4
                           | Выберите длительность съемок?
 
                   .form-calc__item-section.form-calc__item-section--2
-                      .form-calc__price
+                      .form-calc__price#dailySum
                           |  327.600 р.
 
                   .form-calc__item-section.form-calc__item-section--select
@@ -359,7 +359,7 @@ section.ec-section.calc4
                 .form-total__text
                     span.form-total__text-1
                         | Итого: 
-                    span.form-total__text-final
+                    span.form-total__text-final#finalSum
                         | 
                     span.form-total__text-currency
                         | р.
