@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Получение глобальныъ элементов
     const switcher = document.querySelector(".event-calc__buttons"),
       form = document.querySelector(".event-calc__form"),
+      formType = document.getElementById("hidden"),
       dailySumText = document.getElementById("dailySum"),
       finalSumText = document.getElementById("finalSum");
 
@@ -66,10 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let es4_1val = 0,
       es6_1val = 0;
 
-    function calcEs1Val() {
+    function calcEsVal(elem) {
       let higherVal = 0;
 
-      es_field_1.querySelectorAll("input").forEach((item) => {
+      elem.querySelectorAll("input").forEach((item) => {
         if (item.checked) {
           if (item.dataset.price > higherVal) {
             higherVal = +item.dataset.price;
@@ -77,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      es1val = +higherVal;
+      return +higherVal;
     }
 
     // Высчитывает общую сумму
@@ -87,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Высчитывает все значения
     function calcValues() {
-      calcEs1Val();
+      es1val = calcEsVal(es_field_1);
       es2val = es1val * es_field_2.value;
       es3val = +es_field_3.options[es_field_3.selectedIndex].dataset.price;
       es4val = es3val * es_field_4.value;
@@ -95,7 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (es_field_2.value <= "3") {
       }
-      es6val;
 
       fillPricesText();
     }
@@ -186,10 +186,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (target.dataset.tab === "people") {
         calcType = false;
+        formType.value = 1;
 
         calcSwitcher(target);
       } else if (target.dataset.tab === "objects") {
         calcType = true;
+        formType.value = 2;
 
         calcSwitcher(target);
       }

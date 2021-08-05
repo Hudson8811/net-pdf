@@ -26,7 +26,10 @@ section.ec-section.calc4
             
           form.event-calc__form.ec-form.form(action="" method="POST" data-id="3")
             .qodef-content-grid
-              #people.form-calc.form-calc--active
+              .form-calc.form-calc--active
+
+                //- Form type. 1 - people, 2 - objects
+                input(type="hidden" name="type" value="1")#hidden
 
                 //- Calc item 1. People only form
                 .form-calc__item.first-el.js-form-people
