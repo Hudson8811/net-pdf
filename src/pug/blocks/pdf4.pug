@@ -164,7 +164,7 @@ section.ec-section.calc4
 
                   .form-calc__item-section.form-calc__item-section--radio#es_field_6
                     label.form-radio.form-calc__radio
-                      input(type="radio" name="es_field_6" value="Потребуется Total Look" data-price="25000").form-radio__input
+                      input(type="radio" name="es_field_6" value="Потребуется Total Look" data-price="1").form-radio__input
                       span.form-radio__dot
                       span.form-radio__text.form-checkbox__text
                         | Потребуется <br>Total Look
@@ -210,7 +210,7 @@ section.ec-section.calc4
 
                   .form-calc__item-section.form-calc__item-section--radio#es_field_7
                     label.form-radio.form-calc__radio
-                      input(type="radio" name="es_field_7" value="Исполнитель" data-price="15000").form-radio__input
+                      input(type="radio" name="es_field_7" value="Исполнитель" data-price="1").form-radio__input
                       span.form-radio__dot
                       span.form-radio__text.form-checkbox__text
                         | Агентство <br>NetClip, 15.000 р./усл. <br>(Исполнитель)
@@ -233,7 +233,7 @@ section.ec-section.calc4
 
                   .form-calc__item-section.form-calc__item-section--radio#es_field_8
                     label.form-radio.form-calc__radio
-                      input(type="radio" name="es_field_8" checked value="Исполнитель" data-price="10000").form-radio__input
+                      input(type="radio" name="es_field_8" checked value="Исполнитель" data-price="1").form-radio__input
                       span.form-radio__dot
                       span.form-radio__text.form-checkbox__text
                         | Агентство <br>NetClip, 10.000 р./усл. <br>(Исполнитель)
@@ -260,12 +260,12 @@ section.ec-section.calc4
 
                     .form-calc__item-section.form-calc__item-section--select
                         select(name="es_field_9").form-select.form-calc__select
-                            option(value="20000") Профессионал для каталога
-                            option(value="30000") Профессионал для имиджевой съемки
-                            option(value="25000") Профессионал + для каталога
-                            option(value="40000") Профессонал + для ииджевой съемки
-                            option(value="60000") Профи под нестандартную задачу
-                            option(value="80000") Именитый фотограф/большое портф.
+                            option(value="0" data-price="20000") Профессионал для каталога
+                            option(value="1" data-price="30000") Профессионал для имиджевой съемки
+                            option(value="2" data-price="25000") Профессионал + для каталога
+                            option(value="3" data-price="40000") Профессонал + для ииджевой съемки
+                            option(value="4" data-price="60000") Профи под нестандартную задачу
+                            option(value="5" data-price="80000") Именитый фотограф/большое портф.
                         img(src="images/arrow.svg", alt="").form-calc__select-arrow
 
                 //- Calc item 10. People only form
@@ -279,13 +279,13 @@ section.ec-section.calc4
                             |  8.000 р.  
 
                 //- Calc item 11. People only form
-                .form-calc__item.js-form-people
+                .form-calc__item.js-field
                     .form-calc__item-section.form-calc__item-section--1
                         .form-calc__title
                             | Вам нужны будут люди под концепцию съемки, а значит и кастинг
 
                     .form-calc__item-section.form-calc__item-section--2
-                        .form-calc__price#casting-price
+                        .form-calc__price#casting-price(data-price="0")
                             |  10.000 р.                   
                 
                 //- Calc item 12
