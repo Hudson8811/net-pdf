@@ -11,9 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
       finalSumText = document.getElementById("finalSum");
 
     // Тип калькулятора. По-умолчанию — фото с людьми
+    // + Тип луков. По-умолчанию — кэжуал
     // + Общая сумма в день
     // + Общая сумма
     let calcType = false,
+      flag = false,
       dailyTotal = 0,
       total = 0;
 
@@ -83,6 +85,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+    // При выборе более 4 человек, отключает вариант с 1-3 луками
+    function activeRange() {
+      if (es_field_2.value > 3) {
+        if (es_field_5.selectedIndex === 0) {
+          es_field_5.querySelectorAll("option")[1].selected = true;
+        }
+        es_field_5.querySelectorAll("option")[0].disabled = true;
+      } else {
+        es_field_5.querySelectorAll("option")[0].disabled = false;
+      }
+    }
+
     // Проверяет какие чекбоксы/радио-кнопки выбраны
     function calcEsVal(elem) {
       let higherVal = 0;
@@ -98,9 +112,23 @@ document.addEventListener("DOMContentLoaded", () => {
       return +higherVal;
     }
 
+    // Проверяет какой тип луков выбран
+    function lookType(elem) {
+      elem.querySelectorAll("input").forEach((item) => {
+        if (item.checked) {
+          if (item.dataset.type === "total") {
+            flag = true;
+          } else if (item.dataset.type === "casual") {
+            flag = false;
+          }
+        }
+      });
+    }
+
     // Высчитывает общую сумму
     function calcTotal() {
       activeField();
+      activeRange();
       calcValues();
 
       if (!calcType) {
@@ -139,85 +167,90 @@ document.addEventListener("DOMContentLoaded", () => {
       es4_1val = 15000 * es_field_4_1.value;
       es5val = es_field_5.value;
 
+      lookType(es_field_6);
+
       if (es_field_2.value <= "3") {
-        es6val = calcEsVal(es_field_6) * es_field_2.value * +es_field_5.options[es_field_5.selectedIndex].dataset.price;
-      } else {
-        if (es5val <= 3) {
-          es6val =
-            calcEsVal(es_field_6) * es_field_2.value * +es_field_5.options[es_field_5.selectedIndex].dataset.price;
-        } else if (es5val <= 20) {
-          es6val =
-            calcEsVal(es_field_6) *
-            es_field_2.value *
-            (+es_field_5.options[es_field_5.selectedIndex].dataset.price + 10000);
+        if (flag) {
+          es6val = +es_field_5.options[es_field_5.selectedIndex].dataset.price + 5000;
         } else {
-          es6val =
-            calcEsVal(es_field_6) *
-            es_field_2.value *
-            (+es_field_5.options[es_field_5.selectedIndex].dataset.price + 15000);
+          es6val = +es_field_5.options[es_field_5.selectedIndex].dataset.price;
+        }
+      } else {
+        if (es5val <= 15) {
+          if (flag) {
+            es6val = +es_field_5.options[es_field_5.selectedIndex].dataset.price + 15000;
+          } else {
+            es6val = +es_field_5.options[es_field_5.selectedIndex].dataset.price + 10000;
+          }
+        } else {
+          if (flag) {
+            es6val = +es_field_5.options[es_field_5.selectedIndex].dataset.price + 20000;
+          } else {
+            es6val = +es_field_5.options[es_field_5.selectedIndex].dataset.price + 15000;
+          }
         }
       }
 
       es6_1val = calcEsVal(es_field_6_1);
 
-      es7val = calcEsVal(es_field_7) * es_field_2.value;
+      // es7val = calcEsVal(es_field_7) * es_field_2.value;
       if (es5val === "3") {
-        es7val *= 10000;
+        es7val = calcEsVal(es_field_7) * 10000;
       } else if (es5val === "7") {
-        es7val *= 20000;
+        es7val = calcEsVal(es_field_7) * 20000;
       } else if (es5val === "11") {
-        es7val *= 35000;
+        es7val = calcEsVal(es_field_7) * 35000;
       } else if (es5val === "15") {
-        es7val *= 50000;
+        es7val = calcEsVal(es_field_7) * 50000;
       } else if (es5val === "20") {
-        es7val *= 70000;
+        es7val = calcEsVal(es_field_7) * 70000;
       } else if (es5val === "21") {
-        es7val *= 75000;
+        es7val = calcEsVal(es_field_7) * 75000;
       }
 
       // Динамическое изменение цены у 7 поля
       if (es5val === "3") {
-        es7price.textContent = `${createText(10000)} р./чел `;
+        es7price.textContent = `${createText(10000)} р./усл. `;
       } else if (es5val === "7") {
-        es7price.textContent = `${createText(20000)} р./чел `;
+        es7price.textContent = `${createText(20000)} р./усл. `;
       } else if (es5val === "11") {
-        es7price.textContent = `${createText(35000)} р./чел `;
+        es7price.textContent = `${createText(35000)} р./усл. `;
       } else if (es5val === "15") {
-        es7price.textContent = `${createText(50000)} р./чел `;
+        es7price.textContent = `${createText(50000)} р./усл. `;
       } else if (es5val === "20") {
-        es7price.textContent = `${createText(70000)} р./чел `;
+        es7price.textContent = `${createText(70000)} р./усл. `;
       } else if (es5val === "21") {
-        es7price.textContent = `${createText(75000)} р./чел `;
+        es7price.textContent = `${createText(75000)} р./усл. `;
       }
 
-      es8val = calcEsVal(es_field_8) * es_field_2.value;
+      // es8val = calcEsVal(es_field_8) * es_field_2.value;
       if (es5val === "3") {
-        es8val *= 5000;
+        es8val = calcEsVal(es_field_8) * 5000;
       } else if (es5val === "7") {
-        es8val *= 8000;
+        es8val = calcEsVal(es_field_8) * 8000;
       } else if (es5val === "11") {
-        es8val *= 11000;
+        es8val = calcEsVal(es_field_8) * 11000;
       } else if (es5val === "15") {
-        es8val *= 15000;
+        es8val = calcEsVal(es_field_8) * 15000;
       } else if (es5val === "20") {
-        es8val *= 20000;
+        es8val = calcEsVal(es_field_8) * 20000;
       } else if (es5val === "21") {
-        es8val *= 25000;
+        es8val = calcEsVal(es_field_8) * 25000;
       }
 
-      // Динамическое изменение цены у 7 поля
+      // Динамическое изменение цены у 8 поля
       if (es5val === "3") {
-        es8price.textContent = `${createText(5000)} р./чел `;
+        es8price.textContent = `${createText(5000)} р./усл. `;
       } else if (es5val === "7") {
-        es8price.textContent = `${createText(8000)} р./чел `;
+        es8price.textContent = `${createText(8000)} р./усл. `;
       } else if (es5val === "11") {
-        es8price.textContent = `${createText(11000)} р./чел `;
+        es8price.textContent = `${createText(11000)} р./усл. `;
       } else if (es5val === "15") {
-        es8price.textContent = `${createText(15000)} р./чел `;
+        es8price.textContent = `${createText(15000)} р./усл. `;
       } else if (es5val === "20") {
-        es8price.textContent = `${createText(20000)} р./чел `;
+        es8price.textContent = `${createText(20000)} р./усл. `;
       } else if (es5val === "21") {
-        es8price.textContent = `${createText(25000)} р./чел `;
+        es8price.textContent = `${createText(25000)} р./усл. `;
       }
 
       es9val = +es_field_9.options[es_field_9.selectedIndex].dataset.price;
