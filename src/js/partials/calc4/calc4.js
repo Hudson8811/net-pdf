@@ -5,16 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
       form = document.querySelector(".event-calc__form"),
       formType = document.getElementById("hidden"),
       field = document.querySelector(".js-field"),
+      peopleError = document.getElementById("people-error"),
       es7price = document.getElementById("es_field_7_price"),
       es8price = document.getElementById("es_field_8_price"),
       dailySumText = document.getElementById("dailySum"),
       finalSumText = document.getElementById("finalSum");
 
     // Тип калькулятора. По-умолчанию — фото с людьми
+    // + Выбраны ли люди в первом поле в калькуляторе фотографий с людьми
     // + Тип луков. По-умолчанию — кэжуал
     // + Общая сумма в день
     // + Общая сумма
     let calcType = false,
+      selected = false,
       flag = false,
       dailyTotal = 0,
       total = 0;
@@ -391,6 +394,15 @@ document.addEventListener("DOMContentLoaded", () => {
       return totalText;
     }
 
+    // Првоеряет, выбраны ли люди в первом калькуляторе
+    function peopleSelected() {
+      if (es_field_1.querySelectorAll("input")[0].checked || es_field_1.querySelectorAll("input")[1].checked) {
+        selected = true;
+      } else {
+        selected = false;
+      }
+    }
+
     // Переключатель калькуляторов
     switcher.addEventListener("click", (event) => {
       event.preventDefault();
@@ -410,8 +422,29 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    form.addEventListener("change", () => {
+    form.addEventListener("change", (event) => {
       calcTotal();
+      peopleSelected();
+
+      if (!selected) {
+        event.preventDefault();
+
+        peopleError.classList.add("active");
+      } else {
+        peopleError.classList.remove("active");
+      }
+    });
+
+    form.addEventListener("submit", (event) => {
+      if (!calcType) {
+        if (!selected) {
+          event.preventDefault();
+
+          peopleError.classList.add("active");
+        } else {
+          peopleError.classList.remove("active");
+        }
+      }
     });
 
     calcSwitcher(document.getElementById("people"));
