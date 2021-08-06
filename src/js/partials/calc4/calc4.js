@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
       form = document.querySelector(".event-calc__form"),
       formType = document.getElementById("hidden"),
       field = document.querySelector(".js-field"),
+      es7price = document.getElementById("es_field_7_price"),
+      es8price = document.getElementById("es_field_8_price"),
       dailySumText = document.getElementById("dailySum"),
       finalSumText = document.getElementById("finalSum");
 
@@ -173,6 +175,21 @@ document.addEventListener("DOMContentLoaded", () => {
         es7val *= 75000;
       }
 
+      // Динамическое изменение цены у 7 поля
+      if (es5val === "3") {
+        es7price.textContent = `${createText(10000)} р./чел `;
+      } else if (es5val === "7") {
+        es7price.textContent = `${createText(20000)} р./чел `;
+      } else if (es5val === "11") {
+        es7price.textContent = `${createText(35000)} р./чел `;
+      } else if (es5val === "15") {
+        es7price.textContent = `${createText(50000)} р./чел `;
+      } else if (es5val === "20") {
+        es7price.textContent = `${createText(70000)} р./чел `;
+      } else if (es5val === "21") {
+        es7price.textContent = `${createText(75000)} р./чел `;
+      }
+
       es8val = calcEsVal(es_field_8) * es_field_2.value;
       if (es5val === "3") {
         es8val *= 5000;
@@ -186,6 +203,21 @@ document.addEventListener("DOMContentLoaded", () => {
         es8val *= 20000;
       } else if (es5val === "21") {
         es8val *= 25000;
+      }
+
+      // Динамическое изменение цены у 7 поля
+      if (es5val === "3") {
+        es8price.textContent = `${createText(5000)} р./чел `;
+      } else if (es5val === "7") {
+        es8price.textContent = `${createText(8000)} р./чел `;
+      } else if (es5val === "11") {
+        es8price.textContent = `${createText(11000)} р./чел `;
+      } else if (es5val === "15") {
+        es8price.textContent = `${createText(15000)} р./чел `;
+      } else if (es5val === "20") {
+        es8price.textContent = `${createText(20000)} р./чел `;
+      } else if (es5val === "21") {
+        es8price.textContent = `${createText(25000)} р./чел `;
       }
 
       es9val = +es_field_9.options[es_field_9.selectedIndex].dataset.price;
