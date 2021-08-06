@@ -137,6 +137,10 @@ document.addEventListener("DOMContentLoaded", () => {
         dailyTotal = es4val + es4_1val + es6_1val + es9val;
       }
 
+      if (es_field_3.selectedIndex === 3) {
+        dailyTotal += +es_field_3.options[es_field_3.selectedIndex].dataset.price;
+      }
+
       total = dailyTotal * es14val;
 
       if (es14val <= 3) {
@@ -163,7 +167,13 @@ document.addEventListener("DOMContentLoaded", () => {
       es1val = calcEsVal(es_field_1);
       es2val = es1val * es_field_2.value;
       es3val = +es_field_3.options[es_field_3.selectedIndex].dataset.price;
-      es4val = es3val * es_field_4.value;
+
+      if (es_field_3.selectedIndex === 3) {
+        es4val = 0;
+      } else {
+        es4val = es3val * es_field_4.value;
+      }
+
       es4_1val = 15000 * es_field_4_1.value;
       es5val = es_field_5.value;
 
@@ -306,7 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (createText(es4val) === "0") {
-        es4text.textContent = `${createText(es4val)} р.`;
+        es4text.textContent = ``;
       } else {
         es4text.textContent = `~ ${createText(es4val)} р.`;
       }
